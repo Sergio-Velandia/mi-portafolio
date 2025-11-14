@@ -7,7 +7,7 @@ export default function Header() {
       <h1>Sergio Andrés Ramírez Velandia</h1>
       <p id="tagline">Desarrollador de Software en formación | Fullstack & Análisis de Datos</p>
       <div>
-        <a href="/CV.pdf" download className="cv">
+        <a href="CV.pdf" download className="cv">
           Descargar CV
         </a>
         <a

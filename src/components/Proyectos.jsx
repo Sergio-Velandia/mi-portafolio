@@ -6,19 +6,19 @@ export default function Proyectos() {
       titulo: "Portafolio Web Personal",
       descripcion: "Página creada en React para presentar mi perfil profesional.",
       tecnologias: "React, HTML, CSS, JavaScript",
-      link: "https://github.com/Sergio-Velandia" // tu repo o demo
+      link: "https://github.com/Sergio-Velandia/mi-portafolio" // tu repo o demo
     },
     {
-      titulo: "Sistema de Gestión de Inventario",
-      descripcion: "Aplicación en Java con conexión a MySQL para administrar productos.",
-      tecnologias: "Java, MySQL",
-      link: "https://github.com/Sergio-Velandia" // repo del proyecto
+      titulo: "Aplicación de Calendario PWA",
+      descripcion: "Una aplicación de calendario progresiva (PWA) diseñada para ofrecer una experiencia fluida y accesible, permitiendo a los usuarios gestionar sus eventos y recordatorios de manera eficiente desde cualquier dispositivo, incluso sin conexión a internet.",
+      tecnologias: "HTML, CSS, JavaScript",
+      link: "https://github.com/Sergio-Velandia/Trabajo-PWA" // repo del proyecto
     },
     {
-      titulo: "Análisis de Datos Académicos",
-      descripcion: "Exploración de dataset académico usando Python y librerías de análisis.",
+      titulo: "Análisis de Datos De Ventas",
+      descripcion: "Exploración de dataset de ventas usando Python y librerías de análisis en este bloque se encuentra lo aprendido y ejecutado sobre el curso sobre ANALISIS EXPLORATORIO DE DATOS EN PYTHON.",
       tecnologias: "Python, Pandas, Matplotlib",
-      link: "https://github.com/Sergio-Velandia" // notebook en GitHub
+      link: "https://github.com/Sergio-Velandia/Analisis-de-Datos-De-Ventas" // notebook en GitHub
     }
   ]
 

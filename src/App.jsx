@@ -8,6 +8,7 @@ import Habilidades from "./components/Habilidades"
 import Proyectos from "./components/Proyectos"
 import Contacto from "./components/Contacto"
 import Footer from "./components/footer"
+import Certificaciones from "./components/Certificaciones"
 
 // Importamos animación scroll
 import { initScrollReveal } from "./animation"
@@ -38,6 +39,10 @@ function App() {
       <div className="reveal">
         <Footer />
       </div>
+      <div className="reveal">
+  <Certificaciones />
+</div>
+
     </>
   )
 }

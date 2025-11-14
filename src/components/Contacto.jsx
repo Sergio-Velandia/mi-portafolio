@@ -31,12 +31,8 @@ export default function Contacto() {
         <div className="card">
           <FaLinkedin className="icono" />
           <h3>LinkedIn</h3>
-          <a
-            href="https://linkedin.com/in/tu-perfil"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            linkedin.com/in/tu-perfil
+          <a>
+            Sergio Andres Ramirez Velandia
           </a>
         </div>
       </div>
