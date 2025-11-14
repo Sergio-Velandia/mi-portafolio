@@ -40,8 +40,8 @@ function App() {
         <Footer />
       </div>
       <div className="reveal">
-  <Certificaciones />
-</div>
+        <Certificaciones />
+      </div>
 
     </>
   )
