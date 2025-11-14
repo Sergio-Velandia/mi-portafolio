@@ -14,7 +14,7 @@ export default function Certificaciones() {
       <h3>Análisis Exploratorio de Datos en Python</h3>
     </div>
     <p>SENA – Septiembre 2025</p>
-    <a href="/certificados/CERTIFICADO_ANALISIS_DE_DATOS_SENA.pdf" download>
+    <a href="CERTIFICADO_ANALISIS_DE_DATOS_SENA.pdf" download className="CERTIFICADO_ANALISIS_DE_DATOS_SENA">
       📄 Descargar certificado
     </a>
   </div>
@@ -25,7 +25,7 @@ export default function Certificaciones() {
       <h3>Aplicaciones con Interfaz Gráfica en Java</h3>
     </div>
     <p>SENA – Octubre 2025</p>
-    <a href="/certificados/CERTIFICADO_DE_APLICACIONES_CON_INTERFAZ_GRAFICA.pdf" download>
+    <a href="CERTIFICADO_DE_APLICACIONES_CON_INTERFAZ_GRAFICA.pdf" download className="CERTIFICADO_DE_APLICACIONES_CON_INTERFAZ_GRAFICA">
       📄 Descargar certificado
     </a>
   </div>

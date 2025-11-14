@@ -36,7 +36,7 @@ function App() {
       <div className="reveal">
         <Contacto />
       </div>
-      <div className="reveal">
+      <div className="cert-header">
         <Certificaciones />
       </div>
       <div className="reveal">
