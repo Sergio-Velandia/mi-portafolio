@@ -333,3 +333,14 @@ header a.github:hover {
 .cert-btn:hover {
   background: #1e40af;
 }
+
+.cert-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.cert-header h3 {
+  margin: 0;
+}
