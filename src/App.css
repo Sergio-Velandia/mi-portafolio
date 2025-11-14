@@ -307,41 +307,62 @@ header a.github:hover {
 }
 
 
-.cert-botones {
-  margin-top: 40px;
+/* === Estilos para CERTIFICACIONES === */
+
+.certificaciones {
+  padding: 80px 20px;
+  background: #ffffff;
   text-align: center;
 }
 
-.cert-botones h3 {
-  font-size: 1.5rem;
-  margin-bottom: 20px;
-  color: #1f2937;
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
-.cert-btn {
-  display: inline-block;
-  padding: 12px 25px;
-  margin: 10px;
-  background: #2563eb;
-  color: white;
-  font-weight: bold;
-  text-decoration: none;
-  border-radius: 8px;
-  transition: background 0.2s ease;
+.cert-card {
+  background: #f9fafb;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
 }
 
-.cert-btn:hover {
-  background: #1e40af;
+.cert-card:hover {
+  transform: scale(1.03);
 }
 
 .cert-header {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
   margin-bottom: 10px;
 }
 
+.icono-pdf {
+  font-size: 2rem;
+  color: #dc2626;
+}
+
 .cert-header h3 {
   margin: 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.cert-card a {
+  margin-top: 10px;
+  display: inline-block;
+  font-weight: bold;
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.cert-card a:hover {
+  text-decoration: underline;
 }
 
