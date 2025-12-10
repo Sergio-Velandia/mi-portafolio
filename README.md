@@ -24,12 +24,19 @@ Build con Vite para generar la carpeta dist/
 📁 Estructura del proyecto
 mi-portafolio/
 ├── public/
+
 ├── src/
+
 │   ├── App.jsx
+
 │   ├── App.css
+
 │   └── components/
+
 ├── dist/           
+
 ├── package.json
+
 ├── vite.config.js
 
 🎯 Objetivo del proyecto
