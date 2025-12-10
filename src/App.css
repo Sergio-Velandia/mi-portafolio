@@ -4,18 +4,18 @@
 body {
   margin: 0;
   font-family: "Inter", sans-serif;
-  background-color: #fafafb;
-  color: #1f2937;
+  background-color: #0f1117; /* dark */
+  color: #e5e7eb; /* gris claro */
   line-height: 1.6;
 }
 
 /* === HEADER HERO === */
 header {
-  background: linear-gradient(135deg, #0f172a, #1e293b);
+  background: linear-gradient(135deg, #0a0f1f, #111827);
   color: white;
   text-align: center;
   padding: 80px 20px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 header h1 {
@@ -62,16 +62,16 @@ header a.github:hover {
 /* === SECCIÓN SOBRE MÍ === */
 .sobre-mi {
   padding: 100px 20px;
-  background: white;
+  background: #13151c;
 }
 
 .sobre-mi-card {
-  background: #ffffff;
+  background: #181b23;
   max-width: 900px;
   margin: 0 auto;
   padding: 50px 40px;
   border-radius: 16px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
   text-align: center;
   transition: 0.3s ease;
 }
@@ -82,20 +82,20 @@ header a.github:hover {
 
 .sobre-mi h2 {
   font-size: 2.4rem;
-  color: #111827;
+  color: #f3f4f6;
   font-weight: 700;
   margin-bottom: 25px;
 }
 
 .sobre-mi p {
   font-size: 1.15rem;
-  color: #374151;
+  color: #cbd5e1;
 }
 
 /* === HABILIDADES === */
 .habilidades {
   padding: 100px 20px;
-  background: #f8fafc;
+  background: #0f1117;
   text-align: center;
 }
 
@@ -103,7 +103,7 @@ header a.github:hover {
   font-size: 2.4rem;
   margin-bottom: 45px;
   font-weight: 700;
-  color: #111827;
+  color: #f3f4f6;
 }
 
 .habilidades-grid {
@@ -120,19 +120,20 @@ header a.github:hover {
   font-weight: 600;
   font-size: 1.15rem;
   color: white;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+  background: #1e2231;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.25);
   transition: 0.25s ease;
 }
 
 .habilidad-card:hover {
   transform: translateY(-4px) scale(1.03);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.35);
 }
 
 /* === PROYECTOS === */
 .proyectos {
   padding: 100px 20px;
-  background: white;
+  background: #13151c;
   text-align: center;
 }
 
@@ -140,7 +141,7 @@ header a.github:hover {
   font-size: 2.3rem;
   margin-bottom: 45px;
   font-weight: 700;
-  color: #111827;
+  color: #f3f4f6;
 }
 
 .proyectos-grid {
@@ -152,10 +153,10 @@ header a.github:hover {
 }
 
 .proyecto-card {
-  background: #ffffff;
+  background: #181b23;
   border-radius: 14px;
   padding: 28px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
   transition: 0.28s ease;
 }
 
@@ -167,11 +168,12 @@ header a.github:hover {
   font-size: 1.3rem;
   font-weight: 700;
   margin-bottom: 12px;
+  color: #f9fafb;
 }
 
 .proyecto-card p {
   font-size: 1rem;
-  color: #475569;
+  color: #94a3b8;
 }
 
 .proyecto-card .tec {
@@ -202,7 +204,7 @@ header a.github:hover {
 /* === CONTACTO === */
 .contacto {
   padding: 100px 20px;
-  background: #f8fafc;
+  background: #0f1117;
   text-align: center;
 }
 
@@ -210,7 +212,7 @@ header a.github:hover {
   font-size: 2.3rem;
   font-weight: 700;
   margin-bottom: 45px;
-  color: #111827;
+  color: #f3f4f6;
 }
 
 .contacto-cards {
@@ -222,10 +224,10 @@ header a.github:hover {
 }
 
 .contacto-cards .card {
-  background: white;
+  background: #181b23;
   padding: 28px;
   border-radius: 14px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
   transition: 0.25s ease;
   text-align: center;
 }
@@ -238,21 +240,22 @@ header a.github:hover {
   margin-bottom: 10px;
   font-size: 1.2rem;
   font-weight: 600;
+  color: #f8fafc;
 }
 
 .contacto-cards .card a {
   text-decoration: none;
-  color: #2563eb;
+  color: #3b82f6;
   font-weight: 600;
 }
 
 .contacto-cards .card a:hover {
-  color: #1d4ed8;
+  color: #60a5fa;
 }
 
 /* === FOOTER === */
 .footer {
-  background: #0f172a;
+  background: #0a0f1f;
   color: #cbd5e1;
   text-align: center;
   padding: 25px;
@@ -275,7 +278,7 @@ header a.github:hover {
 /* === CERTIFICACIONES === */
 .certificaciones {
   padding: 100px 20px;
-  background: white;
+  background: #13151c;
   text-align: center;
 }
 
@@ -288,10 +291,10 @@ header a.github:hover {
 }
 
 .cert-card {
-  background: #f9fafb;
+  background: #1b1f2d;
   padding: 28px;
   border-radius: 14px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
   transition: 0.25s ease;
 }
 
@@ -310,6 +313,7 @@ header a.github:hover {
   margin: 0;
   font-size: 1.15rem;
   font-weight: 600;
+  color: #f8fafc;
 }
 
 .icono-pdf {
@@ -321,7 +325,7 @@ header a.github:hover {
   display: inline-block;
   margin-top: 12px;
   font-weight: 600;
-  color: #2563eb;
+  color: #3b82f6;
   text-decoration: none;
 }
 
