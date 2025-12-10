@@ -6,11 +6,17 @@ Aquí presento mis proyectos, habilidades, certificaciones y formas de contacto 
 🚀 Tecnologías utilizadas
 
 • React – Librería principal para la interfaz
+
 • Vite – Herramienta de desarrollo rápida para React
+
 • JavaScript (ES6+)
+
 • HTML5 & CSS3
+
 • Node.js & npm – Gestión de paquetes
+
 • Git & GitHub – Control de versiones
+
 • GitHub Pages – Hosting del sitio
 
 
@@ -36,8 +42,13 @@ mi-portafolio/
 🎯 Objetivo del proyecto
 
 Crear un portafolio profesional, simple y funcional que represente mis habilidades como desarrollador web junior, mostrando:
+
 • Mis tecnologías principales
+
 • Proyectos destacados
+
 • Certificaciones
+
 • Información clara de contacto
+
 └── README.md
