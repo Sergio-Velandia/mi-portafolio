@@ -31,7 +31,7 @@ export default function Contacto() {
         <div className="card">
           <h3>Contacto</h3>
           <p style={{ fontSize: "1.1rem", fontWeight: "bold" }}>
-            +57 300 918 7875
+            +57 321 938 2844
           </p>  
         </div>
       </div>

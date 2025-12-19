@@ -3,25 +3,26 @@ import "../App.css"
 export default function Proyectos() {
   const proyectos = [
     {
-      titulo: "Portafolio Web Personal",
-      descripcion: "Página creada en React para presentar mi perfil profesional.",
+      titulo: "YuGiOhApi",
+      descripcion: "YuGiOhAPI es una aplicación web interactiva diseñada para los entusiastas del juego de cartas Yu-Gi-Oh! La plataforma permite explorar una vasta base de datos de cartas consumiendo una API externa, ofreciendo funcionalidades dinámicas y una interfaz personalizada.",
+      tecnologias: "React, HTML, CSS, JavaScript, Api externa",
+      link: "https://github.com/Sergio-Velandia/YuGiOhApi" 
+    },
+    {
+      titulo: "DigimonAPI-Firebase",
+      descripcion: "DigimonAPI es una aplicación multiplataforma que permite gestionar una colección de Digimons con autenticación segura. Gracias a su arquitectura basada en Capacitor, el proyecto está listo para ser compilado en Android Studio y generado como una APK.",
+      tecnologias: "HTML, CSS, JavaScript, Node, Capacitor, Api externa, Firebase",
+      link: "https://github.com/Sergio-Velandia/DigimonAPI-Firebase" 
+    },
+    {
+      titulo: " Mi Portafolio Desarrollador Web",
+      descripcion: "Este es mi portafolio personal desarrollado con React, Vite, HTML, CSS y JavaScript. Aquí presento mis proyectos, habilidades, certificaciones y formas de contacto de una manera moderna y optimizada.",
       tecnologias: "React, HTML, CSS, JavaScript",
-      link: "https://github.com/Sergio-Velandia/mi-portafolio" // tu repo o demo
-    },
-    {
-      titulo: "Aplicación de Calendario PWA",
-      descripcion: "Una aplicación de calendario progresiva (PWA) diseñada para ofrecer una experiencia fluida y accesible, permitiendo a los usuarios gestionar sus eventos y recordatorios de manera eficiente desde cualquier dispositivo, incluso sin conexión a internet.",
-      tecnologias: "HTML, CSS, JavaScript",
-      link: "https://github.com/Sergio-Velandia/Trabajo-PWA" // repo del proyecto
-    },
-    {
-      titulo: "Análisis de Datos De Ventas",
-      descripcion: "Exploración de dataset de ventas usando Python y librerías de análisis en este bloque se encuentra lo aprendido y ejecutado sobre el curso sobre ANALISIS EXPLORATORIO DE DATOS EN PYTHON.",
-      tecnologias: "Python, Pandas, Matplotlib",
-      link: "https://github.com/Sergio-Velandia/Analisis-de-Datos-De-Ventas" // notebook en GitHub
+      link: "https://github.com/Sergio-Velandia/mi-portafolio" 
     }
   ]
 
+  
   return (
     <section className="proyectos">
       <h2>Proyectos</h2>

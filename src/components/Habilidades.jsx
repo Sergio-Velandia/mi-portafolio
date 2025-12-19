@@ -6,7 +6,6 @@ export default function Habilidades() {
   { nombre: "React", color: "#61dafb", texto: "#000" },
   { nombre: "Vite", color: "#646cff", texto: "#000" },
   { nombre: "HTML", color: "#e34c26" },
-  { nombre: "Python", color: "#3776ab" },
   { nombre: "N8N", color: "#ff6a00" },
   { nombre: "Agentes IA", color: "#7e22ce" },
   { nombre: "Git", color: "#f1502f" },

@@ -6,6 +6,7 @@ import Header from "./components/Header"
 import SobreMi from "./components/SobreMi"
 import Habilidades from "./components/Habilidades"
 import Proyectos from "./components/Proyectos"
+import N8nProyecto from "./components/N8nProyecto"
 import Contacto from "./components/Contacto"
 import Certificaciones from "./components/Certificaciones"
 import Footer from "./components/footer"
@@ -32,6 +33,9 @@ function App() {
       </div>
       <div className="reveal">
         <Proyectos />
+      </div>
+      <div className="reveal">
+        <N8nProyecto />
       </div>
       <div className="reveal">
         <Contacto />
