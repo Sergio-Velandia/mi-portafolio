@@ -1,5 +1,5 @@
 import "../App.css";
-
+import FlujoN8N from "../assets/FlujoN8N.png"
 export default function N8nProyecto() {
   return (
     <section className="n8n">
@@ -9,10 +9,7 @@ export default function N8nProyecto() {
         
         {}
         <div className="n8n-imagen">
-          <img
-            src="./public/FlujoN8N.png"
-            alt="Flujo de análisis de datos en n8n"
-          />
+          <img src={FlujoN8N} alt="Flujo de análisis de datos en n8n" />
         </div>
 
         {/* Explicación */}
