@@ -30,6 +30,17 @@ export default function Certificaciones() {
     </a>
   </div>
 
+   <div className="cert-card">
+    <div className="cert-header">
+      <FaFilePdf className="icono-pdf" />
+      <h3>Construccion de bases de datos con MySql</h3>
+    </div>
+    <p>SENA – Diciembre 2025</p>
+    <a href="CONSTRUCCION_DE_BASES_DE_DATOS_CON_MYSQL.pdf" download className="CONSTRUCCION_DE_BASES_DE_DATOS_CON_MYSQL">
+      📄 Descargar certificado
+    </a>
+  </div>
+
 </div>
 
     </section>
