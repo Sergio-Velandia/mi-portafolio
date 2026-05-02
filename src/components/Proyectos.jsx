@@ -1,48 +1,63 @@
 import "../App.css"
 
-export default function Proyectos() {
-  const proyectos = [
-    {
-      titulo: "YuGiOhApi",
-      descripcion: "YuGiOhAPI es una aplicación web interactiva diseñada para los entusiastas del juego de cartas Yu-Gi-Oh! La plataforma permite explorar una vasta base de datos de cartas consumiendo una API externa, ofreciendo funcionalidades dinámicas y una interfaz personalizada.",
-      tecnologias: "React, HTML, CSS, JavaScript, Api externa",
-      link: "https://github.com/Sergio-Velandia/YuGiOhApi" 
-    },
-    {
-      titulo: "DigimonAPI-Firebase",
-      descripcion: "DigimonAPI es una aplicación multiplataforma que permite gestionar una colección de Digimons con autenticación segura. Gracias a su arquitectura basada en Capacitor, el proyecto está listo para ser compilado en Android Studio y generado como una APK.",
-      tecnologias: "HTML, CSS, JavaScript, Node, Capacitor, Api externa, Firebase",
-      link: "https://github.com/Sergio-Velandia/DigimonAPI-Firebase" 
-    },
-    {
-      titulo: " Mi Portafolio Desarrollador Web",
-      descripcion: "Este es mi portafolio personal desarrollado con React, Vite, HTML, CSS y JavaScript. Aquí presento mis proyectos, habilidades, certificaciones y formas de contacto de una manera moderna y optimizada.",
-      tecnologias: "React, HTML, CSS, JavaScript",
-      link: "https://github.com/Sergio-Velandia/mi-portafolio" 
-    }
-  ]
+const proyectos = [
+  {
+    num: "001",
+    titulo: "YuGiOhApi",
+    descripcion:
+      "Aplicación web interactiva para explorar una vasta base de datos de cartas Yu-Gi-Oh! consumiendo una API externa, con funcionalidades dinámicas e interfaz personalizada.",
+    tecnologias: "React · CSS · JavaScript · API externa",
+    link: "https://github.com/Sergio-Velandia/YuGiOhApi",
+  },
+  {
+    num: "002",
+    titulo: "DigimonAPI + Firebase",
+    descripcion:
+      "App multiplataforma para gestionar una colección de Digimons con autenticación segura. Arquitectura basada en Capacitor, lista para compilar como APK en Android Studio.",
+    tecnologias: "HTML · JS · Node · Capacitor · Firebase · API externa",
+    link: "https://github.com/Sergio-Velandia/DigimonAPI-Firebase",
+  },
+  {
+    num: "003",
+    titulo: "Mi Portafolio Web",
+    descripcion:
+      "Portafolio personal desarrollado con React y Vite. Muestra proyectos, habilidades, certificaciones y automatizaciones de forma moderna y optimizada.",
+    tecnologias: "React · Vite · CSS · JavaScript",
+    link: "https://github.com/Sergio-Velandia/mi-portafolio",
+  },
+]
 
-  
+export default function Proyectos() {
   return (
-    <section className="proyectos">
-      <h2>Proyectos</h2>
-      <div className="proyectos-grid">
-        {proyectos.map((proyecto, index) => (
-          <div key={index} className="proyecto-card">
-            <h3>{proyecto.titulo}</h3>
-            <p>{proyecto.descripcion}</p>
-            <span className="tec">{proyecto.tecnologias}</span>
-            <br />
-            <a
-              href={proyecto.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-proyecto"
-            >
-              Ver en GitHub
-            </a>
-          </div>
-        ))}
+    <section className="proyectos" id="proyectos">
+      <div className="proyectos-inner">
+
+        <div className="proyectos-header reveal">
+          <span className="section-label">Trabajo</span>
+          <h2 className="section-title">Proyectos</h2>
+        </div>
+
+        <div className="proyectos-grid">
+          {proyectos.map((p) => (
+            <article key={p.num} className="proyecto-card reveal">
+              <p className="proyecto-num">{p.num}</p>
+              <h3>{p.titulo}</h3>
+              <p>{p.descripcion}</p>
+              <div className="proyecto-footer">
+                <span className="tec">{p.tecnologias}</span>
+                <a
+                  href={p.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-proyecto"
+                >
+                  GitHub →
+                </a>
+              </div>
+            </article>
+          ))}
+        </div>
+
       </div>
     </section>
   )

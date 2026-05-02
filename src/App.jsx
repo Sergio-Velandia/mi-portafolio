@@ -1,53 +1,55 @@
 import { useEffect } from "react"
-import "./App.css"
-
-// Importamos componentes
 import Header from "./components/Header"
 import SobreMi from "./components/SobreMi"
 import Habilidades from "./components/Habilidades"
 import Proyectos from "./components/Proyectos"
+import RobloxProyecto from "./components/RobloxProyecto"
+import Experiencia from "./components/Experiencia"
+import Stats from "./components/Stats"
+import StackActual from "./components/Stackactual"
 import N8nProyecto from "./components/N8nProyecto"
-import Contacto from "./components/Contacto"
 import Certificaciones from "./components/Certificaciones"
-import Footer from "./components/footer"
+import Contacto from "./components/Contacto"
+import Footer from "./components/Footer"
+import { initAllAnimations } from "./animation"
+import { initExtras, typeWriterLoop } from "./extras"
+import "./App.css"
 
-// Importamos animación scroll
-import { initScrollReveal } from "./animation"
-
-function App() {
+export default function App() {
   useEffect(() => {
-    // Activa la animación de aparición al hacer scroll
-    initScrollReveal()
+    initAllAnimations()
+    initExtras()
+
+    // TypeWriter en el subtítulo del hero (ver Header.jsx id="hero-subtitle")
+    typeWriterLoop(
+      "hero-subtitle",
+      [
+        "Desarrollador Web Full Stack",
+        "Automatización con n8n & IA",
+        "React · Node · Python",
+        "Soluciones digitales a medida",
+      ],
+      75,
+      2200
+    )
   }, [])
 
   return (
     <>
-      <div className="reveal">
-        <Header />
-      </div>
-      <div className="reveal">
+      <Header />
+      <main>
         <SobreMi />
-      </div>
-      <div className="reveal">
         <Habilidades />
-      </div>
-      <div className="reveal">
+        <Experiencia/>
+        <Stats/>
         <Proyectos />
-      </div>
-      <div className="reveal">
         <N8nProyecto />
-      </div>
-      <div className="reveal">
-        <Contacto />
-      </div>
-      <div className="reveal">
-        <Certificaciones />
-      </div>
-      <div className="reveal">
-        <Footer />
-      </div>
+        <RobloxProyecto/>
+        <Certificaciones/>
+        <StackActual/>
+        <Contacto/>
+      </main>
+      <Footer />
     </>
   )
 }
-
-export default App
