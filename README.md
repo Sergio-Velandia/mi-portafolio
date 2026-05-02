@@ -17,7 +17,6 @@
 
 ## 📸 Preview
 
-> _Agrega aquí un screenshot del hero — arrastra la imagen a la carpeta `/public` y referénciala así:_
 
 ![Preview del portafolio](./public/Preview.png)
 
