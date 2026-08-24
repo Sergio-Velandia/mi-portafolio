@@ -33,8 +33,8 @@ export default function Proyectos() {
       <div className="proyectos-inner">
 
         <div className="proyectos-header reveal">
-          <span className="section-label">Trabajo</span>
-          <h2 className="section-title">Proyectos</h2>
+          <span className="section-label">Work</span>
+          <h2 className="section-title">Projects</h2>
         </div>
 
         <div className="proyectos-grid">

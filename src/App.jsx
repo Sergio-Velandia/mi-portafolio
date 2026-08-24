@@ -26,8 +26,8 @@ export default function App() {
       [
         "Desarrollador Web Full Stack",
         "Automatización con n8n & IA",
-        "React · Node · Python",
-        "Soluciones digitales a medida",
+        "React · BD · N8N · Node.js",
+        "Automatización inteligente para tu negocio.",
       ],
       75,
       2200
@@ -38,16 +38,36 @@ export default function App() {
     <>
       <Header />
       <main>
+        {/* 1. EL GANCHO: Quién eres y qué buscas (Contrato SENA) */}
         <SobreMi />
+        
+        {/* 2. LA AUTORIDAD: ¡Tus credenciales pesadas (IBM, Google, n8n)! 
+            Esto genera confianza inmediata antes de ver tu código. */}
+        <Certificaciones />
+        
+        {/* 3. EL ARSENAL: El panel de 4 columnas que armamos. 
+            El reclutador hará "check" mental de los requisitos de la vacante. */}
         <Habilidades />
-        <Experiencia/>
-        <Stats/>
-        <Proyectos />
+        
+        {/* 4. EL PLATO FUERTE (Experiencia): Tu trabajo real de 6 meses. */}
+        <RobloxProyecto />
+        
+        {/* 5. EL PROYECTO CLAVE (Automatización/IA): Ideal para los roles que buscas mañana. */}
         <N8nProyecto />
-        <RobloxProyecto/>
-        <Certificaciones/>
-        <StackActual/>
-        <Contacto/>
+        
+        {/* 6. EL RESTO DE PROYECTOS: Tu gestor DevAsset, este mismo portafolio, etc. */}
+        <Proyectos />
+        
+        {/* 7. RESUMEN DE EXPERIENCIA: Si este componente es una línea de tiempo, 
+            aquí queda perfecto como resumen cronológico (incluyendo la carpintería). */}
+        {/*<Experiencia />*/}
+        
+        {/* 8. EXTRAS VISUALES: Para relajar la vista y mostrar constancia. */}
+        <Stats />
+        <StackActual />
+        
+        {/* 9. EL CIERRE: Llamado a la acción. ¡Contrátame! */}
+        <Contacto />
       </main>
       <Footer />
     </>

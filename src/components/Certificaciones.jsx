@@ -3,6 +3,48 @@ import { FaFilePdf } from "react-icons/fa";
 
 const certs = [
   {
+    title: "IBM Full-Stack JavaScript Developer",
+    fecha: "IBM · Agosto 2026",
+    file: "IBM Full-Stack JavaScript Developer.pdf",
+    className: "CERT_IBM_FULLSTACK",
+  },
+  {
+    title: "Google AI Essentials Certificate",
+    fecha: "Google · Agosto 2026",
+    file: "Google AI Essentials Certificate.pdf",
+    className: "CERT_GOOGLE_AI",
+  },
+  {
+    title: "AI Automation Engineer",
+    fecha: "Agosto 2026",
+    file: "AI Automation Engineer.pdf",
+    className: "CERT_AI_AUTOMATION",
+  },
+  {
+    title: "JavaScript Programming with React, Node",
+    fecha: "Agosto 2026",
+    file: "JavaScript Programming with React, Node & MongoDB.pdf",
+    className: "CERT_JS_REACT_NODE",
+  },
+  {
+    title: "Apply API Testing & Automation with Postman",
+    fecha: "Agosto 2026",
+    file: "Apply API Testing & Automation with Postman.pdf",
+    className: "CERT_POSTMAN_TESTING",
+  },
+  {
+    title: "Apply Postman APIs for Customer Data",
+    fecha: "Agosto 2026",
+    file: "Apply Postman APIs for Customer Data.pdf",
+    className: "CERT_POSTMAN_CUSTOMER",
+  },
+  {
+    title: "Construcción de Bases de Datos con MySQL",
+    fecha: "SENA · Diciembre 2025",
+    file: "CONSTRUCCION_DE_BASES_DE_DATOS_CON_MYSQL.pdf",
+    className: "CONSTRUCCION_DE_BASES_DE_DATOS_CON_MYSQL",
+  },
+  {
     title: "Análisis Exploratorio de Datos en Python",
     fecha: "SENA · Septiembre 2025",
     file: "CERTIFICADO_ANALISIS_DE_DATOS_SENA.pdf",
@@ -15,11 +57,11 @@ const certs = [
     className: "CERTIFICADO_DE_APLICACIONES_CON_INTERFAZ_GRAFICA",
   },
   {
-    title: "Construcción de Bases de Datos con MySQL",
-    fecha: "SENA · Diciembre 2025",
-    file: "CONSTRUCCION_DE_BASES_DE_DATOS_CON_MYSQL.pdf",
-    className: "CONSTRUCCION_DE_BASES_DE_DATOS_CON_MYSQL",
-  },
+    title: "Stay Ahead of the AI Curve",
+    fecha: "Agosto 2026",
+    file: "Stay Ahead of the AI Curve.pdf",
+    className: "CERT_STAY_AHEAD_AI",
+  }
 ];
 
 export default function Certificaciones() {
@@ -28,8 +70,8 @@ export default function Certificaciones() {
       <div className="certificaciones-inner">
 
         <div className="cert-header-sec reveal">
-          <span className="section-label">Formación</span>
-          <h2 className="section-title">Certificaciones</h2>
+          <span className="section-label">Training</span>
+          <h2 className="section-title">Certifications</h2>
         </div>
 
         <div className="cert-grid">

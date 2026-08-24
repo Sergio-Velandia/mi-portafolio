@@ -7,10 +7,10 @@ export default function Header() {
       <nav>
         <a href="#hero" className="nav-logo">SV</a>
         <ul className="nav-links">
-          <li><a href="#sobre-mi">Sobre mí</a></li>
+          <li><a href="#sobre-mi">About me</a></li>
           <li><a href="#habilidades">Skills</a></li>
-          <li><a href="#proyectos">Proyectos</a></li>
-          <li><a href="#contacto">Contacto</a></li>
+          <li><a href="#proyectos">Projects</a></li>
+          <li><a href="#contacto">Contact</a></li>
         </ul>
       </nav>
 
@@ -18,11 +18,11 @@ export default function Header() {
       <header id="hero">
         {/* Columna izquierda */}
         <div className="hero-left">
-          <p className="hero-eyebrow">Portfolio 2025</p>
+          <p className="hero-eyebrow">Portfolio 2026</p>
 
           <h1 className="hero-title">
             <span>Sergio</span>
-            <span className="accent-word">Velandia</span>
+            <span className="accent-word">Ramirez</span>
             <span className="outline-word">Dev</span>
           </h1>
 
@@ -49,11 +49,11 @@ export default function Header() {
         {/* Columna derecha — panel asimétrico */}
         <div className="hero-right">
           <div className="dot-grid" />
-          <div className="hero-right-rotated">Available for freelance · 2025</div>
+          <div className="hero-right-rotated">Available for freelance · 2026</div>
 
           <div>
             <p className="hero-right-label">Ubicación</p>
-            <p className="hero-right-info">Colombia</p>
+            <p className="hero-right-info">Bogotá, Colombia</p>
             <p className="hero-right-sub">Disponible para trabajo remoto</p>
           </div>
 

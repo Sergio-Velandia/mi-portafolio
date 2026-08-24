@@ -6,24 +6,18 @@ export default function SobreMi() {
       <div className="sobre-mi-inner">
 
         <div className="sobre-mi-heading reveal">
-          <span className="section-label">Sobre mí</span>
+          <span className="section-label">About me</span>
           <h2 className="section-title">
-            Construyo ideas<br />que escalan.
+            Ingeniería de software<br />aplicada al flujo de trabajo.
           </h2>
         </div>
 
         <div className="sobre-mi-card reveal">
           <p>
-            Desarrollador de Software en formación, especializado en <strong>React + Vite</strong> y
-            arquitecturas serverless/BaaS con Supabase (PostgreSQL). Diseño esquemas relacionales,
-            aplico RLS y desarrollo Edge Functions en TypeScript.
-          </p>
+            ¡Hola! Soy Sergio, desarrollador Full-Stack en formación. Construyo aplicaciones web completas con React, Node.js y bases de datos modernas, y me especializo en conectar el desarrollo tradicional con la automatización e integración de Inteligencia Artificial.          </p>
           <br />
           <p>
-            Experiencia en automatización avanzada con <strong>n8n</strong>, integrando APIs,
-            workflows complejos y Agentes de IA para ejecutar tareas autónomas y procesamiento
-            inteligente. Enfocado en construir soluciones rápidas, escalables y totalmente
-            automatizadas.
+           Explorando el mundo de la automatización de flujos con <strong>n8n</strong> y la integración de IA en aplicaciones reales.
           </p>
         </div>
 

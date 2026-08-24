@@ -1,31 +1,66 @@
 import "../App.css"
 
 const herramientas = [
-  { categoria: "Editor", items: ["VS Code", "Roblox Studio"] },
-  { categoria: "Control de versiones", items: ["Git", "GitHub"] },
-  { categoria: "Automatización", items: ["n8n", "Webhooks", "APIs REST"] },
-  { categoria: "Base de datos", items: ["MySQL", "Supabase (PostgreSQL)"] },
-  { categoria: "Entorno", items: ["Windows 11", "Terminal PowerShell"] },
-  { categoria: "Deploy", items: ["Vercel", "GitHub Pages"] },
-]
+  {
+    categoria: "Frontend",
+    skills: [
+      { nombre: "JavaScript", color: "#f7df1e" },
+      { nombre: "React",      color: "#61dafb" },
+      { nombre: "Vite",       color: "#646cff" },
+      { nombre: "HTML & CSS", color: "#e34c26" },
+      { nombre: "Vercel",     color: "#000000" },
+      { nombre: "GitHub Pages", color: "#222222" }
+    ]
+  },
+  {
+    categoria: "Backend & BD",
+    skills: [
+      { nombre: "Node.js",    color: "#339933" },
+      { nombre: "Supabase",   color: "#3ECF8E" },
+      { nombre: "PostgreSQL", color: "#336791" },
+      { nombre: "MySQL",      color: "#4479A1" },
+      { nombre: "MongoDB",    color: "#47A248" }
+    ]
+  },
+  {
+    categoria: "IA & APIs",
+    skills: [
+      { nombre: "n8n",        color: "#ff6a00" },
+      { nombre: "Agentes IA", color: "#7e22ce" },
+      { nombre: "APIs REST",  color: "#00a2ff" },
+      { nombre: "Webhooks",   color: "#00b4d8" },
+      { nombre: "Postman",    color: "#FF6C37" }
+    ]
+  },
+  {
+    categoria: "Herramientas",
+    skills: [
+      { nombre: "VS Code",       color: "#007ACC" },
+      { nombre: "Git",           color: "#f1502f" },
+      { nombre: "GitHub",        color: "#ffffff" },
+      { nombre: "Docker",        color: "#2496ED" },
+      { nombre: "Lua",           color: "#000080" },
+    ]
+  }
+];
 
 const aprendiendo = [
   {
-    tech: "Lua & OOP Avanzado",
+    tech: "AI Agents & RAG Workflows",
+    nivel: 75,
+    desc: "Implementing advanced LLM integrations (OpenAI, Gemini) with knowledge bases and automated n8n workflows to build autonomous reasoning agents and intelligent data pipelines.",
+  },
+  {
+    tech: "Advanced Workflow Automation (n8n)",
+    nivel: 85,
+    desc: "Designing complex integration architectures: mass data processing via webhooks, automated CSV/XLSX transformation, cloud synchronization, and serverless logic.",
+  },
+  {
+    tech: "Full-Stack & Scalable Databases",
     nivel: 65,
-    desc: "Profundizando en patrones de diseño orientado a objetos dentro de Roblox Studio: herencia, metatables, módulos reutilizables y arquitecturas cliente-servidor robustas para videojuegos a escala.",
+    desc: "Strengthening backend systems with Node.js, Express, NoSQL data modeling in MongoDB, and robust relational schemas using Supabase and PostgreSQL.",
   },
-  {
-    tech: "Supabase",
-    nivel: 40,
-    desc: "Explorando el ecosistema completo: autenticación, Row Level Security, Edge Functions en TypeScript y sincronización en tiempo real como alternativa serverless a backends tradicionales.",
-  },
-  {
-    tech: "Apps móviles con React + Capacitor",
-    nivel: 35,
-    desc: "Convirtiendo proyectos React/Vite en APKs nativas para Android usando Capacitor y Android Studio. El objetivo es poder entregar apps móviles sin salir del ecosistema web que ya domino.",
-  },
-]
+];
 
 export default function StackActual() {
   return (
@@ -34,8 +69,8 @@ export default function StackActual() {
 
         {/* Stack del día a día */}
         <div className="stack-header reveal">
-          <span className="section-label">Flujo de trabajo</span>
-          <h2 className="section-title">Stack actual</h2>
+          <span className="section-label">Workflow</span>
+          <h2 className="section-title">Stack</h2>
         </div>
 
         <div className="stack-grid reveal">
@@ -43,8 +78,14 @@ export default function StackActual() {
             <div key={h.categoria} className="stack-card">
               <p className="stack-categoria">{h.categoria}</p>
               <div className="stack-items">
-                {h.items.map((item) => (
-                  <span key={item} className="stack-tag">{item}</span>
+                {h.skills.map((s) => (
+                  <span 
+                    key={s.nombre} 
+                    className="stack-tag"
+                    style={{ "--skill-color": s.color }}
+                  >
+                    {s.nombre}
+                  </span>
                 ))}
               </div>
             </div>
@@ -53,9 +94,9 @@ export default function StackActual() {
 
         {/* Actualmente aprendiendo */}
         <div className="aprendiendo-header reveal">
-          <span className="section-label">En progreso</span>
+          <span className="section-label">In progress</span>
           <h3 className="section-title" style={{ fontSize: "clamp(1.6rem, 3vw, 2.4rem)" }}>
-            Actualmente aprendiendo
+            Currently learning and experimenting.
           </h3>
         </div>
 
@@ -79,5 +120,5 @@ export default function StackActual() {
 
       </div>
     </section>
-  )
+  );
 }

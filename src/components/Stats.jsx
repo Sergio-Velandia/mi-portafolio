@@ -7,32 +7,32 @@ const stats = [
     label: "Meses de experiencia",
     valor: 6,
     sufijo: "",
-    porcentaje: 60,
-    desc: "Desarrollo profesional del videojuego ExplosionArt",
+    porcentaje: 100,
+    desc: "Videogame developer en Roblox Studio, con entregas periódicas y feedback del cliente",
   },
   {
     id: "stat-proyectos",
     label: "Proyectos completados",
     valor: 5,
     sufijo: "+",
-    porcentaje: 75,
+    porcentaje: 85,
     desc: "Web apps, automatizaciones, videojuego y portafolio",
   },
   {
     id: "stat-certs",
     label: "Certificaciones",
-    valor: 3,
+    valor: 10,
     sufijo: "",
-    porcentaje: 45,
-    desc: "Python · Java · MySQL — emitidas por el SENA",
+    porcentaje: 100,
+    desc: "N8N · JavaScript · BD · IA · React · Node.js",
   },
   {
-    id: "stat-flujos",
-    label: "Flujos n8n en producción",
-    valor: 4,
+    id: "stat-flujs",
+    label: "Skills",
+    valor: 12,
     sufijo: "+",
-    porcentaje: 55,
-    desc: "Automatizaciones con APIs, webhooks y Google Drive",
+    porcentaje: 100,
+    desc: "Mis habilidades técnicas y herramientas que domino, incluyendo React, Node.js, IA y más.",
   },
 ]
 
@@ -82,8 +82,8 @@ export default function Stats() {
     <section className="stats-section" id="stats" ref={sectionRef}>
       <div className="stats-inner">
         <div className="stats-header reveal">
-          <span className="section-label">En números</span>
-          <h2 className="section-title">Lo que he construido</h2>
+          <span className="section-label">In numbers</span>
+          <h2 className="section-title">Let's see the impact</h2>
         </div>
 
         <div className="stats-grid">

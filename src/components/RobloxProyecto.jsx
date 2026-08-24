@@ -1,6 +1,6 @@
 import "../App.css"
 
-// Fragmentos reales del código Lua del juego
+// Fragmentos reales del código Luau del juego
 const codeSnippets = [
   {
     label: "Pathfinding NPC",
@@ -47,12 +47,14 @@ end`,
 ]
 
 const features = [
-  "Sistema de fases progresivas con temporizadores sincronizados a todos los jugadores",
-  "Pathfinding avanzado de NPCs con detección de obstáculos y salto automático",
-  "Ritual multijugador con 7 pasos cooperativos y estados compartidos vía RemoteEvents",
-  "Sistema de sonido dinámico: música por fase, efectos de interacción y ambientación",
-  "Puertas, luces y efectos visuales controlados por servidor para evitar exploits",
-  "Checklist en tiempo real visible para todos los jugadores del lobby",
+  " Desarrollo completo de 12 niveles jugables y funcionales llenos de tensión y aventura.",
+  " Rigging de personajes y mecánicas avanzadas de animación (Animator:LoadAnimation) para movimientos fluidos.",
+  " Integración profunda de físicas (Physics Pipeline) y sistemas interactivos para los jugadores.",
+  " Ejecución del proyecto bajo modelo de entregas incrementales, adaptándome al feedback continuo del cliente.",
+  " Sistema de fases progresivas con temporizadores sincronizados para todos los jugadores en el servidor.",
+  " Pathfinding inteligente de NPCs con detección de obstáculos y salto automático para perseguir jugadores.",
+  " Ritual multijugador cooperativo de 7 pasos con estados compartidos vía RemoteEvents.",
+  " Gestión autónoma del tiempo, asegurando calidad, cumplimiento de plazos y control anti-exploits."
 ]
 
 export default function RobloxProyecto() {
@@ -61,8 +63,8 @@ export default function RobloxProyecto() {
       <div className="roblox-inner">
 
         <div className="roblox-header reveal">
-          <span className="section-label">Proyecto destacado</span>
-          <h2 className="section-title">Videojuego en Roblox</h2>
+          <span className="section-label">Experiencia Profesional </span>
+          <h2 className="section-title">Videojuego Multijugador en Roblox</h2>
         </div>
 
         {/* Card principal */}
@@ -71,19 +73,14 @@ export default function RobloxProyecto() {
           {/* Cabecera de la card */}
           <div className="roblox-card-top">
             <div className="roblox-meta">
-              <span className="roblox-badge">Lua · OOP Avanzado</span>
+              <span className="roblox-badge">Lua · OOP Avanzado · Físicas</span>
               <span className="roblox-badge roblox-badge--live">
                 <span className="live-dot" /> En vivo en Roblox
               </span>
             </div>
-            <h3 className="roblox-title">ExplosionArt Game</h3>
+            <h3 className="roblox-title">ExplosionArt Game (Contrato de Aprendizaje)</h3>
             <p className="roblox-desc">
-              Videojuego de terror cooperativo desarrollado íntegramente en Lua con programación
-              orientada a objetos avanzada dentro del motor Roblox Studio. Los jugadores deben
-              completar un ritual de 7 pasos de forma cooperativa para desencadenar las fases
-              del juego, mientras un NPC con pathfinding inteligente los persigue.
-              Desarrollado durante <strong>6 meses</strong> para el universo cinematográfico del
-              canal <strong>ExplosionArt</strong>.
+              ¡De la imaginación a la pantalla!  Como Desarrollador de Videojuegos, di vida a un inmersivo universo multijugador de terror y aventura para una empresa privada. Durante <strong>6 increíbles meses</strong>, diseñé e implementé 12 niveles completamente funcionales y jugables con complejas mecánicas de físicas, rigging de personajes y animaciones en el motor de Roblox Studio. ¿El resultado? Un juego atrapante con entregas periódicas impecables que superaron las expectativas del cliente. 👾
             </p>
             <div className="roblox-links">
               <a
@@ -92,15 +89,15 @@ export default function RobloxProyecto() {
                 rel="noopener noreferrer"
                 className="btn-primary"
               >
-                Jugar en Roblox →
+                ¡Jugar en Roblox! 🎮
               </a>
               <a
-                href="https://www.youtube.com/@Explosionart"
+                href="https://www.youtube.com/@Explosionart."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-ghost"
               >
-                Canal de YouTube →
+                Canal de YouTube 
               </a>
             </div>
           </div>
@@ -110,7 +107,7 @@ export default function RobloxProyecto() {
 
             {/* Lista de features */}
             <div className="roblox-features">
-              <p className="roblox-sub-label">Sistemas implementados</p>
+              <p className="roblox-sub-label">Logros y Sistemas Implementados</p>
               <ul>
                 {features.map((f) => (
                   <li key={f}>{f}</li>
@@ -120,7 +117,7 @@ export default function RobloxProyecto() {
 
             {/* Snippets de código */}
             <div className="roblox-code-col">
-              <p className="roblox-sub-label">Código real del juego</p>
+              <p className="roblox-sub-label">Un vistazo al código (Lua)</p>
               <div className="roblox-snippets">
                 {codeSnippets.map((s) => (
                   <div key={s.label} className="code-block">
@@ -138,7 +135,7 @@ export default function RobloxProyecto() {
 
           {/* Footer */}
           <div className="roblox-footer">
-            <span className="tec">Lua · Roblox Studio · OOP · PathfindingService · RemoteEvents · ServerScripts</span>
+            <span className="tec">Lua · Roblox Studio · OOP · Physics Pipeline · Rigging · RemoteEvents</span>
           </div>
 
         </div>
