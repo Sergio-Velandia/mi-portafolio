@@ -1,6 +1,29 @@
+import React, { useEffect, useRef, useState } from 'react';
 import "../App.css"
+import { initHeroNetwork } from '../heroNetwork';
 
 export default function Header() {
+  const headerRef = useRef(null);
+  const canvasRef = useRef(null);
+  const [reducedMotion, setReducedMotion] = useState(false);
+
+  // Detecta preferencias de sistema para animaciones
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    setReducedMotion(mediaQuery.matches);
+    const handleChange = (e) => setReducedMotion(e.matches);
+    mediaQuery.addEventListener('change', handleChange);
+    return () => mediaQuery.removeEventListener('change', handleChange);
+  }, []);
+
+  // Inicializa el sistema de red
+  useEffect(() => {
+    // Si prefiere reducción de movimiento o faltan refs, evitamos montar el loop enteramente
+    if (reducedMotion || !canvasRef.current || !headerRef.current) return;
+    const cleanupNetwork = initHeroNetwork(canvasRef.current, headerRef.current);
+    return cleanupNetwork; 
+  }, [reducedMotion]);
+
   return (
     <>
       {/* NAV */}
@@ -15,7 +38,24 @@ export default function Header() {
       </nav>
 
       {/* HERO */}
-      <header id="hero">
+      <header id="hero" ref={headerRef}>
+        
+        {/* CANVAS DE FONDO (Grafo) */}
+        {!reducedMotion && (
+          <canvas
+            ref={canvasRef}
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              width: '100%',
+              height: '100%',
+              zIndex: 0,
+              pointerEvents: 'none' /* No interfiere con el UI */
+            }}
+          />
+        )}
+
         {/* Columna izquierda */}
         <div className="hero-left">
           <p className="hero-eyebrow">Portfolio 2026</p>
@@ -26,7 +66,7 @@ export default function Header() {
             <span className="outline-word">Dev</span>
           </h1>
 
-          {/* Typewriter — iniciado desde App.jsx con typeWriterLoop("hero-subtitle", [...]) */}
+          {/* Typewriter */}
           <p className="hero-desc">
             <span id="hero-subtitle"></span>
           </p>

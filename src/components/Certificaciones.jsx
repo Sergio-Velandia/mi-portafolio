@@ -1,70 +1,128 @@
 import "../App.css";
-import { FaFilePdf } from "react-icons/fa";
+import { FaFilePdf, FaGraduationCap, FaAward, FaLaptopCode } from "react-icons/fa";
+import { SiGoogle, SiPostman } from "react-icons/si";
 
-const certs = [
+const certsData = [
   {
     title: "IBM Full-Stack JavaScript Developer",
-    fecha: "IBM · Agosto 2026",
+    issuer: "IBM",
+    year: "Agosto 2026",
     file: "IBM Full-Stack JavaScript Developer.pdf",
-    className: "CERT_IBM_FULLSTACK",
+    shortName: "IBM Full-Stack JS",
+    iconType: "ibm",
+    isDestacada: true,
   },
   {
     title: "Google AI Essentials Certificate",
-    fecha: "Google · Agosto 2026",
+    issuer: "Google",
+    year: "Agosto 2026",
     file: "Google AI Essentials Certificate.pdf",
-    className: "CERT_GOOGLE_AI",
+    shortName: "Google AI Essentials",
+    iconType: "google",
+    isDestacada: true,
   },
   {
     title: "AI Automation Engineer",
-    fecha: "Agosto 2026",
+    issuer: "Certificación",
+    year: "Agosto 2026",
     file: "AI Automation Engineer.pdf",
-    className: "CERT_AI_AUTOMATION",
+    shortName: "AI Automation Eng",
+    iconType: "award",
+    isDestacada: true,
   },
   {
     title: "JavaScript Programming with React, Node",
-    fecha: "Agosto 2026",
+    issuer: "Certificación",
+    year: "Agosto 2026",
     file: "JavaScript Programming with React, Node & MongoDB.pdf",
-    className: "CERT_JS_REACT_NODE",
+    shortName: "JS Programming",
+    iconType: "award",
+    isDestacada: false,
   },
   {
     title: "Apply API Testing & Automation with Postman",
-    fecha: "Agosto 2026",
+    issuer: "Postman",
+    year: "Agosto 2026",
     file: "Apply API Testing & Automation with Postman.pdf",
-    className: "CERT_POSTMAN_TESTING",
+    shortName: "API Testing & Auto",
+    iconType: "postman",
+    isDestacada: false,
   },
   {
     title: "Apply Postman APIs for Customer Data",
-    fecha: "Agosto 2026",
+    issuer: "Postman",
+    year: "Agosto 2026",
     file: "Apply Postman APIs for Customer Data.pdf",
-    className: "CERT_POSTMAN_CUSTOMER",
+    shortName: "Postman APIs",
+    iconType: "postman",
+    isDestacada: false,
   },
   {
     title: "Construcción de Bases de Datos con MySQL",
-    fecha: "SENA · Diciembre 2025",
+    issuer: "SENA",
+    year: "Diciembre 2025",
     file: "CONSTRUCCION_DE_BASES_DE_DATOS_CON_MYSQL.pdf",
-    className: "CONSTRUCCION_DE_BASES_DE_DATOS_CON_MYSQL",
+    shortName: "Bases de Datos MySQL",
+    iconType: "sena",
+    isDestacada: false,
   },
   {
     title: "Análisis Exploratorio de Datos en Python",
-    fecha: "SENA · Septiembre 2025",
+    issuer: "SENA",
+    year: "Septiembre 2025",
     file: "CERTIFICADO_ANALISIS_DE_DATOS_SENA.pdf",
-    className: "CERTIFICADO_ANALISIS_DE_DATOS_SENA",
+    shortName: "Análisis Datos Python",
+    iconType: "sena",
+    isDestacada: false,
   },
   {
     title: "Aplicaciones con Interfaz Gráfica en Java",
-    fecha: "SENA · Octubre 2025",
+    issuer: "SENA",
+    year: "Octubre 2025",
     file: "CERTIFICADO_DE_APLICACIONES_CON_INTERFAZ_GRAFICA.pdf",
-    className: "CERTIFICADO_DE_APLICACIONES_CON_INTERFAZ_GRAFICA",
+    shortName: "Apps Interfaz Java",
+    iconType: "sena",
+    isDestacada: false,
   },
   {
     title: "Stay Ahead of the AI Curve",
-    fecha: "Agosto 2026",
+    issuer: "Certificación",
+    year: "Agosto 2026",
     file: "Stay Ahead of the AI Curve.pdf",
-    className: "CERT_STAY_AHEAD_AI",
+    shortName: "AI Curve",
+    iconType: "award",
+    isDestacada: false,
   }
 ];
 
+const ICONS_MAP = {
+  ibm: <FaLaptopCode className="icono-emisor" />,
+  google: <SiGoogle className="icono-emisor" />,
+  sena: <FaGraduationCap className="icono-emisor" />,
+  postman: <SiPostman className="icono-emisor" />,
+  award: <FaAward className="icono-emisor" />
+};
+
 export default function Certificaciones() {
+  const destacadas = certsData.filter((c) => c.isDestacada);
+  const cursos = certsData.filter((c) => !c.isDestacada);
+
+  const renderCard = (cert) => (
+    <div key={cert.file} className={`cert-card ${cert.isDestacada ? 'cert-card-destacada' : ''} stagger-hidden`}>
+      <div className="cert-header">
+        {ICONS_MAP[cert.iconType]}
+        <h3>{cert.title}</h3>
+      </div>
+      
+      <div className="cert-footer">
+        <a href={cert.file} download className="cert-cta">
+          <FaFilePdf className="cert-cta-icon" /> PDF · {cert.shortName}
+        </a>
+        <span className="cert-cta-sub">{cert.issuer} · {cert.year}</span>
+      </div>
+    </div>
+  );
+
   return (
     <section className="certificaciones" id="certificaciones">
       <div className="certificaciones-inner">
@@ -74,19 +132,14 @@ export default function Certificaciones() {
           <h2 className="section-title">Certifications</h2>
         </div>
 
-        <div className="cert-grid">
-          {certs.map((cert) => (
-            <div key={cert.file} className="cert-card reveal">
-              <div className="cert-header">
-                <FaFilePdf className="icono-pdf" />
-                <h3>{cert.title}</h3>
-              </div>
-              <p className="cert-fecha">{cert.fecha}</p>
-              <a href={cert.file} download className={cert.className}>
-                Descargar certificado →
-              </a>
-            </div>
-          ))}
+        {/* 1. Certificaciones Destacadas (fila superior, tarjetas más grandes) */}
+        <div className="cert-grid cert-grid-destacadas">
+          {destacadas.map(renderCard)}
+        </div>
+
+        {/* 2. Cursos y otras certificaciones (grid compacto) */}
+        <div className="cert-grid cert-grid-cursos">
+          {cursos.map(renderCard)}
         </div>
 
       </div>

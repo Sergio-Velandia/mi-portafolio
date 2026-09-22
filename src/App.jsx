@@ -11,6 +11,7 @@ import N8nProyecto from "./components/N8nProyecto"
 import Certificaciones from "./components/Certificaciones"
 import Contacto from "./components/Contacto"
 import Footer from "./components/Footer"
+import FloatingIcons from "./components/FloatingIcons"
 import { initAllAnimations } from "./animation"
 import { initExtras, typeWriterLoop } from "./extras"
 import "./App.css"
@@ -36,6 +37,7 @@ export default function App() {
 
   return (
     <>
+      <FloatingIcons />
       <Header />
       <main>
         {/* 1. EL GANCHO: Quién eres y qué buscas (Contrato SENA) */}
