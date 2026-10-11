@@ -27,21 +27,23 @@
     <meta name="twitter:description" content="Desarrollador web y automatizaciones — Colombia." />
     <meta name="twitter:image"       content="https://sergio-velandia.github.io/mi-portafolio/Preview.png" />
 
-    <!-- ── Favicon ────────────────────────────────────────── -->
-    <link rel="icon"             type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon"             type="image/png"     href="/favicon.png" sizes="32x32" />
-    <link rel="apple-touch-icon"                      href="/mi-portafolio/apple-touch-icon.png" sizes="180x180" />
-    <!-- ── Favicon ────────────────────────────────────────── -->
-<link rel="icon"             type="image/svg+xml" href="/favicon.svg" />
-<link rel="icon"             type="image/png"     href="/favicon.png" sizes="32x32" />
-<link rel="apple-touch-icon"                      href="/mi-portafolio/apple-touch-icon.png" sizes="180x180" />
+    <!-- ── Favicon ────────────────────────────────────────────
+         /mi-portafolio/ = "/mi-portafolio/" en producción, "/" en desarrollo -->
+    <link rel="icon"             href="/mi-portafolio/favicon.ico" sizes="any" />
+    <link rel="icon"             type="image/png" href="/mi-portafolio/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon"             type="image/png" href="/mi-portafolio/favicon-16x16.png" sizes="16x16" />
+    <link rel="apple-touch-icon" href="/mi-portafolio/apple-touch-icon.png" sizes="180x180" />
+    <link rel="manifest"         href="/mi-portafolio/site.webmanifest" />
 
-<!-- ── Android / PWA ─────────────────────────────────── -->
-<link rel="icon" type="image/png" href="/mi-portafolio/android-chrome-192x192.png" sizes="192x192" />
-<link rel="icon" type="image/png" href="/mi-portafolio/android-chrome-512x512.png" sizes="512x512" />
-<link rel="manifest" href="/mi-portafolio/site.webmanifest" />
-    <script type="module" crossorigin src="/mi-portafolio/assets/index-CzT-IYBk.js"></script>
-    <link rel="stylesheet" crossorigin href="/mi-portafolio/assets/index-DNGzoP3m.css">
+    <!-- ── Fuentes: conexión anticipada + carga sin bloquear el CSS ── -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap"
+    />
+    <script type="module" crossorigin src="/mi-portafolio/assets/index-bTDyshgB.js"></script>
+    <link rel="stylesheet" crossorigin href="/mi-portafolio/assets/index-B_LnOCfg.css">
   </head>
   <body>
     <div id="root"></div>
