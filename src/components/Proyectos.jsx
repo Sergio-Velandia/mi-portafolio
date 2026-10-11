@@ -39,7 +39,7 @@ export default function Proyectos() {
 
         <div className="proyectos-grid">
           {proyectos.map((p) => (
-            <article key={p.num} className="proyecto-card reveal">
+            <article key={p.num} className="proyecto-card">
               <p className="proyecto-num">{p.num}</p>
               <h3>{p.titulo}</h3>
               <p>{p.descripcion}</p>

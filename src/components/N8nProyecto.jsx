@@ -11,7 +11,7 @@ export default function N8nProyecto() {
           <h2 className="section-title">Flujo con n8n</h2>
         </div>
 
-        <div className="n8n-card reveal">
+        <div className="n8n-card">
 
           <div className="n8n-imagen">
             <img src={FlujoN8N} alt="Flujo de análisis de datos en n8n" />

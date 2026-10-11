@@ -332,6 +332,5 @@ export function initAllAnimations() {
 
   initParallax(".hero-title", 0.18)
   initMagnetic(".btn-primary", 0.3)
-  initMagnetic(".btn-ghost", 0.25)
   initCustomCursor()
 }

@@ -70,7 +70,7 @@ export default function Contacto() {
         {/* Cards de contacto directo */}
         <div className="contacto-cards">
           {contactItems.map((item) => (
-            <div key={item.label} className="card reveal">
+            <div key={item.label} className="card">
               <div className="contacto-icon">{item.icon}</div>
               <h3>{item.label}</h3>
               <a href={item.href} target="_blank" rel="noopener noreferrer">
@@ -81,7 +81,7 @@ export default function Contacto() {
         </div>
 
         {/* Formulario */}
-        <div className="contacto-form-wrap reveal">
+        <div className="contacto-form-wrap">
           <p className="contacto-form-label">Or send a message directly</p>
 
           <form ref={formRef} onSubmit={handleSubmit} className="contacto-form" noValidate>

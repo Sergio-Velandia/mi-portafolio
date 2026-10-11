@@ -58,16 +58,20 @@ export default function Stats() {
       ([entry]) => {
         if (entry.isIntersecting && !animated.current) {
           animated.current = true
+          const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches
           stats.forEach((s) => {
             // counter
             const el = document.getElementById(s.id)
-            if (el) animateCounter(el, s.valor, s.sufijo)
-            // barra
+            if (el) {
+              if (reduced) el.textContent = s.valor + s.sufijo
+              else animateCounter(el, s.valor, s.sufijo)
+            }
+            // barra (scaleX: no recalcula layout mientras se llena)
             const bar = document.getElementById(s.id + "-bar")
             if (bar) {
               setTimeout(() => {
-                bar.style.width = s.porcentaje + "%"
-              }, 200)
+                bar.style.transform = `scaleX(${s.porcentaje / 100})`
+              }, reduced ? 0 : 200)
             }
           })
         }
@@ -88,17 +92,13 @@ export default function Stats() {
 
         <div className="stats-grid">
           {stats.map((s) => (
-            <div key={s.id} className="stat-card reveal">
+            <div key={s.id} className="stat-card">
               <div className="stat-top">
                 <span className="stat-number" id={s.id}>0{s.sufijo}</span>
                 <span className="stat-label">{s.label}</span>
               </div>
               <div className="stat-bar-track">
-                <div
-                  className="stat-bar-fill"
-                  id={s.id + "-bar"}
-                  style={{ width: "0%" }}
-                />
+                <div className="stat-bar-fill" id={s.id + "-bar"} />
               </div>
               <p className="stat-desc">{s.desc}</p>
             </div>

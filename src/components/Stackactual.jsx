@@ -73,7 +73,7 @@ export default function StackActual() {
           <h2 className="section-title">Stack</h2>
         </div>
 
-        <div className="stack-grid reveal">
+        <div className="stack-grid">
           {herramientas.map((h) => (
             <div key={h.categoria} className="stack-card">
               <p className="stack-categoria">{h.categoria}</p>
@@ -102,7 +102,7 @@ export default function StackActual() {
 
         <div className="aprendiendo-list">
           {aprendiendo.map((a) => (
-            <div key={a.tech} className="aprendiendo-card reveal">
+            <div key={a.tech} className="aprendiendo-card">
               <div className="aprendiendo-top">
                 <span className="aprendiendo-tech">{a.tech}</span>
                 <span className="aprendiendo-nivel">{a.nivel}%</span>

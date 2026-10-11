@@ -31,7 +31,7 @@ export default function MossProject() {
           <h2 className="section-title">Moss — Digital Garden</h2>
         </div>
 
-        <div className="moss-card reveal">
+        <div className="moss-card">
 
           <div className="moss-galeria">
             <div className="moss-captura">

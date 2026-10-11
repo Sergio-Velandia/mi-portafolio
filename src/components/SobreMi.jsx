@@ -12,7 +12,7 @@ export default function SobreMi() {
           </h2>
         </div>
 
-        <div className="sobre-mi-card reveal">
+        <div className="sobre-mi-card">
           <p>
             ¡Hola! Soy Sergio, desarrollador Full-Stack en formación. Construyo aplicaciones web completas con React, Node.js y bases de datos modernas, y me especializo en conectar el desarrollo tradicional con la automatización e integración de Inteligencia Artificial.          </p>
           <br />

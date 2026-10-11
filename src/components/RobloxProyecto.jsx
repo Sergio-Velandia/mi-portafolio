@@ -68,7 +68,7 @@ export default function RobloxProyecto() {
         </div>
 
         {/* Card principal */}
-        <div className="roblox-card reveal">
+        <div className="roblox-card">
 
           {/* Cabecera de la card */}
           <div className="roblox-card-top">

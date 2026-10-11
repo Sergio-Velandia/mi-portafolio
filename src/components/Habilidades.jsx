@@ -104,7 +104,7 @@ export default function Habilidades() {
 
         {/* Grid de 4 columnas */}
         <div
-          className="habilidades-columns reveal"
+          className="habilidades-columns"
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
