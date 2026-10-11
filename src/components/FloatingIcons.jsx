@@ -42,7 +42,6 @@ const randomRange = (min, max) => Math.random() * (max - min) + min;
 const lerp = (start, end, factor) => start + (end - start) * factor;
 
 export default function FloatingIcons() {
-  const containerRef = useRef(null);
   const iconsRef = useRef([]);
   const mouseRef = useRef({ x: -1000, y: -1000 });
   const scrollRef = useRef(0);

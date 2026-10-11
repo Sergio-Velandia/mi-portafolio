@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react"
 import { TbWebhook, TbFileImport, TbFilter, TbFileSpreadsheet, TbCheck } from "react-icons/tb"
 import { SiGoogledrive } from "react-icons/si"
 
-// Recreación del flujo real de n8n (ver FlujoN8N.png). Al entrar en
+// Recreación del flujo real de n8n (ver assets/flujo-n8n.webp). Al entrar en
 // pantalla "se ejecuta" una vez: cada nodo se enciende en orden, la
 // conexión se traza hasta el siguiente y aparece cuántos items pasan.
 const NODES = [

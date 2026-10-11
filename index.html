@@ -27,19 +27,21 @@
     <meta name="twitter:description" content="Desarrollador web y automatizaciones — Colombia." />
     <meta name="twitter:image"       content="https://sergio-velandia.github.io/mi-portafolio/Preview.png" />
 
-    <!-- ── Favicon ────────────────────────────────────────── -->
-    <link rel="icon"             type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon"             type="image/png"     href="/favicon.png" sizes="32x32" />
-    <link rel="apple-touch-icon"                      href="/apple-touch-icon.png" sizes="180x180" />
-    <!-- ── Favicon ────────────────────────────────────────── -->
-<link rel="icon"             type="image/svg+xml" href="/favicon.svg" />
-<link rel="icon"             type="image/png"     href="/favicon.png" sizes="32x32" />
-<link rel="apple-touch-icon"                      href="/apple-touch-icon.png" sizes="180x180" />
+    <!-- ── Favicon ────────────────────────────────────────────
+         %BASE_URL% = "/mi-portafolio/" en producción, "/" en desarrollo -->
+    <link rel="icon"             href="%BASE_URL%favicon.ico" sizes="any" />
+    <link rel="icon"             type="image/png" href="%BASE_URL%favicon-32x32.png" sizes="32x32" />
+    <link rel="icon"             type="image/png" href="%BASE_URL%favicon-16x16.png" sizes="16x16" />
+    <link rel="apple-touch-icon" href="%BASE_URL%apple-touch-icon.png" sizes="180x180" />
+    <link rel="manifest"         href="%BASE_URL%site.webmanifest" />
 
-<!-- ── Android / PWA ─────────────────────────────────── -->
-<link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192" />
-<link rel="icon" type="image/png" href="/android-chrome-512x512.png" sizes="512x512" />
-<link rel="manifest" href="/site.webmanifest" />
+    <!-- ── Fuentes: conexión anticipada + carga sin bloquear el CSS ── -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap"
+    />
   </head>
   <body>
     <div id="root"></div>

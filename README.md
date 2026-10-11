@@ -43,7 +43,7 @@ mi-portafolio/
 │   └── *.pdf                    # Certificaciones descargables (IBM, Google, Postman, SENA...)
 └── src/
     ├── assets/
-    │   └── FlujoN8N.png          # Captura del flujo de automatización
+    │   └── flujo-n8n.webp        # Captura del flujo de automatización
     ├── components/
     │   ├── FloatingIcons.jsx     # Íconos decorativos flotantes en el fondo
     │   ├── Header.jsx            # Hero con typewriter y cursor personalizado

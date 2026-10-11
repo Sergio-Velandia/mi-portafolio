@@ -1,5 +1,5 @@
 import "../App.css"
-import FlujoN8N from "../assets/FlujoN8N.png"
+import FlujoN8N from "../assets/flujo-n8n.webp"
 import N8nFlow from "./N8nFlow"
 import { useLang } from "../i18n"
 

@@ -1,9 +1,9 @@
 import { useState } from "react"
 import "../App.css"
-import MossCap1 from "../assets/MossCap1.png"
-import MossCap2 from "../assets/MossCap2.png"
-import MossCap3 from "../assets/MossCap3.png"
-import MossCap4 from "../assets/Mosscap4.png"
+import MossCap1 from "../assets/moss-inicio.webp"
+import MossCap2 from "../assets/moss-laboratorio.webp"
+import MossCap3 from "../assets/moss-manual.webp"
+import MossCap4 from "../assets/moss-herbario.webp"
 import { useLang } from "../i18n"
 
 const CAPTURAS = [MossCap1, MossCap2, MossCap3, MossCap4]
@@ -82,8 +82,8 @@ export default function MossProject() {
                 className="moss-fade"
                 src={CAPTURAS[activa]}
                 alt={t.capturas[activa].alt}
-                width="1920"
-                height="1080"
+                width="1600"
+                height="900"
                 decoding="async"
               />
             </div>
@@ -98,7 +98,7 @@ export default function MossProject() {
                   aria-pressed={i === activa}
                   aria-label={`${t.view}: ${cap.label}`}
                 >
-                  <img src={CAPTURAS[i]} alt="" width="1920" height="1080" loading="lazy" decoding="async" />
+                  <img src={CAPTURAS[i]} alt="" width="1600" height="900" loading="lazy" decoding="async" />
                   <span>{cap.label}</span>
                 </button>
               ))}

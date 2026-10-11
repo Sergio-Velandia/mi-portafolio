@@ -25,7 +25,6 @@
    ============================================================ */
 
 /* === IMPORTS === */
-@import url("https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap");
 
 /* ============================================================
    01. VARIABLES
@@ -927,7 +926,7 @@ header {
   opacity: 0.55;
   transition: opacity var(--dur-fast) ease, border-color var(--dur-fast) ease;
 }
-.moss-thumb img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; object-position: top; display: block; }
+.moss-thumb img { width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; object-position: top; display: block; }
 .moss-thumb span { display: block; padding: 8px 10px; font-size: 0.75rem; letter-spacing: 0.04em; color: var(--text-secondary); }
 .moss-thumb:hover { opacity: 0.85; }
 .moss-thumb.is-active { opacity: 1; border-color: var(--accent); }
