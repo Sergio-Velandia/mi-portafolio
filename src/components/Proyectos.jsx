@@ -1,57 +1,80 @@
 import "../App.css"
+import { useLang } from "../i18n"
 
 const proyectos = [
   {
-    num: "001",
+    id: "yugioh",
     titulo: "YuGiOhApi",
-    descripcion:
-      "Aplicación web interactiva para explorar una vasta base de datos de cartas Yu-Gi-Oh! consumiendo una API externa, con funcionalidades dinámicas e interfaz personalizada.",
-    tecnologias: "React · CSS · JavaScript · API externa",
+    descripcion: {
+      es: "Aplicación web interactiva para explorar una vasta base de datos de cartas Yu-Gi-Oh! consumiendo una API externa, con funcionalidades dinámicas e interfaz personalizada.",
+      en: "Interactive web app to explore a large Yu-Gi-Oh! card database from an external API, with dynamic features and a custom interface.",
+    },
+    tecnologias: ["React", "CSS", "JavaScript", "API externa|External API"],
     link: "https://github.com/Sergio-Velandia/YuGiOhApi",
   },
   {
-    num: "002",
+    id: "digimon",
     titulo: "DigimonAPI + Firebase",
-    descripcion:
-      "App multiplataforma para gestionar una colección de Digimons con autenticación segura. Arquitectura basada en Capacitor, lista para compilar como APK en Android Studio.",
-    tecnologias: "HTML · JS · Node · Capacitor · Firebase · API externa",
+    descripcion: {
+      es: "App multiplataforma para gestionar una colección de Digimons con autenticación segura. Arquitectura basada en Capacitor, lista para compilar como APK en Android Studio.",
+      en: "Cross-platform app to manage a Digimon collection with secure authentication. Built on Capacitor and ready to compile as an APK in Android Studio.",
+    },
+    tecnologias: ["HTML", "JavaScript", "Node.js", "Capacitor", "Firebase", "API externa|External API"],
     link: "https://github.com/Sergio-Velandia/DigimonAPI-Firebase",
   },
   {
-    num: "003",
-    titulo: "Mi Portafolio Web",
-    descripcion:
-      "Portafolio personal desarrollado con React y Vite. Muestra proyectos, habilidades, certificaciones y automatizaciones de forma moderna y optimizada.",
-    tecnologias: "React · Vite · CSS · JavaScript",
+    id: "portafolio",
+    titulo: { es: "Mi portafolio web", en: "My portfolio website" },
+    descripcion: {
+      es: "Este mismo sitio, desarrollado con React y Vite. Muestra proyectos, habilidades, certificaciones y automatizaciones, en español e inglés.",
+      en: "This very site, built with React and Vite. It showcases projects, skills, certifications and automations, in Spanish and English.",
+    },
+    tecnologias: ["React", "Vite", "CSS", "JavaScript"],
     link: "https://github.com/Sergio-Velandia/mi-portafolio",
   },
 ]
 
+const TEXT = {
+  es: { title: "Otros proyectos", github: "Ver en GitHub" },
+  en: { title: "Other projects", github: "View on GitHub" },
+}
+
+// "API externa|External API" → texto según idioma; el resto no se traduce
+const tr = (value, lang) => {
+  if (typeof value === "object") return value[lang]
+  const [es, en] = value.split("|")
+  return lang === "en" && en ? en : es
+}
+
 export default function Proyectos() {
+  const { lang } = useLang()
+  const t = TEXT[lang]
+
   return (
     <section className="proyectos" id="proyectos">
       <div className="proyectos-inner">
 
         <div className="proyectos-header reveal">
-          <span className="section-label">Work</span>
-          <h2 className="section-title">Projects</h2>
+          <h2 className="section-title">{t.title}</h2>
         </div>
 
         <div className="proyectos-grid">
           {proyectos.map((p) => (
-            <article key={p.num} className="proyecto-card">
-              <p className="proyecto-num">{p.num}</p>
-              <h3>{p.titulo}</h3>
-              <p>{p.descripcion}</p>
+            <article key={p.id} className="proyecto-card">
+              <h3>{tr(p.titulo, lang)}</h3>
+              <p>{p.descripcion[lang]}</p>
               <div className="proyecto-footer">
-                <span className="tec">{p.tecnologias}</span>
+                <ul className="chips">
+                  {p.tecnologias.map((s) => <li key={s}>{tr(s, lang)}</li>)}
+                </ul>
                 <a
                   href={p.link}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-proyecto"
+                  aria-label={`${t.github}: ${tr(p.titulo, lang)}`}
                 >
-                  GitHub →
+                  {t.github}
                 </a>
               </div>
             </article>

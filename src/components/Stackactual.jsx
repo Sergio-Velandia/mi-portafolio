@@ -1,8 +1,10 @@
 import "../App.css"
+import { useLang } from "../i18n"
 
 const herramientas = [
   {
-    categoria: "Frontend",
+    id: "frontend",
+    categoria: { es: "Frontend", en: "Frontend" },
     skills: [
       { nombre: "JavaScript", color: "#f7df1e" },
       { nombre: "React",      color: "#61dafb" },
@@ -13,7 +15,8 @@ const herramientas = [
     ]
   },
   {
-    categoria: "Backend & BD",
+    id: "backend",
+    categoria: { es: "Backend y bases de datos", en: "Backend & databases" },
     skills: [
       { nombre: "Node.js",    color: "#339933" },
       { nombre: "Supabase",   color: "#3ECF8E" },
@@ -23,17 +26,19 @@ const herramientas = [
     ]
   },
   {
-    categoria: "IA & APIs",
+    id: "ia",
+    categoria: { es: "IA y APIs", en: "AI & APIs" },
     skills: [
       { nombre: "n8n",        color: "#ff6a00" },
-      { nombre: "Agentes IA", color: "#7e22ce" },
+      { nombre: { es: "Agentes IA", en: "AI Agents" }, color: "#7e22ce" },
       { nombre: "APIs REST",  color: "#00a2ff" },
       { nombre: "Webhooks",   color: "#00b4d8" },
       { nombre: "Postman",    color: "#FF6C37" }
     ]
   },
   {
-    categoria: "Herramientas",
+    id: "tools",
+    categoria: { es: "Herramientas", en: "Tools" },
     skills: [
       { nombre: "VS Code",       color: "#007ACC" },
       { nombre: "Git",           color: "#f1502f" },
@@ -46,45 +51,67 @@ const herramientas = [
 
 const aprendiendo = [
   {
-    tech: "AI Agents & RAG Workflows",
+    id: "agents",
     nivel: 75,
-    desc: "Implementing advanced LLM integrations (OpenAI, Gemini) with knowledge bases and automated n8n workflows to build autonomous reasoning agents and intelligent data pipelines.",
+    tech: { es: "Agentes de IA y flujos RAG", en: "AI Agents & RAG Workflows" },
+    desc: {
+      es: "Integraciones avanzadas con LLMs (OpenAI, Gemini) conectadas a bases de conocimiento y flujos de n8n, para construir agentes autónomos y pipelines de datos inteligentes.",
+      en: "Implementing advanced LLM integrations (OpenAI, Gemini) with knowledge bases and automated n8n workflows to build autonomous reasoning agents and intelligent data pipelines.",
+    },
   },
   {
-    tech: "Advanced Workflow Automation (n8n)",
+    id: "n8n",
     nivel: 85,
-    desc: "Designing complex integration architectures: mass data processing via webhooks, automated CSV/XLSX transformation, cloud synchronization, and serverless logic.",
+    tech: { es: "Automatización avanzada de flujos (n8n)", en: "Advanced Workflow Automation (n8n)" },
+    desc: {
+      es: "Arquitecturas de integración complejas: procesamiento masivo de datos vía webhooks, transformación automática de CSV/XLSX, sincronización en la nube y lógica serverless.",
+      en: "Designing complex integration architectures: mass data processing via webhooks, automated CSV/XLSX transformation, cloud synchronization, and serverless logic.",
+    },
   },
   {
-    tech: "Full-Stack & Scalable Databases",
+    id: "fullstack",
     nivel: 65,
-    desc: "Strengthening backend systems with Node.js, Express, NoSQL data modeling in MongoDB, and robust relational schemas using Supabase and PostgreSQL.",
+    tech: { es: "Full-Stack y bases de datos escalables", en: "Full-Stack & Scalable Databases" },
+    desc: {
+      es: "Backends más sólidos con Node.js y Express, modelado de datos NoSQL en MongoDB y esquemas relacionales robustos con Supabase y PostgreSQL.",
+      en: "Strengthening backend systems with Node.js, Express, NoSQL data modeling in MongoDB, and robust relational schemas using Supabase and PostgreSQL.",
+    },
   },
 ];
 
+const TEXT = {
+  es: { title: "Stack de trabajo", learning: "Lo que estoy aprendiendo y experimentando ahora." },
+  en: { title: "Working stack", learning: "What I'm currently learning and experimenting with." },
+};
+
+// Nombre visible: texto fijo o { es, en } cuando se traduce
+const label = (value, lang) => (typeof value === "string" ? value : value[lang]);
+
 export default function StackActual() {
+  const { lang } = useLang();
+  const t = TEXT[lang];
+
   return (
     <section className="stack-section" id="stack">
       <div className="stack-inner">
 
         {/* Stack del día a día */}
         <div className="stack-header reveal">
-          <span className="section-label">Workflow</span>
-          <h2 className="section-title">Stack</h2>
+          <h2 className="section-title">{t.title}</h2>
         </div>
 
         <div className="stack-grid">
           {herramientas.map((h) => (
-            <div key={h.categoria} className="stack-card">
-              <p className="stack-categoria">{h.categoria}</p>
+            <div key={h.id} className="stack-card">
+              <p className="stack-categoria">{label(h.categoria, lang)}</p>
               <div className="stack-items">
                 {h.skills.map((s) => (
-                  <span 
-                    key={s.nombre} 
+                  <span
+                    key={label(s.nombre, "es")}
                     className="stack-tag"
                     style={{ "--skill-color": s.color }}
                   >
-                    {s.nombre}
+                    {label(s.nombre, lang)}
                   </span>
                 ))}
               </div>
@@ -94,26 +121,25 @@ export default function StackActual() {
 
         {/* Actualmente aprendiendo */}
         <div className="aprendiendo-header reveal">
-          <span className="section-label">In progress</span>
           <h3 className="section-title" style={{ fontSize: "clamp(1.6rem, 3vw, 2.4rem)" }}>
-            Currently learning and experimenting.
+            {t.learning}
           </h3>
         </div>
 
         <div className="aprendiendo-list">
           {aprendiendo.map((a) => (
-            <div key={a.tech} className="aprendiendo-card">
+            <div key={a.id} className="aprendiendo-card">
               <div className="aprendiendo-top">
-                <span className="aprendiendo-tech">{a.tech}</span>
+                <span className="aprendiendo-tech">{a.tech[lang]}</span>
                 <span className="aprendiendo-nivel">{a.nivel}%</span>
               </div>
               <div className="aprendiendo-track">
                 <div
                   className="aprendiendo-fill"
-                  style={{ "--target-width": a.nivel + "%" }}
+                  style={{ "--target-scale": a.nivel / 100 }}
                 />
               </div>
-              <p className="aprendiendo-desc">{a.desc}</p>
+              <p className="aprendiendo-desc">{a.desc[lang]}</p>
             </div>
           ))}
         </div>

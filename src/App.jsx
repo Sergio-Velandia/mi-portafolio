@@ -15,26 +15,35 @@ import Footer from "./components/Footer"
 import FloatingIcons from "./components/FloatingIcons"
 import { initAllAnimations } from "./animation"
 import { initExtras, typeWriterLoop } from "./extras"
+import { useLang } from "./i18n"
 import "./App.css"
 
+// Frases del typewriter del hero (ver Header.jsx id="hero-subtitle")
+const HERO_PHRASES = {
+  es: [
+    "Desarrollador Web Full Stack",
+    "Automatización con n8n e IA",
+    "React, Node.js, bases de datos y n8n",
+    "Automatización inteligente para tu negocio.",
+  ],
+  en: [
+    "Full Stack Web Developer",
+    "Automation with n8n and AI",
+    "React, Node.js, databases and n8n",
+    "Smart automation for your business.",
+  ],
+}
+
 export default function App() {
+  const { lang } = useLang()
+
   useEffect(() => {
     initAllAnimations()
     initExtras()
-
-    // TypeWriter en el subtítulo del hero (ver Header.jsx id="hero-subtitle")
-    typeWriterLoop(
-      "hero-subtitle",
-      [
-        "Desarrollador Web Full Stack",
-        "Automatización con n8n & IA",
-        "React · BD · N8N · Node.js",
-        "Automatización inteligente para tu negocio.",
-      ],
-      75,
-      2200
-    )
   }, [])
+
+  // Se reinicia con las frases del idioma activo
+  useEffect(() => typeWriterLoop("hero-subtitle", HERO_PHRASES[lang], 75, 2200), [lang])
 
   return (
     <>

@@ -252,8 +252,7 @@ header {
   z-index: 2;
 }
 
-.hero-left::before {
-  content: 'Hola, bienvenido';
+.hero-greeting {
   position: absolute;
   top: 120px;
   left: 64px;
@@ -746,39 +745,137 @@ header {
 .n8n-inner { max-width: 1100px; margin: 0 auto; }
 .n8n-header { margin-bottom: 64px; }
 
+/* ── Flujo animado: el "momento" del sitio ─────────────────────
+   Recrea el canvas de n8n (fondo de puntos, nodos, conexiones).
+   Al entrar en pantalla (.is-running) cada paso se enciende con
+   un retraso de var(--i) × 0.6s: nodo → check → conexión → items. */
+.n8n-flow {
+  --step: 0.6s;
+  --ok: var(--status-live);
+  margin: 0 0 32px;
+  padding: 56px 32px 28px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background-color: var(--bg-card);
+  background-image: radial-gradient(rgba(240, 237, 232, 0.07) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+.n8n-flow-track { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); }
+.n8n-flow-step { position: relative; display: flex; justify-content: center; }
+
+.n8n-node { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; gap: 6px; text-align: center; max-width: 150px; }
+.n8n-node-box {
+  position: relative;
+  width: 72px; height: 72px;
+  display: grid; place-items: center;
+  margin-bottom: 8px;
+  border-radius: 14px;
+  border: 1.5px solid var(--border-strong);
+  background: var(--bg-raised);
+  color: var(--text-muted);
+  font-size: 30px;
+  transition-property: border-color, color, box-shadow;
+  transition-duration: var(--dur-base);
+  transition-delay: calc(var(--i) * var(--step));
+}
+/* El disparador del flujo tiene el lado izquierdo redondo, como en n8n */
+.n8n-flow-step:first-child .n8n-node-box { border-radius: 36px 14px 14px 36px; }
+.n8n-node-check {
+  position: absolute; right: -8px; bottom: -8px;
+  width: 22px; height: 22px;
+  display: grid; place-items: center;
+  border-radius: 50%;
+  background: var(--ok);
+  color: var(--bg-base);
+  font-size: 14px;
+  transform: scale(0);
+  transition: transform var(--dur-base) var(--ease-out);
+  transition-delay: calc(var(--i) * var(--step) + 0.25s);
+}
+.n8n-node-name { font-size: 0.85rem; font-weight: 500; color: var(--text-primary); line-height: 1.35; }
+.n8n-node-sub { font-size: 0.75rem; color: var(--text-muted); }
+
+/* Conexión hacia el siguiente nodo: pista tenue + trazo verde que la recorre */
+.n8n-edge {
+  position: absolute;
+  top: 35px;
+  left: calc(50% + 36px);
+  width: calc(100% - 72px);
+  height: 2px;
+  background: var(--border-strong);
+}
+.n8n-edge-line {
+  position: absolute; inset: 0;
+  background: var(--ok);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform calc(var(--step) - 0.15s) linear;
+  transition-delay: calc(var(--i) * var(--step) + 0.3s);
+}
+.n8n-edge-count {
+  position: absolute;
+  bottom: 8px; left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.75rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--ok);
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity var(--dur-base) ease;
+  transition-delay: calc(var(--i) * var(--step) + 0.6s);
+}
+
+.n8n-flow-status {
+  display: flex; align-items: center; justify-content: flex-end; gap: 8px;
+  margin-top: 32px;
+  font-size: 0.78rem;
+  color: var(--ok);
+  opacity: 0;
+  transition: opacity var(--dur-base) ease;
+  transition-delay: calc(5 * var(--step));
+}
+.n8n-flow-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--ok); }
+
+.n8n-flow.is-running .n8n-node-box { border-color: var(--ok); color: var(--text-primary); box-shadow: 0 0 0 4px rgba(58, 211, 137, 0.12); }
+.n8n-flow.is-running .n8n-node-check { transform: scale(1); }
+.n8n-flow.is-running .n8n-edge-line { transform: scaleX(1); }
+.n8n-flow.is-running .n8n-edge-count,
+.n8n-flow.is-running .n8n-flow-status { opacity: 1; }
+
+/* Tarjeta con la explicación y la captura real como prueba */
 .n8n-card {
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   overflow: hidden;
   display: grid;
-  grid-template-columns: 1.1fr 1fr;
-  transition: border-color var(--dur-base) ease;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
 }
-.n8n-card:hover { border-color: var(--border-accent); }
 
 .n8n-imagen {
-  position: relative;
-  overflow: hidden;
+  margin: 0;
+  padding: 40px 32px;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
-  height: 100%;
-  min-height: 243px;
+  gap: 12px;
   background-color: var(--bg-raised);
+  border-left: 1px solid var(--border);
 }
-
-.n8n-imagen img { width: 100%; height: auto; max-width: 1069px; object-fit: contain; display: block; transition: transform 0.5s ease; }
-.n8n-card:hover .n8n-imagen img { transform: scale(1.04); }
+.n8n-imagen a { display: block; border: 1px solid var(--border); border-radius: var(--radius-sm); overflow: hidden; transition: border-color var(--dur-fast) ease; }
+.n8n-imagen a:hover { border-color: var(--border-accent); }
+.n8n-imagen img { width: 100%; height: auto; display: block; }
+.n8n-imagen figcaption { font-size: 0.78rem; color: var(--text-muted); }
 
 .n8n-info { padding: 52px 48px; display: flex; flex-direction: column; justify-content: center; }
+.n8n-info .btn-proyecto { align-self: flex-start; }
 
 .n8n-info h3 { font-family: var(--font-display); font-size: 1.55rem; font-weight: 700; color: var(--text-primary); margin-bottom: 16px; line-height: 1.25; }
 .n8n-info p { font-size: 0.92rem; font-weight: 300; color: var(--text-secondary); line-height: 1.75; }
-.n8n-info ul { margin: 24px 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px; }
-.n8n-info li { font-size: 0.88rem; color: var(--text-secondary); padding-left: 18px; position: relative; font-weight: 300; }
+.n8n-steps { margin: 24px 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.n8n-steps li { font-size: 0.88rem; color: var(--text-secondary); padding-left: 18px; position: relative; font-weight: 300; }
 
-.n8n-info li::before {
+.n8n-steps li::before {
   content: '';
   position: absolute;
   left: 0; top: 50%;
@@ -788,7 +885,6 @@ header {
   background: var(--accent);
 }
 
-.n8n-info .tec { margin-top: 8px; }
 
 /* ============================================================
    11b. MOSS
@@ -841,7 +937,6 @@ header {
 .moss-texto h3 { font-family: var(--font-display); font-size: 1.55rem; font-weight: 700; color: var(--text-primary); margin-bottom: 16px; line-height: 1.25; }
 .moss-texto p { font-size: 0.92rem; font-weight: 300; color: var(--text-secondary); line-height: 1.75; margin-bottom: 14px; }
 .moss-texto strong { color: var(--text-primary); font-weight: 500; }
-.moss-texto .tec { display: block; margin: 10px 0 4px; line-height: 1.6; }
 .moss-links { display: flex; gap: 12px; flex-wrap: wrap; }
 
 .moss-pilares { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; align-content: start; }
@@ -1250,8 +1345,9 @@ header {
 .aprendiendo-tech { font-family: var(--font-display); font-size: 1.05rem; font-weight: 700; color: var(--text-primary); letter-spacing: -0.01em; }
 .aprendiendo-nivel { font-family: var(--font-display); font-size: 0.85rem; font-weight: 600; color: var(--accent); flex-shrink: 0; }
 .aprendiendo-track { width: 100%; height: 3px; background: var(--border); border-radius: 999px; overflow: hidden; }
-.aprendiendo-fill { height: 100%; width: 0%; background: linear-gradient(to right, var(--accent-dim), var(--accent)); border-radius: 999px; transition: width 1.2s var(--ease-out); }
-.aprendiendo-card.active .aprendiendo-fill { width: var(--target-width); }
+.aprendiendo-fill { height: 100%; width: 100%; background: linear-gradient(to right, var(--accent-dim), var(--accent)); border-radius: 999px; transform: scaleX(0); transform-origin: left; transition: transform 1.2s var(--ease-out); }
+/* Se llena cuando la tarjeta entra en pantalla (initStagger en animation.js) */
+.aprendiendo-card.stagger-visible .aprendiendo-fill { transform: scaleX(var(--target-scale)); }
 .aprendiendo-desc { font-size: 0.88rem; font-weight: 300; color: var(--text-secondary); line-height: 1.78; max-width: 760px; }
 
 /* ============================================================
@@ -1262,7 +1358,7 @@ header {
   header { grid-template-columns: minmax(0, 1fr); }
   .hero-right { display: none; }
   .hero-left { padding: 120px 36px 80px; justify-content: center; }
-  .hero-left::before { top: 40px; left: 36px; }
+  .hero-greeting { top: 40px; left: 36px; }
 
   .sobre-mi, .habilidades, .proyectos, .n8n, .moss, .certificaciones,
   .contacto, .roblox-proyecto, .experiencia, .stats-section,
@@ -1270,8 +1366,8 @@ header {
 
   .sobre-mi-inner { grid-template-columns: 1fr; gap: 40px; }
   .sobre-mi-heading { position: static; }
-  .n8n-card { grid-template-columns: 1fr; }
-  .n8n-imagen { height: 260px; }
+  .n8n-card { grid-template-columns: minmax(0, 1fr); }
+  .n8n-imagen { border-left: none; border-top: 1px solid var(--border); }
   .moss-info { grid-template-columns: 1fr; gap: 36px; }
   .footer { flex-direction: column; text-align: center; padding: 28px 36px; }
 
@@ -1287,7 +1383,6 @@ header {
 
 @media (max-width: 640px) {
   nav { padding: 16px 24px; }
-  .nav-links { display: none; }
   .hero-left { padding: 100px 24px 64px; }
 
   .sobre-mi, .habilidades, .proyectos, .n8n, .moss, .certificaciones,
@@ -1334,3 +1429,127 @@ main, footer { position: relative; z-index: 10; }
   transition-timing-function: var(--ease-out);
 }
 .btn-ghost:active, .btn-proyecto:active, .moss-thumb:active { transform: scale(0.97); }
+
+/* ============================================================
+   NAV: IDIOMA Y MENÚ MÓVIL
+   ============================================================ */
+.nav-actions { display: flex; align-items: center; gap: 14px; }
+
+.lang-switch {
+  display: flex;
+  padding: 2px;
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+}
+.lang-switch button {
+  min-width: 36px;
+  min-height: 28px;
+  padding: 0 10px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text-secondary);
+  font: 600 0.72rem/1 var(--font-body);
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  touch-action: manipulation;
+  transition: background-color var(--dur-fast) ease, color var(--dur-fast) ease;
+}
+.lang-switch button:hover { color: var(--text-primary); }
+.lang-switch button.is-active { background: var(--accent); color: var(--bg-base); }
+
+.nav-toggle {
+  display: none;
+  width: 44px; height: 44px;
+  place-items: center;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--text-primary);
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+/* ============================================================
+   CHIPS DE TECNOLOGÍAS (reemplazan las listas "A · B · C")
+   ============================================================ */
+.chips { list-style: none; margin: 4px 0 24px; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
+.chips li {
+  padding: 4px 10px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: rgba(201, 169, 110, 0.06);
+  color: var(--accent-soft);
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+.proyecto-footer { align-items: flex-end; }
+.proyecto-footer .chips, .roblox-footer .chips { margin: 0; }
+
+/* ============================================================
+   FORMULARIO: errores junto al campo
+   ============================================================ */
+.form-error { font-size: 0.8rem; color: var(--status-error); }
+.form-group [aria-invalid="true"] { border-color: var(--status-error); }
+
+/* ============================================================
+   RESPONSIVE DE LO NUEVO
+   ============================================================ */
+@media (max-width: 960px) {
+  .nav-toggle { display: grid; }
+
+  /* El menú se despliega bajo la barra */
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%; left: 0; right: 0;
+    flex-direction: column;
+    gap: 0;
+    padding: 8px 24px 20px;
+    background: rgba(10, 10, 9, 0.97);
+    border-bottom: 1px solid var(--border);
+  }
+  nav.menu-open { background: rgba(10, 10, 9, 0.97); }
+  nav.menu-open .nav-links { display: flex; }
+  .nav-links a { display: flex; align-items: center; min-height: 48px; font-size: 1rem; }
+  .nav-links a::after { display: none; }
+}
+
+@media (max-width: 760px) {
+  /* El flujo se dibuja en vertical: nodo a la izquierda, texto a la derecha */
+  .n8n-flow { padding: 32px 20px 24px; }
+  .n8n-flow-track { grid-template-columns: minmax(0, 1fr); }
+  .n8n-flow-step { justify-content: flex-start; padding-bottom: 48px; }
+  .n8n-flow-step:last-child { padding-bottom: 0; }
+  .n8n-node {
+    display: grid;
+    grid-template-columns: 56px minmax(0, 1fr);
+    column-gap: 16px;
+    row-gap: 2px;
+    align-items: center;
+    text-align: left;
+    max-width: none;
+  }
+  .n8n-node-box { grid-row: span 2; width: 56px; height: 56px; margin: 0; font-size: 24px; }
+  .n8n-flow-step:first-child .n8n-node-box { border-radius: 28px 12px 12px 28px; }
+  .n8n-node-name { align-self: end; }
+  .n8n-node-sub { align-self: start; }
+  .n8n-edge { top: 56px; left: 27px; width: 2px; height: 48px; }
+  .n8n-edge-line { transform: scaleY(0); transform-origin: top; }
+  .n8n-flow.is-running .n8n-edge-line { transform: scaleY(1); }
+  .n8n-edge-count { bottom: auto; top: 50%; left: 16px; transform: translateY(-50%); }
+  .n8n-flow-status { justify-content: flex-start; }
+}
+
+@media (max-width: 640px) {
+  /* 16px evita el zoom automático de iOS al enfocar un campo */
+  .form-group input, .form-group textarea { font-size: 1rem; }
+  .lang-switch button { min-width: 44px; min-height: 36px; }
+  .proyecto-footer { flex-direction: column; align-items: flex-start; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* Sin retrasos escalonados: el flujo aparece ya ejecutado */
+  .n8n-flow * { transition-delay: 0s !important; }
+}

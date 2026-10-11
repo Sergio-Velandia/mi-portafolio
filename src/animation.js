@@ -329,6 +329,7 @@ export function initAllAnimations() {
   initStagger(".contacto-cards", ".card", 70)
   initStagger(".stats-grid", ".stat-card", 70)
   initStagger(".stack-grid", ".stack-card", 60)
+  initStagger(".aprendiendo-list", ".aprendiendo-card", 90)
 
   initParallax(".hero-title", 0.18)
   initMagnetic(".btn-primary", 0.3)

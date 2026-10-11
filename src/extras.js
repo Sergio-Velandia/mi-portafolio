@@ -43,14 +43,22 @@ export function typeWriter(elementId, text, speed = 80) {
   typing()
 }
 
-// Typewriter con loop de frases y cursor parpadeante
+// Typewriter con loop de frases y cursor parpadeante.
+// Devuelve una función que lo detiene (para reiniciarlo al cambiar de idioma).
 export function typeWriterLoop(elementId, phrases, speed = 80, pause = 2000) {
   const el = document.getElementById(elementId)
-  if (!el) return
+  if (!el) return () => {}
+
+  // Con reduced-motion se muestra la primera frase fija, sin teclear
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    el.textContent = phrases[0]
+    return () => {}
+  }
 
   let phraseIndex = 0
   let charIndex = 0
   let deleting = false
+  let timer = null
 
   el.classList.add("typewriter-cursor")
 
@@ -62,7 +70,7 @@ export function typeWriterLoop(elementId, phrases, speed = 80, pause = 2000) {
       charIndex++
       if (charIndex === current.length) {
         deleting = true
-        setTimeout(tick, pause)
+        timer = setTimeout(tick, pause)
         return
       }
     } else {
@@ -74,10 +82,11 @@ export function typeWriterLoop(elementId, phrases, speed = 80, pause = 2000) {
       }
     }
 
-    setTimeout(tick, deleting ? speed * 0.5 : speed)
+    timer = setTimeout(tick, deleting ? speed * 0.5 : speed)
   }
 
   tick()
+  return () => clearTimeout(timer)
 }
 
 // ── 3. SMOOTH SCROLL para links internos ─────────────────────
@@ -114,6 +123,8 @@ export function showToast(message, type = "success", duration = 3000) {
 
   const toast = document.createElement("div")
   toast.className = `toast toast-${type}`
+  toast.setAttribute("role", "status")
+  toast.setAttribute("aria-live", "polite")
   toast.textContent = message
   document.body.appendChild(toast)
 

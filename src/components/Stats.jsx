@@ -1,38 +1,41 @@
 import { useEffect, useRef } from "react"
 import "../App.css"
+import { useLang } from "../i18n"
+
+const TITLE = { es: "Mi trayectoria en números", en: "My track record in numbers" }
 
 const stats = [
   {
     id: "stat-meses",
-    label: "Meses de experiencia",
+    label: { es: "Meses de experiencia", en: "Months of experience" },
     valor: 6,
     sufijo: "",
     porcentaje: 100,
-    desc: "Videogame developer en Roblox Studio, con entregas periódicas y feedback del cliente",
+    desc: { es: "Desarrollador de videojuegos en Roblox Studio, con entregas periódicas y feedback del cliente.", en: "Game developer in Roblox Studio, with regular releases and client feedback." },
   },
   {
     id: "stat-proyectos",
-    label: "Proyectos completados",
+    label: { es: "Proyectos completados", en: "Projects completed" },
     valor: 5,
     sufijo: "+",
     porcentaje: 85,
-    desc: "Web apps, automatizaciones, videojuego y portafolio",
+    desc: { es: "Aplicaciones web, automatizaciones, un videojuego y este portafolio.", en: "Web apps, automations, a video game and this portfolio." },
   },
   {
     id: "stat-certs",
-    label: "Certificaciones",
+    label: { es: "Certificaciones", en: "Certifications" },
     valor: 10,
     sufijo: "",
     porcentaje: 100,
-    desc: "N8N · JavaScript · BD · IA · React · Node.js",
+    desc: { es: "n8n, JavaScript, bases de datos, IA, React y Node.js.", en: "n8n, JavaScript, databases, AI, React and Node.js." },
   },
   {
     id: "stat-flujs",
-    label: "Skills",
+    label: { es: "Habilidades", en: "Skills" },
     valor: 12,
     sufijo: "+",
     porcentaje: 100,
-    desc: "Mis habilidades técnicas y herramientas que domino, incluyendo React, Node.js, IA y más.",
+    desc: { es: "Habilidades técnicas y herramientas que domino, como React, Node.js e IA.", en: "Technical skills and tools I master, such as React, Node.js and AI." },
   },
 ]
 
@@ -50,6 +53,7 @@ function animateCounter(el, to, suffix) {
 }
 
 export default function Stats() {
+  const { lang } = useLang()
   const sectionRef = useRef(null)
   const animated = useRef(false)
 
@@ -86,8 +90,7 @@ export default function Stats() {
     <section className="stats-section" id="stats" ref={sectionRef}>
       <div className="stats-inner">
         <div className="stats-header reveal">
-          <span className="section-label">In numbers</span>
-          <h2 className="section-title">Let's see the impact</h2>
+          <h2 className="section-title">{TITLE[lang]}</h2>
         </div>
 
         <div className="stats-grid">
@@ -95,12 +98,12 @@ export default function Stats() {
             <div key={s.id} className="stat-card">
               <div className="stat-top">
                 <span className="stat-number" id={s.id}>0{s.sufijo}</span>
-                <span className="stat-label">{s.label}</span>
+                <span className="stat-label">{s.label[lang]}</span>
               </div>
               <div className="stat-bar-track">
                 <div className="stat-bar-fill" id={s.id + "-bar"} />
               </div>
-              <p className="stat-desc">{s.desc}</p>
+              <p className="stat-desc">{s.desc[lang]}</p>
             </div>
           ))}
         </div>

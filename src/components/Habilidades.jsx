@@ -9,6 +9,12 @@ import {
 import { TbApi, TbRobot } from "react-icons/tb"
 import { initSkillsFloat, FLOAT_SIZES } from "../skillsFloat"
 import "../App.css"
+import { useLang } from "../i18n"
+
+const TITLE = { es: "Habilidades", en: "Skills" }
+
+// Nombre visible: texto fijo o { es, en } cuando se traduce
+const label = (value, lang) => (typeof value === "string" ? value : value[lang])
 
 // ── Mapa: tech key → componente de icono ──────────────────────
 // Todos los imports verificados: SiN8n (n minúscula), SiLua real,
@@ -35,7 +41,8 @@ const TECH_ICONS = {
 // ── Datos de skills ────────────────────────────────────────────
 const skillCategories = [
   {
-    categoria: "Frontend",
+    id: "frontend",
+    categoria: { es: "Frontend", en: "Frontend" },
     skills: [
       { nombre: "JavaScript", color: "#f7df1e", tech: "javascript" },
       { nombre: "React",      color: "#61dafb", tech: "react"      },
@@ -45,7 +52,8 @@ const skillCategories = [
     floatIcons: ["javascript", "react", "vite", "htmlcss"],
   },
   {
-    categoria: "Backend & BD",
+    id: "backend",
+    categoria: { es: "Backend y bases de datos", en: "Backend & databases" },
     skills: [
       { nombre: "Node.js",    color: "#3c873a", tech: "nodejs"     },
       { nombre: "Supabase",   color: "#3ECF8E", tech: "supabase"   },
@@ -55,17 +63,19 @@ const skillCategories = [
     floatIcons: ["nodejs", "supabase", "postgresql", "mongodb"],
   },
   {
-    categoria: "IA & APIs",
+    id: "ia",
+    categoria: { es: "IA y APIs", en: "AI & APIs" },
     skills: [
       { nombre: "n8n",        color: "#ff6a00", tech: "n8n"        },
-      { nombre: "Agentes IA", color: "#7e22ce", tech: "agentesia"  },
+      { nombre: { es: "Agentes IA", en: "AI Agents" }, color: "#7e22ce", tech: "agentesia" },
       { nombre: "APIs REST",  color: "#00a2ff", tech: "apisrest"   },
       { nombre: "Postman",    color: "#FF6C37", tech: "postman"    },
     ],
     floatIcons: ["n8n", "agentesia", "apisrest", "postman"],
   },
   {
-    categoria: "Herramientas",
+    id: "tools",
+    categoria: { es: "Herramientas", en: "Tools" },
     skills: [
       { nombre: "Git",    color: "#f1502f", tech: "git"    },
       { nombre: "GitHub", color: "#e6e6e6", tech: "github" },
@@ -86,6 +96,7 @@ const FLOAT_POSITIONS = [
 ]
 
 export default function Habilidades() {
+  const { lang } = useLang()
   useEffect(() => {
     const cleanup = initSkillsFloat()
     return () => {
@@ -98,8 +109,8 @@ export default function Habilidades() {
       <div className="habilidades-inner">
 
         <div className="habilidades-header reveal">
-          <span className="section-label">Stack</span>
-          <h2 className="section-title">Skills</h2>
+
+          <h2 className="section-title">{TITLE[lang]}</h2>
         </div>
 
         {/* Grid de 4 columnas */}
@@ -114,7 +125,7 @@ export default function Habilidades() {
         >
           {skillCategories.map((columna) => (
             <div
-              key={columna.categoria}
+              key={columna.id}
               className="skill-column"
               style={{ position: "relative", overflow: "visible" }}
             >
@@ -173,7 +184,7 @@ export default function Habilidades() {
                   paddingBottom: "0.5rem",
                 }}
               >
-                {columna.categoria}
+                {label(columna.categoria, lang)}
               </h3>
 
               {/* ── Cards apiladas ── */}
@@ -188,7 +199,7 @@ export default function Habilidades() {
               >
                 {columna.skills.map((skill) => (
                   <div
-                    key={skill.nombre}
+                    key={skill.tech}
                     className="habilidad-card stagger-hidden"
                     data-tech={skill.tech}
                     style={{ "--card-accent": skill.color }}
@@ -211,7 +222,7 @@ export default function Habilidades() {
                         )
                       })()}
                     </span>
-                    <span className="skill-name">{skill.nombre}</span>
+                    <span className="skill-name">{label(skill.nombre, lang)}</span>
                   </div>
                 ))}
               </div>

@@ -1,12 +1,13 @@
 import "../App.css";
 import { FaFilePdf, FaGraduationCap, FaAward, FaLaptopCode } from "react-icons/fa";
 import { SiGoogle, SiPostman } from "react-icons/si";
+import { useLang, formatMonth } from "../i18n";
 
 const certsData = [
   {
     title: "IBM Full-Stack JavaScript Developer",
     issuer: "IBM",
-    year: "Agosto 2026",
+    date: "2026-08",
     file: "IBM Full-Stack JavaScript Developer.pdf",
     shortName: "IBM Full-Stack JS",
     iconType: "ibm",
@@ -15,7 +16,7 @@ const certsData = [
   {
     title: "Google AI Essentials Certificate",
     issuer: "Google",
-    year: "Agosto 2026",
+    date: "2026-08",
     file: "Google AI Essentials Certificate.pdf",
     shortName: "Google AI Essentials",
     iconType: "google",
@@ -23,8 +24,8 @@ const certsData = [
   },
   {
     title: "AI Automation Engineer",
-    issuer: "Certificación",
-    year: "Agosto 2026",
+    issuer: null,
+    date: "2026-08",
     file: "AI Automation Engineer.pdf",
     shortName: "AI Automation Eng",
     iconType: "award",
@@ -32,8 +33,8 @@ const certsData = [
   },
   {
     title: "JavaScript Programming with React, Node",
-    issuer: "Certificación",
-    year: "Agosto 2026",
+    issuer: null,
+    date: "2026-08",
     file: "JavaScript Programming with React, Node & MongoDB.pdf",
     shortName: "JS Programming",
     iconType: "award",
@@ -42,7 +43,7 @@ const certsData = [
   {
     title: "Apply API Testing & Automation with Postman",
     issuer: "Postman",
-    year: "Agosto 2026",
+    date: "2026-08",
     file: "Apply API Testing & Automation with Postman.pdf",
     shortName: "API Testing & Auto",
     iconType: "postman",
@@ -51,7 +52,7 @@ const certsData = [
   {
     title: "Apply Postman APIs for Customer Data",
     issuer: "Postman",
-    year: "Agosto 2026",
+    date: "2026-08",
     file: "Apply Postman APIs for Customer Data.pdf",
     shortName: "Postman APIs",
     iconType: "postman",
@@ -60,7 +61,7 @@ const certsData = [
   {
     title: "Construcción de Bases de Datos con MySQL",
     issuer: "SENA",
-    year: "Diciembre 2025",
+    date: "2025-12",
     file: "CONSTRUCCION_DE_BASES_DE_DATOS_CON_MYSQL.pdf",
     shortName: "Bases de Datos MySQL",
     iconType: "sena",
@@ -69,7 +70,7 @@ const certsData = [
   {
     title: "Análisis Exploratorio de Datos en Python",
     issuer: "SENA",
-    year: "Septiembre 2025",
+    date: "2025-09",
     file: "CERTIFICADO_ANALISIS_DE_DATOS_SENA.pdf",
     shortName: "Análisis Datos Python",
     iconType: "sena",
@@ -78,7 +79,7 @@ const certsData = [
   {
     title: "Aplicaciones con Interfaz Gráfica en Java",
     issuer: "SENA",
-    year: "Octubre 2025",
+    date: "2025-10",
     file: "CERTIFICADO_DE_APLICACIONES_CON_INTERFAZ_GRAFICA.pdf",
     shortName: "Apps Interfaz Java",
     iconType: "sena",
@@ -86,8 +87,8 @@ const certsData = [
   },
   {
     title: "Stay Ahead of the AI Curve",
-    issuer: "Certificación",
-    year: "Agosto 2026",
+    issuer: null,
+    date: "2026-08",
     file: "Stay Ahead of the AI Curve.pdf",
     shortName: "AI Curve",
     iconType: "award",
@@ -96,14 +97,21 @@ const certsData = [
 ];
 
 const ICONS_MAP = {
-  ibm: <FaLaptopCode className="icono-emisor" />,
-  google: <SiGoogle className="icono-emisor" />,
-  sena: <FaGraduationCap className="icono-emisor" />,
-  postman: <SiPostman className="icono-emisor" />,
-  award: <FaAward className="icono-emisor" />
+  ibm: <FaLaptopCode className="icono-emisor" aria-hidden="true" />,
+  google: <SiGoogle className="icono-emisor" aria-hidden="true" />,
+  sena: <FaGraduationCap className="icono-emisor" aria-hidden="true" />,
+  postman: <SiPostman className="icono-emisor" aria-hidden="true" />,
+  award: <FaAward className="icono-emisor" aria-hidden="true" />
+};
+
+const TEXT = {
+  es: { title: "Certificaciones", download: "Descargar PDF", certificate: "Certificado" },
+  en: { title: "Certifications", download: "Download PDF", certificate: "Certificate" },
 };
 
 export default function Certificaciones() {
+  const { lang } = useLang();
+  const t = TEXT[lang];
   const destacadas = certsData.filter((c) => c.isDestacada);
   const cursos = certsData.filter((c) => !c.isDestacada);
 
@@ -113,12 +121,14 @@ export default function Certificaciones() {
         {ICONS_MAP[cert.iconType]}
         <h3>{cert.title}</h3>
       </div>
-      
+
       <div className="cert-footer">
-        <a href={cert.file} download className="cert-cta">
-          <FaFilePdf className="cert-cta-icon" /> PDF · {cert.shortName}
+        <a href={cert.file} download className="cert-cta" aria-label={`${t.download}: ${cert.title}`}>
+          <FaFilePdf className="cert-cta-icon" aria-hidden="true" /> {t.download}
         </a>
-        <span className="cert-cta-sub">{cert.issuer} · {cert.year}</span>
+        <span className="cert-cta-sub">
+          {cert.issuer ?? t.certificate}, {formatMonth(cert.date, lang)}
+        </span>
       </div>
     </div>
   );
@@ -128,8 +138,7 @@ export default function Certificaciones() {
       <div className="certificaciones-inner">
 
         <div className="cert-header-sec reveal">
-          <span className="section-label">Training</span>
-          <h2 className="section-title">Certifications</h2>
+          <h2 className="section-title">{t.title}</h2>
         </div>
 
         {/* 1. Certificaciones Destacadas (fila superior, tarjetas más grandes) */}
