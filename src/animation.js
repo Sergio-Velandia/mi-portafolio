@@ -28,10 +28,14 @@ export function initScrollReveal() {
     return
   }
 
+  // Se revela una sola vez: si el contenido se volviera a ocultar al
+  // subir, el usuario vería parpadear lo que ya leyó.
   const observer = new IntersectionObserver(
-    (entries) => {
+    (entries, obs) => {
       entries.forEach((entry) => {
-        entry.target.classList.toggle("active", entry.isIntersecting)
+        if (!entry.isIntersecting) return
+        entry.target.classList.add("active")
+        obs.unobserve(entry.target)
       })
     },
     { threshold: 0.12, rootMargin: "0px 0px -60px 0px" }
@@ -175,24 +179,36 @@ export function initCustomCursor() {
   document.body.appendChild(dot)
   document.body.appendChild(ring)
 
+  let mx = 0
+  let my = 0
   let rx = 0
   let ry = 0
+  let running = false
 
-  document.addEventListener("mousemove", (e) => {
-    dot.style.left = e.clientX + "px"
-    dot.style.top = e.clientY + "px"
-  })
-
+  // El anillo sigue al puntero y el loop se detiene cuando lo alcanza,
+  // en lugar de correr 60 veces por segundo aunque el mouse esté quieto.
   function animateRing() {
-    const mx = parseFloat(dot.style.left) || 0
-    const my = parseFloat(dot.style.top) || 0
     rx += (mx - rx) * 0.14
     ry += (my - ry) * 0.14
     ring.style.left = rx + "px"
     ring.style.top = ry + "px"
+    if (Math.abs(mx - rx) < 0.1 && Math.abs(my - ry) < 0.1) {
+      running = false
+      return
+    }
     requestAnimationFrame(animateRing)
   }
-  animateRing()
+
+  document.addEventListener("mousemove", (e) => {
+    mx = e.clientX
+    my = e.clientY
+    dot.style.left = mx + "px"
+    dot.style.top = my + "px"
+    if (!running) {
+      running = true
+      requestAnimationFrame(animateRing)
+    }
+  })
 
   document
     .querySelectorAll("a, button, .proyecto-card, .habilidad-card")
@@ -256,8 +272,9 @@ export function initScrollProgress(selector = ".scroll-progress") {
   const update = () => {
     const scrollTop = window.scrollY
     const docHeight = document.documentElement.scrollHeight - window.innerHeight
-    const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0
-    bar.style.width = `${progress}%`
+    const progress = docHeight > 0 ? scrollTop / docHeight : 0
+    // scaleX en vez de width: no provoca recálculo de layout en cada frame
+    bar.style.transform = `scaleX(${progress})`
     ticking = false
   }
 

@@ -58,20 +58,21 @@ export default function Header() {
 
         {/* Columna izquierda */}
         <div className="hero-left">
-          <p className="hero-eyebrow">Portfolio 2026</p>
+          <p className="hero-eyebrow" data-hero-step="1">Portfolio 2026</p>
 
+          {/* Cada línea sube desde detrás de una máscara (initHeroIntro) */}
           <h1 className="hero-title">
-            <span>Sergio</span>
-            <span className="accent-word">Ramirez</span>
-            <span className="outline-word">Dev</span>
+            <span className="line"><span data-hero-step="2">Sergio</span></span>
+            <span className="line accent-word"><span data-hero-step="3">Ramirez</span></span>
+            <span className="line outline-word"><span data-hero-step="4">Dev</span></span>
           </h1>
 
           {/* Typewriter */}
-          <p className="hero-desc">
+          <p className="hero-desc" data-hero-step="5">
             <span id="hero-subtitle"></span>
           </p>
 
-          <div className="hero-cta">
+          <div className="hero-cta" data-hero-step="6">
             <a href="CV.pdf" download className="btn-primary">
               Descargar CV
             </a>

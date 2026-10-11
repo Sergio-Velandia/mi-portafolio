@@ -35,7 +35,7 @@ export default function MossProject() {
 
           <div className="moss-galeria">
             <div className="moss-captura">
-              <img src={capturas[activa].src} alt={capturas[activa].alt} />
+              <img key={activa} className="moss-fade" src={capturas[activa].src} alt={capturas[activa].alt} />
             </div>
 
             <div className="moss-thumbs" role="group" aria-label="Capturas de Moss">

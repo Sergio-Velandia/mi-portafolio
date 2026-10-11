@@ -75,7 +75,11 @@
    02. RESET & BASE
    ============================================================ */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; color-scheme: dark; }
+
+/* El nav es fijo: sin esto, al saltar a una sección su título
+   queda escondido debajo de la barra. */
+section[id], header[id] { scroll-margin-top: 72px; }
 
 body {
   font-family: var(--font-body);
@@ -151,10 +155,12 @@ body {
   position: fixed;
   top: 0; left: 0;
   height: 2px;
-  width: 0%;
+  width: 100%;
   background: linear-gradient(to right, var(--accent-dim), var(--accent));
   z-index: 1000;
-  transition: width 0.1s linear;
+  transform: scaleX(0);
+  transform-origin: left;
+  pointer-events: none;
 }
 
 /* ============================================================
@@ -254,6 +260,23 @@ header {
   transition: opacity var(--dur-slow) var(--ease-out), transform var(--dur-slow) var(--ease-out);
 }
 [data-hero-step].is-in { opacity: 1; transform: translateY(0); }
+
+/* Líneas del título: suben desde detrás de una máscara en vez de
+   aparecer con fade. El padding/margin negativo deja espacio a los
+   descendentes ("g") sin cambiar el interlineado. */
+.hero-title .line {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.12em;
+  margin-bottom: -0.12em;
+}
+.hero-title .line > [data-hero-step] {
+  display: block;
+  opacity: 1;
+  transform: translateY(110%);
+  transition: transform 1s var(--ease-out);
+}
+.hero-title .line > [data-hero-step].is-in { transform: translateY(0); }
 
 .hero-eyebrow {
   font-family: var(--font-body);
@@ -778,6 +801,9 @@ header {
   aspect-ratio: 16 / 9;
 }
 .moss-captura img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
+/* Responde al clic en una miniatura: la nueva captura entra con un fundido corto */
+.moss-fade { animation: mossFade 0.32s var(--ease-out); }
+@keyframes mossFade { from { opacity: 0; transform: scale(1.015); } to { opacity: 1; transform: scale(1); } }
 
 .moss-thumbs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 14px; }
 .moss-thumb {

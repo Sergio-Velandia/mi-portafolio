@@ -38,6 +38,7 @@ export default function App() {
 
   return (
     <>
+      <div className="scroll-progress" aria-hidden="true" />
       <FloatingIcons />
       <Header />
       <main>
