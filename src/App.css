@@ -754,6 +754,68 @@ header {
 .n8n-info .tec { margin-top: 8px; }
 
 /* ============================================================
+   11b. MOSS
+   ============================================================ */
+.moss { padding: 140px 60px; background: var(--bg-raised); position: relative; border-bottom: 1px solid var(--border); }
+.moss-inner { max-width: 1100px; margin: 0 auto; }
+.moss-header { margin-bottom: 64px; }
+
+.moss-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: border-color var(--dur-base) ease;
+}
+.moss-card:hover { border-color: var(--border-accent); }
+
+.moss-galeria { padding: 32px 32px 0; }
+.moss-captura {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background: var(--bg-raised);
+  aspect-ratio: 16 / 9;
+}
+.moss-captura img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
+
+.moss-thumbs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 14px; }
+.moss-thumb {
+  padding: 0;
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  cursor: pointer;
+  text-align: left;
+  opacity: 0.55;
+  transition: opacity var(--dur-fast) ease, border-color var(--dur-fast) ease;
+}
+.moss-thumb img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; object-position: top; display: block; }
+.moss-thumb span { display: block; padding: 8px 10px; font-size: 0.75rem; letter-spacing: 0.04em; color: var(--text-secondary); }
+.moss-thumb:hover { opacity: 0.85; }
+.moss-thumb.is-active { opacity: 1; border-color: var(--accent); }
+.moss-thumb.is-active span { color: var(--accent); }
+
+.moss-info { display: grid; grid-template-columns: 1.1fr 1fr; gap: 48px; padding: 48px; }
+.moss-texto h3 { font-family: var(--font-display); font-size: 1.55rem; font-weight: 700; color: var(--text-primary); margin-bottom: 16px; line-height: 1.25; }
+.moss-texto p { font-size: 0.92rem; font-weight: 300; color: var(--text-secondary); line-height: 1.75; margin-bottom: 14px; }
+.moss-texto strong { color: var(--text-primary); font-weight: 500; }
+.moss-texto .tec { display: block; margin: 10px 0 4px; line-height: 1.6; }
+.moss-links { display: flex; gap: 12px; flex-wrap: wrap; }
+
+.moss-pilares { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; align-content: start; }
+.moss-pilares li {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 18px;
+  transition: border-color var(--dur-fast) ease;
+}
+.moss-pilares li:hover { border-color: var(--border-accent); }
+.moss-pilares h4 { font-size: 0.92rem; font-weight: 600; color: var(--accent); margin-bottom: 6px; }
+.moss-pilares p { font-size: 0.82rem; font-weight: 300; color: var(--text-secondary); line-height: 1.6; }
+
+/* ============================================================
    12. CERTIFICACIONES
    ============================================================ */
 .certificaciones { padding: 140px 60px; background: var(--bg-raised); position: relative; }
@@ -1162,7 +1224,7 @@ header {
   .hero-left { padding: 120px 36px 80px; justify-content: center; }
   .hero-left::before { top: 40px; left: 36px; }
 
-  .sobre-mi, .habilidades, .proyectos, .n8n, .certificaciones,
+  .sobre-mi, .habilidades, .proyectos, .n8n, .moss, .certificaciones,
   .contacto, .roblox-proyecto, .experiencia, .stats-section,
   .stack-section { padding: 100px 36px; }
 
@@ -1170,6 +1232,7 @@ header {
   .sobre-mi-heading { position: static; }
   .n8n-card { grid-template-columns: 1fr; }
   .n8n-imagen { height: 260px; }
+  .moss-info { grid-template-columns: 1fr; gap: 36px; }
   .footer { flex-direction: column; text-align: center; padding: 28px 36px; }
 
   .roblox-body { grid-template-columns: 1fr; }
@@ -1187,12 +1250,16 @@ header {
   .nav-links { display: none; }
   .hero-left { padding: 100px 24px 64px; }
 
-  .sobre-mi, .habilidades, .proyectos, .n8n, .certificaciones,
+  .sobre-mi, .habilidades, .proyectos, .n8n, .moss, .certificaciones,
   .contacto, .roblox-proyecto, .experiencia, .stats-section,
   .stack-section { padding: 80px 24px; }
 
   .sobre-mi-card { padding: 32px 24px; }
   .n8n-info { padding: 36px 28px; }
+  .moss-galeria { padding: 20px 20px 0; }
+  .moss-thumbs { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .moss-info { padding: 32px 24px; }
+  .moss-pilares { grid-template-columns: 1fr; }
   .footer { padding: 24px; }
   .hero-cta { flex-direction: column; align-items: flex-start; }
 
