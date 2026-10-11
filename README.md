@@ -16,12 +16,6 @@
 
 ---
 
-## 📸 Preview
-
-![Preview del portafolio](./public/Preview.png)
-
----
-
 ## ✨ Sobre el proyecto
 
 Portafolio personal construido desde cero con **React + Vite**, pensado como una sola página fluida (*single-page*) que cuenta una historia: quién soy, qué sé hacer, y la prueba de que ya lo hice en producción. Sin templates genéricos — cada sección, animación y color fue decidido a propósito.
