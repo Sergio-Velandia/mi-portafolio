@@ -28,7 +28,7 @@ Incluye, entre otras cosas:
 - **Movimiento con propósito.** Solo los títulos de sección aparecen al hacer scroll (una sola vez), barra de progreso de lectura, respuesta al pulsar botones y contadores animados.
 - **Menú móvil** accesible (`aria-expanded`, cierre con Escape, áreas táctiles de 44 px).
 - **Formulario de contacto sin backend** vía EmailJS, con validación junto a cada campo y mensajes de estado anunciados a lectores de pantalla.
-- **Galería de capturas** del proyecto Moss y certificaciones con PDFs descargables.
+- **Galerías de capturas** de los proyectos Moss y Moss Nexus (un mismo componente reutilizable, `ProjectShowcase`) y certificaciones con PDFs descargables.
 - **Typewriter** en el hero, cursor personalizado e íconos flotantes por categoría de skill.
 
 ---
@@ -49,7 +49,8 @@ mi-portafolio/
 ├── src/
 │   ├── assets/
 │   │   ├── flujo-n8n.webp        # Captura real del flujo de automatización
-│   │   └── moss-*.webp           # Capturas del proyecto Moss
+│   │   ├── moss-*.webp           # Capturas del proyecto Moss
+│   │   └── nexus-*.webp          # Capturas del proyecto Moss Nexus
 │   ├── components/
 │   │   ├── Header.jsx            # Menú (con ES/EN y menú móvil) + hero
 │   │   ├── SobreMi.jsx           # Presentación y enfoque profesional
@@ -58,7 +59,9 @@ mi-portafolio/
 │   │   ├── RobloxProyecto.jsx    # Experiencia profesional: videojuego multijugador en Roblox
 │   │   ├── N8nProyecto.jsx       # Proyecto de automatización con n8n
 │   │   ├── N8nFlow.jsx           # Diagrama animado del flujo de n8n
-│   │   ├── MossProject.jsx       # Proyecto personal: Moss, jardín digital (galería)
+│   │   ├── ProjectShowcase.jsx   # Sección reutilizable: galería, texto, chips, enlaces y pilares
+│   │   ├── MossProject.jsx       # Datos de Moss, jardín digital (usa ProjectShowcase)
+│   │   ├── MossNexusProject.jsx  # Datos de Moss Nexus, librería de flujos de n8n (usa ProjectShowcase)
 │   │   ├── Proyectos.jsx         # Otros proyectos (YuGiOhApi, DigimonAPI+Firebase, este portafolio)
 │   │   ├── Stats.jsx             # Estadísticas animadas con contadores
 │   │   ├── Stackactual.jsx       # Stack del día a día + lo que estoy aprendiendo ahora
@@ -91,9 +94,10 @@ El orden de las secciones en `App.jsx` está pensado como un argumento, no como 
 4. **Experiencia profesional (Roblox)**: el trabajo más grande, un videojuego multijugador de 12 niveles.
 5. **Flujo con n8n**: automatización de datos, con el flujo animado y la captura real.
 6. **Moss**: mi "segundo cerebro" técnico, con galería de capturas.
-7. **Otros proyectos**: YuGiOhApi, DigimonAPI + Firebase y este mismo portafolio.
-8. **Stats** y **Stack actual**: números y lo que estoy aprendiendo ahora mismo.
-9. **Contacto**: formulario directo, sin backend propio.
+7. **Moss Nexus**: su proyecto hermano, una librería de flujos de n8n listos para copiar.
+8. **Otros proyectos**: YuGiOhApi, DigimonAPI + Firebase y este mismo portafolio.
+9. **Stats** y **Stack actual**: números y lo que estoy aprendiendo ahora mismo.
+10. **Contacto**: formulario directo, sin backend propio.
 
 > El componente `Experiencia.jsx` (timeline cronológico) ya está construido pero actualmente no se monta en `App.jsx`; queda disponible para reactivarse cuando se necesite.
 
@@ -115,6 +119,10 @@ Flujo que reemplaza la carga manual de datos por un pipeline automatizado: recib
 ### 🌱 Moss: jardín digital
 Mi "segundo cerebro" técnico: una biblioteca visual de snippets, guías y artículos organizada en cuatro pilares (Laboratorio, Manual, Bitácora y Herbario), **sin base de datos ni backend**.
 [Ver en vivo](https://sergio-velandia.github.io/Moss/) · [Ver repo](https://github.com/Sergio-Velandia/Moss)
+
+### 🔗 Moss Nexus: librería de flujos para n8n
+Proyecto hermano de Moss: en Moss se aprende el porqué; en Nexus se copia el flujo y se usa. Reúne **14 flujos de n8n** ya armados y explicados paso a paso, con búsqueda y filtros, un mapa del flujo que se dibuja solo a partir de un JSON y un botón para copiarlo a n8n en un clic. Las plantillas viven en el repositorio como datos, **sin backend**.
+[Ver en vivo](https://sergio-velandia.github.io/Moss-Nexus/) · [Ver repo](https://github.com/Sergio-Velandia/Moss-Nexus)
 
 ### 🃏 YuGiOhApi
 App interactiva que consume una API externa para explorar la base de datos de cartas Yu-Gi-Oh!.

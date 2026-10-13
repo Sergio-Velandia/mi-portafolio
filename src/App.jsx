@@ -9,6 +9,7 @@ import Stats from "./components/Stats"
 import StackActual from "./components/Stackactual"
 import N8nProyecto from "./components/N8nProyecto"
 import MossProject from "./components/MossProject"
+import MossNexusProject from "./components/MossNexusProject"
 import Certificaciones from "./components/Certificaciones"
 import Contacto from "./components/Contacto"
 import Footer from "./components/Footer"
@@ -68,8 +69,9 @@ export default function App() {
         {/* 5. EL PROYECTO CLAVE (Automatización/IA): Ideal para los roles que buscas mañana. */}
         <N8nProyecto />
 
-        {/* 5b. PROYECTO PERSONAL: Moss, mi "segundo cerebro" técnico. */}
+        {/* 5b. PROYECTOS PERSONALES: Moss (segundo cerebro) y su hermano Moss Nexus (flujos de n8n). */}
         <MossProject />
+        <MossNexusProject />
         
         {/* 6. EL RESTO DE PROYECTOS: Tu gestor DevAsset, este mismo portafolio, etc. */}
         <Proyectos />

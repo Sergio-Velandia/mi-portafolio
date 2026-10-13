@@ -891,6 +891,9 @@ header {
 .moss { padding: 140px 60px; background: var(--bg-raised); position: relative; border-bottom: 1px solid var(--border); }
 .moss-inner { max-width: 1100px; margin: 0 auto; }
 .moss-header { margin-bottom: 64px; }
+.moss-intro { margin-top: 16px; max-width: 62ch; font-size: 1rem; font-weight: 300; line-height: 1.7; color: var(--text-secondary); text-wrap: pretty; }
+/* Moss Nexus va justo después de Moss: fondo alterno para que no se lean como un solo bloque */
+.moss--nexus { background: var(--bg-base); }
 
 .moss-card {
   background: var(--bg-card);
@@ -907,7 +910,7 @@ header {
   border-radius: var(--radius-sm);
   overflow: hidden;
   background: var(--bg-raised);
-  aspect-ratio: 16 / 9;
+  aspect-ratio: var(--shot-ratio, 16 / 9);
 }
 .moss-captura img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
 /* Responde al clic en una miniatura: la nueva captura entra con un fundido corto */
@@ -926,7 +929,7 @@ header {
   opacity: 0.55;
   transition: opacity var(--dur-fast) ease, border-color var(--dur-fast) ease;
 }
-.moss-thumb img { width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; object-position: top; display: block; }
+.moss-thumb img { width: 100%; height: auto; aspect-ratio: var(--shot-ratio, 16 / 9); object-fit: cover; object-position: top; display: block; }
 .moss-thumb span { display: block; padding: 8px 10px; font-size: 0.75rem; letter-spacing: 0.04em; color: var(--text-secondary); }
 .moss-thumb:hover { opacity: 0.85; }
 .moss-thumb.is-active { opacity: 1; border-color: var(--accent); }

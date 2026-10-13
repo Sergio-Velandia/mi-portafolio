@@ -16,10 +16,10 @@ const stats = [
   {
     id: "stat-proyectos",
     label: { es: "Proyectos completados", en: "Projects completed" },
-    valor: 5,
+    valor: 7,
     sufijo: "+",
     porcentaje: 85,
-    desc: { es: "Aplicaciones web, automatizaciones, un videojuego y este portafolio.", en: "Web apps, automations, a video game and this portfolio." },
+    desc: { es: "Aplicaciones web, automatizaciones con n8n, un videojuego, Moss, Moss Nexus y este portafolio.", en: "Web apps, n8n automations, a video game, Moss, Moss Nexus and this portfolio." },
   },
   {
     id: "stat-certs",
