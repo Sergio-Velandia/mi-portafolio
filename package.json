@@ -27,7 +27,7 @@
   "bugs": {
     "url": "https://github.com/Sergio-Velandia/mi-portafolio/issues"
   },
-  "homepage": "https://sergio-velandia.github.io/mi-portafolio",
+  "homepage": "https://sergio-velandia.dev/mi-portafolio/",
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
     "react": "^19.1.1",

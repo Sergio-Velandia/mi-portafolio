@@ -1,4 +1,5 @@
 import ProjectShowcase from "./ProjectShowcase"
+import { SITES } from "../config/sites"
 import MossCap1 from "../assets/moss-inicio.webp"
 import MossCap2 from "../assets/moss-laboratorio.webp"
 import MossCap3 from "../assets/moss-manual.webp"
@@ -10,7 +11,7 @@ const MOSS = {
   width: 1600,
   height: 900,
   stack: ["React 19", "TypeScript", "Vite", "Tailwind CSS 4", "React Router", "MiniSearch", "Shiki", "Vitest"],
-  liveUrl: "https://sergio-velandia.github.io/Moss/",
+  liveUrl: SITES.moss,
   repoUrl: "https://github.com/Sergio-Velandia/Moss",
   text: {
     es: {

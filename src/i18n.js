@@ -3,7 +3,7 @@
 // ============================================================
 // - El idioma se elige con el botón ES/EN del menú.
 // - Se recuerda en el navegador y también se puede forzar por URL:
-//   https://sergio-velandia.github.io/mi-portafolio/?lang=en
+//   https://sergio-velandia.dev/mi-portafolio/?lang=en
 //   (útil para enviarle el enlace directo a un reclutador extranjero).
 // - Cada componente guarda sus propios textos en un objeto { es, en }
 //   y elige el suyo con useLang().

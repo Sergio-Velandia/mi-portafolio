@@ -1,4 +1,5 @@
 import ProjectShowcase from "./ProjectShowcase"
+import { SITES } from "../config/sites"
 import NexusInicio from "../assets/nexus-inicio.webp"
 import NexusPlantillas from "../assets/nexus-plantillas.webp"
 import NexusAcerca from "../assets/nexus-acerca.webp"
@@ -13,7 +14,7 @@ const NEXUS = {
   width: 1600,
   height: 730,
   stack: ["React 19", "TypeScript", "Vite", "Tailwind CSS 4", "React Router", "Motion", "Vitest", "n8n"],
-  liveUrl: "https://sergio-velandia.github.io/Moss-Nexus/",
+  liveUrl: SITES.mossNexus,
   repoUrl: "https://github.com/Sergio-Velandia/Moss-Nexus",
   text: {
     es: {
