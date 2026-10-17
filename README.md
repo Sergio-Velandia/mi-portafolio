@@ -6,12 +6,12 @@
 
 [![React](https://img.shields.io/badge/React-19-61DAFB?style=flat-square&logo=react&logoColor=black)](https://react.dev/)
 [![Vite](https://img.shields.io/badge/Vite-7-646CFF?style=flat-square&logo=vite&logoColor=white)](https://vitejs.dev/)
-[![Idiomas](https://img.shields.io/badge/Idiomas-ES%20%7C%20EN-C9A96E?style=flat-square)](https://sergio-velandia.github.io/mi-portafolio/?lang=en)
+[![Idiomas](https://img.shields.io/badge/Idiomas-ES%20%7C%20EN-C9A96E?style=flat-square)](https://sergio-velandia.dev/mi-portafolio/?lang=en)
 [![EmailJS](https://img.shields.io/badge/EmailJS-integrado-C9A96E?style=flat-square)](https://www.emailjs.com/)
 [![Deploy](https://img.shields.io/badge/Deploy-GitHub%20Actions-222?style=flat-square&logo=githubactions&logoColor=white)](https://github.com/Sergio-Velandia/mi-portafolio/actions)
 [![License](https://img.shields.io/badge/Uso-Personal-lightgrey?style=flat-square)](#-licencia)
 
-[🌐 Ver en vivo](https://sergio-velandia.github.io/mi-portafolio/) · [🇬🇧 English version](https://sergio-velandia.github.io/mi-portafolio/?lang=en) · [📬 Contacto](mailto:sergio.velandiar.z@gmail.com) · [📄 CV](./public/CV.pdf)
+[🌐 Ver en vivo](https://sergio-velandia.dev/mi-portafolio/) · [🇬🇧 English version](https://sergio-velandia.dev/mi-portafolio/?lang=en) · [📬 Contacto](mailto:contacto@sergio-velandia.dev) · [📄 CV](./public/CV.pdf)
 
 </div>
 
@@ -42,6 +42,7 @@ mi-portafolio/
 ├── public/
 │   ├── favicon.ico / favicon-*.png / apple-touch-icon.png / android-chrome-*.png
 │   ├── site.webmanifest
+│   ├── sitemap.xml               # Mapa del sitio para buscadores
 │   ├── avatar.png
 │   ├── Preview.png               # Imagen para redes sociales (Open Graph)
 │   ├── CV.pdf
@@ -69,6 +70,8 @@ mi-portafolio/
 │   │   ├── Footer.jsx
 │   │   ├── FloatingIcons.jsx     # Íconos decorativos flotantes en el fondo
 │   │   └── Experiencia.jsx       # Timeline de experiencia (disponible, actualmente sin montar)
+│   ├── config/
+│   │   └── sites.js              # URLs públicas del portafolio, Moss y Moss Nexus (un solo lugar)
 │   ├── i18n.js                   # Contexto de idioma, useLang() y formato de fechas
 │   ├── LanguageProvider.jsx      # Estado del idioma: URL, navegador, <html lang> y título
 │   ├── App.jsx                   # Composición y orden de secciones
@@ -79,7 +82,7 @@ mi-portafolio/
 │   ├── skillsFloat.js            # Lógica de los íconos flotantes por categoría
 │   └── main.jsx
 ├── eslint.config.js
-└── vite.config.js                # base: '/mi-portafolio/' para GitHub Pages
+└── vite.config.js                # base: '/mi-portafolio/' (el dominio propio conserva esa ruta)
 ```
 
 ---
@@ -118,11 +121,11 @@ Flujo que reemplaza la carga manual de datos por un pipeline automatizado: recib
 
 ### 🌱 Moss: jardín digital
 Mi "segundo cerebro" técnico: una biblioteca visual de snippets, guías y artículos organizada en cuatro pilares (Laboratorio, Manual, Bitácora y Herbario), **sin base de datos ni backend**.
-[Ver en vivo](https://sergio-velandia.github.io/Moss/) · [Ver repo](https://github.com/Sergio-Velandia/Moss)
+[Ver en vivo](https://sergio-velandia.dev/Moss/) · [Ver repo](https://github.com/Sergio-Velandia/Moss)
 
 ### 🔗 Moss Nexus: librería de flujos para n8n
 Proyecto hermano de Moss: en Moss se aprende el porqué; en Nexus se copia el flujo y se usa. Reúne **14 flujos de n8n** ya armados y explicados paso a paso, con búsqueda y filtros, un mapa del flujo que se dibuja solo a partir de un JSON y un botón para copiarlo a n8n en un clic. Las plantillas viven en el repositorio como datos, **sin backend**.
-[Ver en vivo](https://sergio-velandia.github.io/Moss-Nexus/) · [Ver repo](https://github.com/Sergio-Velandia/Moss-Nexus)
+[Ver en vivo](https://sergio-velandia.dev/Moss-Nexus/) · [Ver repo](https://github.com/Sergio-Velandia/Moss-Nexus)
 
 ### 🃏 YuGiOhApi
 App interactiva que consume una API externa para explorar la base de datos de cartas Yu-Gi-Oh!.
@@ -184,7 +187,7 @@ Todos los valores viven como variables en `src/App.css`:
 ## 🌍 Idiomas
 
 - El sitio carga en **español**. El botón **ES / EN** del menú cambia todo el contenido, el `lang` del documento, el título de la pestaña y la descripción.
-- La elección se guarda en el navegador y se refleja en la URL: [`?lang=en`](https://sergio-velandia.github.io/mi-portafolio/?lang=en) abre directamente la versión en inglés.
+- La elección se guarda en el navegador y se refleja en la URL: [`?lang=en`](https://sergio-velandia.dev/mi-portafolio/?lang=en) abre directamente la versión en inglés.
 - Cada componente guarda sus textos en un objeto `TEXT = { es: {...}, en: {...} }` y elige el suyo con `useLang()`:
 
 ```jsx
@@ -246,6 +249,8 @@ npm run deploy    # Publicación manual en GitHub Pages (normalmente no hace fal
 
 El despliegue es **automático**: cada push a `main` ejecuta `.github/workflows/deploy.yml`, que instala dependencias, genera el build y publica `dist/` en la rama `gh-pages`. También se puede lanzar a mano desde la pestaña **Actions** (*Run workflow*).
 
+El sitio se sirve en el **dominio propio** [sergio-velandia.dev/mi-portafolio](https://sergio-velandia.dev/mi-portafolio/). El dominio se configura en el repositorio raíz `Sergio-Velandia.github.io`, así que este repositorio **no lleva archivo `CNAME`** y conserva `base: '/mi-portafolio/'` en Vite. Las URLs antiguas de `github.io` redirigen solas al dominio nuevo.
+
 ---
 
 ## 📬 Configurar el formulario de contacto
@@ -263,7 +268,7 @@ const EMAILJS_TEMPLATE = "template_xxxxxxx"
 const EMAILJS_KEY      = "xxxxxxxxxxxxxxxxx"
 ```
 
-> ⚠️ Estas claves quedan visibles en el bundle del cliente (es normal en EmailJS). Restringe el servicio a tu dominio desde el panel de EmailJS y nunca subas credenciales de otros servicios (bases de datos, APIs privadas, etc.) directamente al código.
+> ⚠️ Estas claves quedan visibles en el bundle del cliente (es normal en EmailJS). Restringe el servicio a tu dominio (`sergio-velandia.dev`) desde el panel de EmailJS y nunca subas credenciales de otros servicios (bases de datos, APIs privadas, etc.) directamente al código.
 
 ---
 
