@@ -10,7 +10,8 @@ const EMAILJS_TEMPLATE = "template_b6fhjlt"
 const EMAILJS_KEY      = "0arvWc2vnvpI6rFgd"
 // ──────────────────────────────────────────────────────────────────
 
-const EMAIL = "sergio.velandiar.z@gmail.com"
+// Correos públicos del dominio propio (Cloudflare Email Routing): uno por idioma
+const EMAIL = { es: "contacto@sergio-velandia.dev", en: "contact@sergio-velandia.dev" }
 
 const contactItems = [
   {
@@ -18,7 +19,7 @@ const contactItems = [
     icon: <FaEnvelope aria-hidden="true" />,
     label: { es: "Correo", en: "Email" },
     display: EMAIL,
-    href: `mailto:${EMAIL}`,
+    href: { es: `mailto:${EMAIL.es}`, en: `mailto:${EMAIL.en}` },
   },
   {
     id: "github",
@@ -49,7 +50,7 @@ const TEXT = {
     send: "Enviar mensaje",
     sending: "Enviando…",
     ok: "Mensaje enviado. Te responderé pronto.",
-    error: `No se pudo enviar el mensaje. Inténtalo de nuevo o escríbeme a ${EMAIL}.`,
+    error: `No se pudo enviar el mensaje. Inténtalo de nuevo o escríbeme a ${EMAIL.es}.`,
     errName: "Escribe tu nombre.",
     errEmail: "Escribe un correo válido, por ejemplo nombre@dominio.com.",
     errMessage: "Escribe tu mensaje.",
@@ -66,12 +67,15 @@ const TEXT = {
     send: "Send message",
     sending: "Sending…",
     ok: "Message sent. I'll get back to you soon.",
-    error: `The message couldn't be sent. Try again or email me at ${EMAIL}.`,
+    error: `The message couldn't be sent. Try again or email me at ${EMAIL.en}.`,
     errName: "Enter your name.",
     errEmail: "Enter a valid email, for example name@domain.com.",
     errMessage: "Enter your message.",
   },
 }
+
+// Texto fijo o { es, en } según el idioma
+const pick = (value, lang) => (typeof value === "string" ? value : value[lang])
 
 // Valida los tres campos y devuelve { campo: claveDeError }
 function validate(form) {
@@ -143,8 +147,8 @@ export default function Contacto() {
             <div key={item.id} className="card">
               <div className="contacto-icon">{item.icon}</div>
               <h3>{item.label[lang]}</h3>
-              <a href={item.href} target="_blank" rel="noopener noreferrer" translate="no">
-                {item.display}
+              <a href={pick(item.href, lang)} target="_blank" rel="noopener noreferrer" translate="no">
+                {pick(item.display, lang)}
               </a>
             </div>
           ))}
