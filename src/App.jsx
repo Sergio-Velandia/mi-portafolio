@@ -65,13 +65,12 @@ export default function App() {
         {/* 4. EL PLATO FUERTE (Experiencia): Tu trabajo real de 6 meses. */}
         <RobloxProyecto />
         
-        {/* 5. EL PROYECTO CLAVE (Automatización/IA): Ideal para los roles que buscas mañana. */}
+        {/* 5. PROYECTOS DESTACADOS: primero Moss Nexus (el más fuerte hoy), luego Moss,
+            su proyecto hermano, y al final el flujo de n8n. */}
+        <MossNexusProject />
+        <MossProject />
         <N8nProyecto />
 
-        {/* 5b. PROYECTOS PERSONALES: Moss (segundo cerebro) y su hermano Moss Nexus (flujos de n8n). */}
-        <MossProject />
-        <MossNexusProject />
-        
         {/* 6. EL RESTO DE PROYECTOS: Tu gestor DevAsset, este mismo portafolio, etc. */}
         <Proyectos />
         
