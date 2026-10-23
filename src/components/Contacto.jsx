@@ -3,6 +3,7 @@ import emailjs from "@emailjs/browser"
 import "../App.css"
 import { FaEnvelope, FaGithub } from "react-icons/fa"
 import { useLang } from "../i18n"
+import { leerEnvios, puedeEnviar, registrarEnvio } from "../lib/envios"
 
 // ─── Credenciales públicas de EmailJS (restringir el dominio en emailjs.com) ───
 const EMAILJS_SERVICE  = "service_acbdvei"
@@ -47,6 +48,7 @@ const TEXT = {
     errName: "Escribe tu nombre.",
     errEmail: "Escribe un correo válido, por ejemplo nombre@dominio.com.",
     errMessage: "Escribe tu mensaje.",
+    limited: `Ya enviaste varios mensajes en la última hora. Espera un poco o escríbeme a ${EMAIL.es}.`,
   },
   en: {
     title: "Let's talk",
@@ -64,6 +66,7 @@ const TEXT = {
     errName: "Enter your name.",
     errEmail: "Enter a valid email, for example name@domain.com.",
     errMessage: "Enter your message.",
+    limited: `You already sent several messages in the last hour. Wait a bit or email me at ${EMAIL.en}.`,
   },
 }
 
@@ -81,7 +84,7 @@ function validate(form) {
 
 export default function Contacto() {
   const formRef = useRef()
-  const [estado, setEstado] = useState("idle") // idle | sending | ok | error
+  const [estado, setEstado] = useState("idle") // idle | sending | ok | error | limited
   const [errors, setErrors] = useState({})
   const { lang } = useLang()
   const t = TEXT[lang]
@@ -100,10 +103,23 @@ export default function Contacto() {
       return
     }
 
+    // Campo trampa: una persona no lo ve; si llega relleno es un bot. Se finge el
+    // éxito para que no reintente, pero no se envía nada ni se gasta cuota.
+    if (form.website.value) {
+      setEstado("ok")
+      return
+    }
+
+    if (!puedeEnviar(leerEnvios(), Date.now())) {
+      setEstado("limited")
+      return
+    }
+
     setEstado("sending")
     emailjs
       .sendForm(EMAILJS_SERVICE, EMAILJS_TEMPLATE, form, EMAILJS_KEY)
       .then(() => {
+        registrarEnvio(Date.now())
         setEstado("ok")
         setTimeout(() => {
           setEstado("idle")
@@ -210,11 +226,20 @@ export default function Contacto() {
               {fieldError("message")}
             </div>
 
+            {/* Campo trampa (honeypot): fuera de la vista, del teclado y de los lectores de pantalla */}
+            <div className="form-trap" aria-hidden="true">
+              <label htmlFor="website">Website</label>
+              <input id="website" name="website" type="text" tabIndex={-1} autoComplete="off" />
+            </div>
+
             <div className="form-footer">
               {/* Región anunciada por lectores de pantalla sin mover el foco */}
               <div aria-live="polite" role="status">
                 {estado === "ok" && (
                   <p className="form-feedback form-feedback--ok">{t.ok}</p>
+                )}
+                {estado === "limited" && (
+                  <p className="form-feedback form-feedback--error">{t.limited}</p>
                 )}
                 {estado === "error" && (
                   <p className="form-feedback form-feedback--error">{t.error}</p>

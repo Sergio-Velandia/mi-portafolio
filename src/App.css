@@ -1074,6 +1074,8 @@ header {
 .contacto-form-wrap { margin-top: 56px; }
 .contacto-form-label { font-size: 0.75rem; color: var(--text-muted); margin-bottom: 28px; }
 .contacto-form { display: flex; flex-direction: column; gap: 20px; }
+/* Campo trampa del formulario: existe para los bots, no para las personas */
+.form-trap { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
 .form-group { display: flex; flex-direction: column; gap: 8px; }
 .form-group label { font-size: 0.75rem; letter-spacing: 0.05em; color: var(--text-muted); }
