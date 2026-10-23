@@ -42,8 +42,8 @@
   /* Texto */
   --text-primary:   #f5f2ec;
   --text-secondary: #a8a49a;
-  --text-muted:     #6b675e;
-  --text-disabled:  #45423b;
+  --text-muted:     #857f74; /* ≥ 4,5:1 sobre todos los fondos (AA) */
+  --text-outline:   #6b675e; /* solo texto grande en contorno: ≥ 3:1 (AA) */
 
   /* Acento único — oro mate. Vive en: una palabra del hero,
      tags de tecnología, links, barras de progreso, dot de status.
@@ -313,7 +313,7 @@ header {
 .hero-title .accent-word { color: var(--accent); display: block; }
 
 .hero-title .outline-word {
-  -webkit-text-stroke: 1.5px var(--text-disabled);
+  -webkit-text-stroke: 1.5px var(--text-outline);
   color: transparent;
   display: block;
 }
@@ -397,7 +397,7 @@ header {
   transform: translateY(-50%) rotate(90deg);
   font-size: 0.66rem;
   letter-spacing: 0.2em;
-  color: var(--text-disabled);
+  color: var(--text-muted);
   white-space: nowrap;
 }
 
@@ -927,13 +927,14 @@ header {
   overflow: hidden;
   cursor: pointer;
   text-align: left;
-  opacity: 0.55;
-  transition: opacity var(--dur-fast) ease, border-color var(--dur-fast) ease;
+  transition: border-color var(--dur-fast) ease;
 }
-.moss-thumb img { width: 100%; height: auto; aspect-ratio: var(--shot-ratio, 16 / 9); object-fit: cover; object-position: top; display: block; }
+/* Se atenúa solo la imagen: la etiqueta mantiene el contraste AA */
+.moss-thumb img { width: 100%; height: auto; aspect-ratio: var(--shot-ratio, 16 / 9); object-fit: cover; object-position: top; display: block; opacity: 0.55; transition: opacity var(--dur-fast) ease; }
 .moss-thumb span { display: block; padding: 8px 10px; font-size: 0.75rem; letter-spacing: 0.04em; color: var(--text-secondary); }
-.moss-thumb:hover { opacity: 0.85; }
-.moss-thumb.is-active { opacity: 1; border-color: var(--accent); }
+.moss-thumb:hover img { opacity: 0.85; }
+.moss-thumb.is-active img { opacity: 1; }
+.moss-thumb.is-active { border-color: var(--accent); }
 .moss-thumb.is-active span { color: var(--accent); }
 
 .moss-info { display: grid; grid-template-columns: 1.1fr 1fr; gap: 48px; padding: 48px; }
@@ -1097,8 +1098,9 @@ header {
   width: 100%;
 }
 
-.form-group input::placeholder, .form-group textarea::placeholder { color: var(--text-disabled); }
-.form-group input:focus, .form-group textarea:focus { border-color: var(--accent); }
+.form-group input::placeholder, .form-group textarea::placeholder { color: var(--text-muted); }
+/* outline: none arriba anula el foco global: el anillo lo sustituye (borde + sombra = 2px) */
+.form-group input:focus, .form-group textarea:focus { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
 .form-group input:disabled, .form-group textarea:disabled { opacity: 0.5; cursor: not-allowed; }
 
 .form-footer { display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
