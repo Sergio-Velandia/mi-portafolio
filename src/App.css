@@ -171,7 +171,7 @@ body {
 /* ============================================================
    06. NAVEGACIÓN
    ============================================================ */
-nav {
+.site-nav {
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 100;
@@ -184,7 +184,7 @@ nav {
   transition: background var(--dur-base) ease, border-color var(--dur-base) ease, padding var(--dur-base) ease;
 }
 
-nav.scrolled {
+.site-nav.scrolled {
   padding: 18px 60px;
   background: rgba(10, 10, 9, 0.86);
   backdrop-filter: blur(14px);
@@ -1301,7 +1301,7 @@ header {
    20. RESPONSIVE
    ============================================================ */
 @media (max-width: 1024px) {
-  nav { padding: 18px 36px; }
+  .site-nav { padding: 18px 36px; }
   header { grid-template-columns: minmax(0, 1fr); }
   .hero-right { display: none; }
   .hero-left { padding: 120px 36px 80px; justify-content: center; }
@@ -1325,7 +1325,7 @@ header {
 }
 
 @media (max-width: 640px) {
-  nav { padding: 16px 24px; }
+  .site-nav { padding: 16px 24px; }
   .hero-left { padding: 100px 24px 64px; }
 
   .sobre-mi, .habilidades, .proyectos, .n8n, .moss, .certificaciones,
@@ -1450,8 +1450,8 @@ main, footer { position: relative; z-index: 10; }
     background: rgba(10, 10, 9, 0.97);
     border-bottom: 1px solid var(--border);
   }
-  nav.menu-open { background: rgba(10, 10, 9, 0.97); }
-  nav.menu-open .nav-links { display: flex; }
+  .site-nav.menu-open { background: rgba(10, 10, 9, 0.97); }
+  .site-nav.menu-open .nav-links { display: flex; }
   .nav-links a { display: flex; align-items: center; min-height: 48px; font-size: 1rem; }
   .nav-links a::after { display: none; }
 }

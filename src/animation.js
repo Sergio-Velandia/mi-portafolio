@@ -102,7 +102,7 @@ export function initParallax(selector, speed = 0.18) {
 }
 
 // ── 4. NAVBAR scroll effect ───────────────────────────────────
-export function initNavScroll(navSelector = "nav") {
+export function initNavScroll(navSelector = ".site-nav") {
   const nav = document.querySelector(navSelector)
   if (!nav) return
 

@@ -95,7 +95,7 @@ export default function Header() {
   return (
     <>
       {/* NAV */}
-      <nav aria-label={t.navLabel} className={menuOpen ? 'menu-open' : ''}>
+      <nav aria-label={t.navLabel} className={`site-nav${menuOpen ? ' menu-open' : ''}`}>
         <a href="#hero" className="nav-logo" translate="no">SV</a>
 
         <ul className="nav-links" id="nav-links">
