@@ -891,8 +891,10 @@ header {
 .moss-inner { max-width: 1100px; margin: 0 auto; }
 .moss-header { margin-bottom: 64px; }
 .moss-intro { margin-top: 16px; max-width: 62ch; font-size: 1rem; font-weight: 300; line-height: 1.7; color: var(--text-secondary); text-wrap: pretty; }
-/* Moss Nexus va justo después de Moss: fondo alterno para que no se lean como un solo bloque */
+/* Moss Nexus va justo antes de Moss: fondo alterno para que no se lean como un solo bloque */
 .moss--nexus { background: var(--bg-base); }
+/* Estado y versión del proyecto, junto a la etiqueta */
+.moss-status { margin-left: 6px; padding: 2px 10px; border: 1px solid var(--border-accent); border-radius: 999px; font-size: 0.75rem; color: var(--text-secondary); }
 
 .moss-card {
   background: var(--bg-card);

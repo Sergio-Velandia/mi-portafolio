@@ -10,7 +10,7 @@ import { useLang } from "../i18n"
 //   id, variant?,                      // id de la sección y modificador de estilo
 //   images: [src…], width, height,     // capturas (todas con el mismo tamaño)
 //   stack: [...], liveUrl, repoUrl,
-//   text: { es: {...}, en: {...} }     // label, title, intro?, heading, p1, p2, live,
+//   text: { es: {...}, en: {...} }     // label, status?, title, intro?, heading, p1, p2, live,
 // }                                    // github, gallery, view, capturas[], pilares[]
 export default function ProjectShowcase({ project }) {
   const [activa, setActiva] = useState(0)
@@ -27,7 +27,10 @@ export default function ProjectShowcase({ project }) {
       <div className="moss-inner">
 
         <div className="moss-header reveal">
-          <span className="section-label">{t.label}</span>
+          <span className="section-label">
+            {t.label}
+            {t.status && <span className="moss-status">{t.status}</span>}
+          </span>
           <h2 className="section-title">{t.title}</h2>
           {t.intro && <p className="moss-intro">{t.intro}</p>}
         </div>
