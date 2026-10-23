@@ -1,0 +1,71 @@
+/* ============================================================
+   legal.css — Páginas estáticas de privacidad y términos
+   ============================================================
+   Son HTML reales (responden 200 y se indexan), no rutas de la SPA.
+   Mismos colores y fuentes que App.css, sin su layout.
+   ============================================================ */
+@import "@fontsource/syne/700.css";
+@import "@fontsource/syne/800.css";
+@import "@fontsource/dm-sans/400.css";
+@import "@fontsource/dm-sans/500.css";
+
+:root {
+  --bg-base: #0a0a09;
+  --bg-card: #131311;
+  --border: rgba(240, 237, 232, 0.12);
+  --text-primary: #f5f2ec;
+  --text-secondary: #b3afa5;
+  --accent: #c9a96e;
+  --accent-soft: #e0c490;
+  --font-display: "Syne", sans-serif;
+  --font-body: "DM Sans", sans-serif;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg-base);
+  color: var(--text-secondary);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+a { color: var(--accent); text-underline-offset: 3px; }
+a:hover { color: var(--accent-soft); }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+
+.skip-link { position: absolute; left: 16px; top: -48px; padding: 8px 14px; background: var(--accent); color: var(--bg-base); border-radius: 6px; font-weight: 500; }
+.skip-link:focus { top: 16px; }
+
+.legal-header {
+  max-width: 760px; margin: 0 auto; padding: 32px 24px 0;
+  display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap;
+}
+.legal-header nav { display: flex; gap: 20px; font-size: 0.95rem; }
+
+main { max-width: 760px; margin: 0 auto; padding: 48px 24px 96px; }
+
+section + section { margin-top: 96px; padding-top: 64px; border-top: 1px solid var(--border); }
+
+.eyebrow { color: var(--accent); font-size: 0.9rem; font-weight: 500; margin: 0 0 12px; }
+
+h1, h2, h3 { font-family: var(--font-display); color: var(--text-primary); line-height: 1.2; }
+h2 { font-size: 1.35rem; font-weight: 700; margin: 48px 0 12px; }
+/* Un solo h1 por página: el título de la versión en inglés es un h2 con el mismo aspecto */
+h1, h2.h1 { font-size: clamp(2rem, 6vw, 2.8rem); font-weight: 800; margin: 0 0 8px; letter-spacing: -0.01em; }
+h3 { font-size: 1.05rem; font-weight: 700; margin: 28px 0 8px; }
+
+.updated { font-size: 0.9rem; margin: 0 0 32px; }
+.summary { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 20px 24px; color: var(--text-primary); }
+
+strong { color: var(--text-primary); font-weight: 500; }
+code { font-size: 0.92em; color: var(--text-primary); background: var(--bg-card); border: 1px solid var(--border); border-radius: 4px; padding: 1px 6px; }
+ul { padding-left: 1.25rem; }
+li + li { margin-top: 6px; }
+
+.note { font-size: 0.9rem; margin-top: 40px; }
+
+footer { max-width: 760px; margin: 0 auto; padding: 0 24px 48px; font-size: 0.9rem; }
