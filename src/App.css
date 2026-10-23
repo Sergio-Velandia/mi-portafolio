@@ -1069,17 +1069,6 @@ header {
 }
 .contacto-cards .card a:hover { color: var(--accent); }
 
-.whatsapp-display {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.flag-icon {
-  font-size: 1.15em;
-  line-height: 1;
-  display: inline-block;
-}
 
 .contacto-form-wrap { margin-top: 56px; }
 .contacto-form-label { font-size: 0.75rem; color: var(--text-muted); margin-bottom: 28px; }

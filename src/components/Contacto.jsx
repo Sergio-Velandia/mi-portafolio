@@ -1,7 +1,7 @@
 import { useRef, useState } from "react"
 import emailjs from "@emailjs/browser"
 import "../App.css"
-import { FaEnvelope, FaGithub, FaWhatsapp } from "react-icons/fa"
+import { FaEnvelope, FaGithub } from "react-icons/fa"
 import { useLang } from "../i18n"
 
 // ─── Credenciales públicas de EmailJS (restringir el dominio en emailjs.com) ───
@@ -27,13 +27,6 @@ const contactItems = [
     label: { es: "GitHub", en: "GitHub" },
     display: "github.com/Sergio-Velandia",
     href: "https://github.com/Sergio-Velandia",
-  },
-  {
-    id: "whatsapp",
-    icon: <FaWhatsapp aria-hidden="true" />,
-    label: { es: "WhatsApp", en: "WhatsApp" },
-    display: "+57 321 938 2844",
-    href: "https://wa.me/573219382844",
   },
 ]
 
