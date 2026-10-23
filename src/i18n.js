@@ -18,13 +18,13 @@ export const META = {
   es: {
     title: "Sergio Velandia — Desarrollador Web & Automatizaciones",
     description:
-      "Desarrollador web y automatizaciones — Colombia. Proyectos con React, n8n, Roblox Studio y más.",
+      "Desarrollador web y de automatizaciones en Colombia. Creador de Moss Nexus (flujos de n8n probados) y Moss (jardín digital con rutas de aprendizaje).",
     top: "Volver arriba",
   },
   en: {
     title: "Sergio Velandia — Web Developer & Automation",
     description:
-      "Web developer and automation specialist based in Colombia. Projects with React, n8n, Roblox Studio and more.",
+      "Web and automation developer based in Colombia. Creator of Moss Nexus (tested n8n workflows) and Moss (a digital garden with learning paths).",
     top: "Back to top",
   },
 }

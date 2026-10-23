@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<!-- Imagen Open Graph (public/og-image.png). Para regenerarla: npm install, abrir este
+     archivo en el navegador con la ventana a 1200×630 y hacer una captura. -->
+<style>
+  @font-face { font-family: Syne; font-weight: 800; src: url("../node_modules/@fontsource/syne/files/syne-latin-800-normal.woff2"); }
+  @font-face { font-family: Syne; font-weight: 700; src: url("../node_modules/@fontsource/syne/files/syne-latin-700-normal.woff2"); }
+  @font-face { font-family: "DM Sans"; font-weight: 300; src: url("../node_modules/@fontsource/dm-sans/files/dm-sans-latin-300-normal.woff2"); }
+  @font-face { font-family: "DM Sans"; font-weight: 500; src: url("../node_modules/@fontsource/dm-sans/files/dm-sans-latin-500-normal.woff2"); }
+  * { margin: 0; box-sizing: border-box; }
+  html, body { width: 1200px; height: 630px; }
+  body {
+    background:
+      radial-gradient(900px 500px at 100% 0%, rgba(201,169,110,0.13), transparent 60%),
+      #0a0a09;
+    color: #f5f2ec; font-family: "DM Sans", sans-serif;
+    padding: 72px 80px; display: flex; flex-direction: column; position: relative; overflow: hidden;
+  }
+  .dots { position: absolute; right: 64px; top: 64px; width: 180px; height: 120px;
+    background-image: radial-gradient(rgba(240,237,232,0.16) 1.5px, transparent 1.6px); background-size: 20px 20px; }
+  .eyebrow { display: flex; align-items: center; gap: 14px; color: #c9a96e; font-size: 24px; font-weight: 500; letter-spacing: 0.02em; }
+  .eyebrow::before { content: ""; width: 40px; height: 2px; background: #c9a96e; }
+  h1 { font-family: Syne; font-weight: 800; font-size: 104px; line-height: 0.98; letter-spacing: -0.02em; margin-top: 30px; }
+  h1 span { color: #c9a96e; display: block; }
+  .role { margin-top: 26px; font-size: 30px; font-weight: 300; color: #d9d5cc; }
+  .projects { margin-top: auto; display: flex; gap: 16px; }
+  .chip { border: 1px solid rgba(201,169,110,0.45); border-radius: 999px; padding: 12px 22px; font-size: 22px; font-weight: 500; color: #f5f2ec; background: rgba(19,19,17,0.8); }
+  .chip b { font-family: Syne; font-weight: 700; color: #c9a96e; margin-right: 8px; }
+  .url { position: absolute; right: 80px; bottom: 82px; font-size: 22px; color: #a8a49a; }
+</style>
+</head>
+<body>
+  <div class="dots"></div>
+  <p class="eyebrow">Portafolio · Bogotá, Colombia</p>
+  <h1>Sergio<span>Velandia</span></h1>
+  <p class="role">Desarrollo web full stack y automatización con n8n e IA</p>
+  <div class="projects">
+    <p class="chip"><b>Moss Nexus</b>flujos de n8n probados</p>
+    <p class="chip"><b>Moss</b>jardín digital</p>
+  </div>
+  <p class="url">sergio-velandia.dev</p>
+</body>
+</html>

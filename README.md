@@ -44,7 +44,7 @@ mi-portafolio/
 │   ├── site.webmanifest
 │   ├── sitemap.xml               # Mapa del sitio para buscadores
 │   ├── avatar.png
-│   ├── Preview.png               # Imagen para redes sociales (Open Graph)
+│   ├── og-image.png              # Imagen para redes sociales (Open Graph, 1200×630)
 │   └── *.pdf                     # Certificaciones descargables (IBM, Google, Postman, SENA...)
 ├── src/
 │   ├── assets/

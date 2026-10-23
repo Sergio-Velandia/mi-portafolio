@@ -36,3 +36,27 @@ describe("privacidad", () => {
     expect(external).toEqual([])
   })
 })
+
+describe("metadatos para compartir", () => {
+  const html = read("index.html").replace(/\s+/g, " ")
+  const meta = (attr, name) => html.match(new RegExp(`${attr}="${name}" content="([^"]+)"`))?.[1]
+
+  it("la imagen de vista previa existe y mide lo que se declara", () => {
+    const image = meta("property", "og:image")
+    expect(image).toBe(`${SITES.portfolio}og-image.png`)
+    expect(meta("name", "twitter:image")).toBe(image)
+    const png = readFileSync(new URL("../../public/og-image.png", import.meta.url))
+    expect([png.readUInt32BE(16), png.readUInt32BE(20)]).toEqual([
+      Number(meta("property", "og:image:width")),
+      Number(meta("property", "og:image:height")),
+    ])
+    expect(meta("property", "og:image:alt")).toBeTruthy()
+  })
+
+  it("la descripción de index.html es la misma que usa el sitio en español", () => {
+    expect(meta("name", "description")).toBe(META.es.description)
+    expect(meta("property", "og:description")).toBe(META.es.description)
+    expect(META.es.description).toMatch(/Moss Nexus/)
+    expect(META.en.description).toMatch(/Moss Nexus/)
+  })
+})
