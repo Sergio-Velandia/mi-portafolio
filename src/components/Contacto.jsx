@@ -136,15 +136,20 @@ export default function Contacto() {
 
         {/* Cards de contacto directo */}
         <div className="contacto-cards">
-          {contactItems.map((item) => (
-            <div key={item.id} className="card">
-              <div className="contacto-icon">{item.icon}</div>
-              <h3>{item.label[lang]}</h3>
-              <a href={pick(item.href, lang)} target="_blank" rel="noopener noreferrer" translate="no">
-                {pick(item.display, lang)}
-              </a>
-            </div>
-          ))}
+          {contactItems.map((item) => {
+            const href = pick(item.href, lang)
+            // Solo las webs abren pestaña nueva; un mailto: dejaría una pestaña vacía
+            const external = href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {}
+            return (
+              <div key={item.id} className="card">
+                <div className="contacto-icon">{item.icon}</div>
+                <h3>{item.label[lang]}</h3>
+                <a href={href} {...external} translate="no">
+                  {pick(item.display, lang)}
+                </a>
+              </div>
+            )
+          })}
         </div>
 
         {/* Formulario */}
