@@ -26,3 +26,13 @@ describe("URLs del ecosistema", () => {
     expect(read("public/sitemap.xml")).toContain(`<loc>${SITES.portfolio}</loc>`)
   })
 })
+
+describe("privacidad", () => {
+  it("index.html no carga recursos de terceros (fuentes, scripts ni estilos)", () => {
+    const html = read("index.html")
+    const external = [...html.matchAll(/<(?:link|script)[^>]+(?:href|src)="(https?:\/\/[^"]+)"/g)]
+      .map(([, url]) => url)
+      .filter((url) => !url.startsWith(DOMAIN))
+    expect(external).toEqual([])
+  })
+})
