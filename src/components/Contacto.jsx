@@ -48,6 +48,7 @@ const TEXT = {
     errName: "Escribe tu nombre.",
     errEmail: "Escribe un correo válido, por ejemplo nombre@dominio.com.",
     errMessage: "Escribe tu mensaje.",
+    consent: ["Al enviar el mensaje aceptas que use tu nombre y tu correo solo para responderte. Más detalles en la ", "política de privacidad", "."],
     limited: `Ya enviaste varios mensajes en la última hora. Espera un poco o escríbeme a ${EMAIL.es}.`,
   },
   en: {
@@ -66,6 +67,7 @@ const TEXT = {
     errName: "Enter your name.",
     errEmail: "Enter a valid email, for example name@domain.com.",
     errMessage: "Enter your message.",
+    consent: ["By sending the message you agree that I use your name and email only to reply. Details in the ", "privacy policy", "."],
     limited: `You already sent several messages in the last hour. Wait a bit or email me at ${EMAIL.en}.`,
   },
 }
@@ -231,6 +233,12 @@ export default function Contacto() {
               <label htmlFor="website">Website</label>
               <input id="website" name="website" type="text" tabIndex={-1} autoComplete="off" />
             </div>
+
+            <p className="form-consent">
+              {t.consent[0]}
+              <a href={`${import.meta.env.BASE_URL}privacidad/${lang === "en" ? "#en" : "#formulario"}`}>{t.consent[1]}</a>
+              {t.consent[2]}
+            </p>
 
             <div className="form-footer">
               {/* Región anunciada por lectores de pantalla sin mover el foco */}

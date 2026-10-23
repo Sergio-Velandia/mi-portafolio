@@ -55,3 +55,28 @@ describe("privacidad", () => {
     expect(html).toContain("mailto:contact@sergio-velandia.dev")
   })
 })
+
+describe("enlaces legales en el sitio", () => {
+  const footer = read("src/components/Footer.jsx")
+  const contacto = read("src/components/Contacto.jsx")
+
+  it("el pie enlaza a privacidad, términos y la licencia, con aviso de marcas en los dos idiomas", () => {
+    expect(footer).toContain('legalHref("privacidad", lang)')
+    expect(footer).toContain('legalHref("terminos", lang)')
+    expect(footer).toContain("/LICENSE")
+    expect(footer.match(/brands: "/g)).toHaveLength(2)
+  })
+
+  it("el formulario avisa del uso de los datos y enlaza a la privacidad antes de enviar", () => {
+    expect(contacto.match(/consent: \[/g)).toHaveLength(2)
+    expect(contacto).toMatch(/privacidad\/\$\{lang === "en" \? "#en" : "#formulario"\}/)
+  })
+})
+
+describe("estilos", () => {
+  it("el menú fijo no se aplica a cualquier <nav> (como el del pie)", () => {
+    const css = read("src/App.css")
+    expect(css).not.toMatch(/(^|\n)\s*nav\s*[{.]/)
+    expect(css).toContain(".site-nav {")
+  })
+})

@@ -1075,6 +1075,8 @@ header {
 .contacto-form-label { font-size: 0.75rem; color: var(--text-muted); margin-bottom: 28px; }
 .contacto-form { display: flex; flex-direction: column; gap: 20px; }
 /* Campo trampa del formulario: existe para los bots, no para las personas */
+.form-consent { font-size: 0.8rem; color: var(--text-secondary); line-height: 1.6; }
+.form-consent a { color: var(--accent); text-underline-offset: 3px; }
 .form-trap { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
 .form-group { display: flex; flex-direction: column; gap: 8px; }
@@ -1124,6 +1126,10 @@ header {
 
 .footer-brand { font-family: var(--font-display); font-size: 0.8rem; font-weight: 800; letter-spacing: 0.06em; color: var(--accent); }
 .footer p { font-size: 0.78rem; color: var(--text-muted); }
+.footer-info { display: grid; gap: 4px; max-width: 60ch; }
+.footer-legal { display: flex; gap: 18px; flex-wrap: wrap; justify-content: center; }
+.footer-legal a { font-size: 0.82rem; color: var(--text-secondary); text-underline-offset: 3px; }
+.footer-legal a:hover { color: var(--accent); }
 
 .btn-top {
   background: transparent;
