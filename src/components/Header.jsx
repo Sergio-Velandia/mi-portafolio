@@ -20,7 +20,7 @@ const TEXT = {
     langGroup: "Idioma",
     greeting: "Hola, bienvenido",
     eyebrow: "Portafolio 2026",
-    cv: "Descargar CV",
+    contact: "Contáctame",
     github: "Ver mi GitHub",
     rotated: "Disponible para proyectos freelance en 2026",
     locationLabel: "Ubicación",
@@ -46,7 +46,7 @@ const TEXT = {
     langGroup: "Language",
     greeting: "Hi, welcome",
     eyebrow: "Portfolio 2026",
-    cv: "Download CV",
+    contact: "Contact me",
     github: "View my GitHub",
     rotated: "Available for freelance projects in 2026",
     locationLabel: "Location",
@@ -173,8 +173,8 @@ export default function Header() {
           </p>
 
           <div className="hero-cta" data-hero-step="6">
-            <a href="CV.pdf" download className="btn-primary">
-              {t.cv}
+            <a href="#contacto" className="btn-primary">
+              {t.contact}
             </a>
             <a
               href="https://github.com/Sergio-Velandia"

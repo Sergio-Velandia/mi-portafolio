@@ -11,7 +11,7 @@
 [![Deploy](https://img.shields.io/badge/Deploy-GitHub%20Actions-222?style=flat-square&logo=githubactions&logoColor=white)](https://github.com/Sergio-Velandia/mi-portafolio/actions)
 [![License](https://img.shields.io/badge/Uso-Personal-lightgrey?style=flat-square)](#-licencia)
 
-[🌐 Ver en vivo](https://sergio-velandia.dev/mi-portafolio/) · [🇬🇧 English version](https://sergio-velandia.dev/mi-portafolio/?lang=en) · [📬 Contacto](mailto:contacto@sergio-velandia.dev) · [📄 CV](./public/CV.pdf)
+[🌐 Ver en vivo](https://sergio-velandia.dev/mi-portafolio/) · [🇬🇧 English version](https://sergio-velandia.dev/mi-portafolio/?lang=en) · [📬 Contacto](mailto:contacto@sergio-velandia.dev)
 
 </div>
 
@@ -45,7 +45,6 @@ mi-portafolio/
 │   ├── sitemap.xml               # Mapa del sitio para buscadores
 │   ├── avatar.png
 │   ├── Preview.png               # Imagen para redes sociales (Open Graph)
-│   ├── CV.pdf
 │   └── *.pdf                     # Certificaciones descargables (IBM, Google, Postman, SENA...)
 ├── src/
 │   ├── assets/
