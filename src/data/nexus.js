@@ -29,10 +29,10 @@ export const NEXUS = {
       gallery: "Capturas de Moss Nexus",
       view: "Ver captura",
       capturas: [
-        { label: "Inicio",     alt: "Inicio de Moss Nexus: buscador y lienzo con un flujo animado" },
-        { label: "Plantillas", alt: "Galería de plantillas de Moss Nexus con búsqueda, filtros y el filtro «Solo probadas»" },
-        { label: "Acerca",     alt: "Página Acerca de Moss Nexus: qué es, su relación con Moss y qué significa el sello «Probado»" },
-        { label: "Ejemplo",    alt: "Detalle de una plantilla de Moss Nexus con el mapa del flujo y el botón para copiarlo" },
+        { label: "Inicio",     alt: "Inicio de Moss Nexus: buscador y cifras del catálogo, 13 plantillas y 9 probadas en n8n" },
+        { label: "Plantillas", alt: "Galería de las 13 plantillas de Moss Nexus con búsqueda, filtros y el filtro «Solo probadas» con 9" },
+        { label: "Sello",      alt: "Sección de Acerca que explica el sello «Probado»: 9 de 13 plantillas, instancia real de n8n, datos ficticios y casos trampa" },
+        { label: "Ejemplo",    alt: "Ficha de una plantilla con el sello «Probado» y el mapa del flujo" },
       ],
       pilares: [
         { nombre: "Galería de plantillas", desc: "13 flujos con búsqueda y filtros por herramienta, categoría, dificultad y «Solo probadas»." },
@@ -54,10 +54,10 @@ export const NEXUS = {
       gallery: "Moss Nexus screenshots",
       view: "Show screenshot",
       capturas: [
-        { label: "Home",      alt: "Moss Nexus home: search bar and canvas with an animated workflow" },
-        { label: "Templates", alt: "Moss Nexus template gallery with search, filters and the “Tested only” filter" },
-        { label: "About",     alt: "Moss Nexus About page: what it is, how it relates to Moss and what the “Tested” badge means" },
-        { label: "Example",   alt: "Moss Nexus template detail with the workflow map and the copy button" },
+        { label: "Home",      alt: "Moss Nexus home: search bar and catalog figures, 13 templates and 9 tested in n8n" },
+        { label: "Templates", alt: "Gallery of the 13 Moss Nexus templates with search, filters and the “Tested only” filter showing 9" },
+        { label: "Badge",     alt: "About section explaining the “Tested” badge: 9 of 13 templates, a real n8n instance, fictional data and edge cases" },
+        { label: "Example",   alt: "Template page with the “Tested” badge and the workflow map" },
       ],
       pilares: [
         { nombre: "Template gallery",  desc: "13 workflows with search and filters by tool, category, difficulty and “Tested only”." },
