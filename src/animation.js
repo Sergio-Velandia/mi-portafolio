@@ -10,9 +10,6 @@
 //  - Nueva initHeroIntro(): la ÚNICA secuencia de entrada
 //    orquestada del sitio (eyebrow → título → desc → cta en cascada).
 //  - Nueva initScrollProgress(): barra de progreso de lectura.
-//  - Nueva initTimelineDraw(): la línea del timeline se dibuja
-//    cuando la sección entra en viewport, en vez de existir
-//    siempre completa.
 // ============================================================
 
 const prefersReducedMotion = () =>
@@ -290,30 +287,6 @@ export function initScrollProgress(selector = ".scroll-progress") {
   update()
 }
 
-// ── 11. TIMELINE DRAW — la línea se dibuja al entrar a vista ──
-export function initTimelineDraw(selector = ".timeline") {
-  const timelines = document.querySelectorAll(selector)
-  if (!timelines.length) return
-
-  if (prefersReducedMotion()) {
-    timelines.forEach((el) => el.classList.add("is-drawn"))
-    return
-  }
-
-  const observer = new IntersectionObserver(
-    (entries, obs) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return
-        entry.target.classList.add("is-drawn")
-        obs.unobserve(entry.target)
-      })
-    },
-    { threshold: 0.3 }
-  )
-
-  timelines.forEach((el) => observer.observe(el))
-}
-
 // ── 12. INIT ALL — llama esto desde main.jsx / App.jsx ────────
 export function initAllAnimations() {
   initHeroIntro()
@@ -321,7 +294,6 @@ export function initAllAnimations() {
   initScrollReveal()
   initNavScroll()
   initActiveNav()
-  initTimelineDraw()
 
   initStagger(".habilidades-grid", ".habilidad-card", 55)
   initStagger(".proyectos-grid", ".proyecto-card", 80)

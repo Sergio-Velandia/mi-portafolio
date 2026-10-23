@@ -18,7 +18,6 @@
    14. Footer
    15. Cursor personalizado
    16. Roblox — proyecto destacado
-   17. Experiencia — timeline
    18. Stats
    19. Stack actual
    20. Responsive
@@ -1225,53 +1224,6 @@ header {
 .roblox-footer { padding: 20px 48px; border-top: 1px solid var(--border); background: var(--bg-raised); }
 
 /* ============================================================
-   17. EXPERIENCIA — TIMELINE
-   ============================================================ */
-.experiencia { padding: 140px 60px; background: var(--bg-base); position: relative; }
-.experiencia-inner { max-width: 1100px; margin: 0 auto; }
-.experiencia-header { margin-bottom: 56px; }
-
-.exp-context-card {
-  display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;
-  background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg);
-  overflow: hidden; margin-bottom: 64px;
-}
-
-.exp-context-left { padding: 24px 28px; border-right: 1px solid var(--border); }
-.exp-context-left:last-child { border-right: none; }
-.exp-context-label { font-size: 0.68rem; letter-spacing: 0.1em; color: var(--text-muted); margin-bottom: 6px; }
-.exp-context-value { font-family: var(--font-display); font-size: 0.95rem; font-weight: 600; color: var(--text-primary); line-height: 1.3; }
-.exp-context-link { font-family: var(--font-display); font-size: 0.95rem; font-weight: 600; color: var(--accent); text-decoration: none; transition: color var(--dur-fast) ease; }
-.exp-context-link:hover { color: var(--accent-soft); }
-
-.timeline { display: flex; flex-direction: column; gap: 0; position: relative; padding-left: 32px; }
-
-/* La línea del timeline ahora se "dibuja" progresivamente con
-   scroll (ver animation.js initTimelineDraw), en vez de existir
-   siempre completa — coherente con que es una línea de tiempo. */
-.timeline::before {
-  content: '';
-  position: absolute;
-  left: 7px; top: 8px;
-  width: 1px;
-  height: 0%;
-  background: linear-gradient(to bottom, var(--accent), var(--border));
-  transition: height var(--dur-slow) var(--ease-out);
-}
-.timeline.is-drawn::before { height: calc(100% - 16px); }
-
-.timeline-item { display: grid; grid-template-columns: auto 1fr; gap: 28px; padding-bottom: 44px; position: relative; }
-.timeline-item:last-child { padding-bottom: 0; }
-.timeline-line { position: absolute; left: -32px; top: 6px; display: flex; align-items: flex-start; }
-.timeline-dot { width: 14px; height: 14px; border-radius: 50%; background: var(--bg-base); border: 2px solid var(--border-accent); transition: background var(--dur-base) ease, border-color var(--dur-base) ease; flex-shrink: 0; }
-.timeline-item--highlight .timeline-dot { background: var(--accent); border-color: var(--accent); }
-.timeline-content { padding-bottom: 0; }
-.timeline-fecha { display: inline-block; font-size: 0.68rem; letter-spacing: 0.08em; color: var(--accent); margin-bottom: 8px; }
-.timeline-titulo { font-family: var(--font-display); font-size: 1.05rem; font-weight: 700; color: var(--text-primary); margin-bottom: 8px; line-height: 1.3; }
-.timeline-desc { font-size: 0.9rem; font-weight: 300; color: var(--text-secondary); line-height: 1.75; max-width: 680px; }
-.timeline-item--highlight .timeline-titulo { color: var(--accent); }
-
-/* ============================================================
    18. STATS
    ============================================================ */
 .stats-section { padding: 140px 60px; background: var(--bg-raised); position: relative; }
@@ -1352,7 +1304,7 @@ header {
   .hero-greeting { top: 40px; left: 36px; }
 
   .sobre-mi, .habilidades, .proyectos, .n8n, .moss, .certificaciones,
-  .contacto, .roblox-proyecto, .experiencia, .stats-section,
+  .contacto, .roblox-proyecto, .stats-section,
   .stack-section { padding: 100px 36px; }
 
   .sobre-mi-inner { grid-template-columns: 1fr; gap: 40px; }
@@ -1366,10 +1318,6 @@ header {
   .roblox-features { border-right: none; border-bottom: 1px solid var(--border); }
   .roblox-card-top, .roblox-features, .roblox-code-col, .roblox-footer { padding: 32px 28px; }
 
-  .exp-context-card { grid-template-columns: 1fr 1fr; }
-  .exp-context-left:nth-child(2) { border-right: none; }
-  .exp-context-left:nth-child(3) { border-top: 1px solid var(--border); }
-  .exp-context-left:nth-child(4) { border-top: 1px solid var(--border); border-right: none; }
 }
 
 @media (max-width: 640px) {
@@ -1377,7 +1325,7 @@ header {
   .hero-left { padding: 100px 24px 64px; }
 
   .sobre-mi, .habilidades, .proyectos, .n8n, .moss, .certificaciones,
-  .contacto, .roblox-proyecto, .experiencia, .stats-section,
+  .contacto, .roblox-proyecto, .stats-section,
   .stack-section { padding: 80px 24px; }
 
   .sobre-mi-card { padding: 32px 24px; }
@@ -1390,9 +1338,6 @@ header {
   .hero-cta { flex-direction: column; align-items: flex-start; }
 
   .roblox-card-top, .roblox-features, .roblox-code-col, .roblox-footer { padding: 28px 20px; }
-  .exp-context-card { grid-template-columns: 1fr; }
-  .exp-context-left { border-right: none !important; border-bottom: 1px solid var(--border); }
-  .exp-context-left:last-child { border-bottom: none; }
 
   .stats-grid { grid-template-columns: 1fr 1fr; gap: 14px; }
   .stack-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
