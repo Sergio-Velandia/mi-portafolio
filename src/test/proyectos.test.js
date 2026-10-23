@@ -1,3 +1,4 @@
+import { readFileSync } from "node:fs"
 import { describe, expect, it } from "vitest"
 import { MOSS } from "../data/moss"
 import { NEXUS } from "../data/nexus"
@@ -46,5 +47,13 @@ describe("Moss", () => {
     expect(MOSS.text.es.status).toBe("Estable · v1.14.0")
     expect(MOSS.text.es.intro).toMatch(/5 rutas de aprendizaje/)
     expect(MOSS.text.es.pilares.map((p) => p.nombre)).toContain("Rutas")
+  })
+})
+
+describe("certificaciones", () => {
+  it("marcan el idioma real de cada título para los lectores de pantalla", () => {
+    const source = readFileSync(new URL("../components/Certificaciones.jsx", import.meta.url), "utf8")
+    expect(source).toContain('<h3 lang={cert.lang ?? "en"}>')
+    expect(source.match(/lang: "es"/g)).toHaveLength(3)
   })
 })

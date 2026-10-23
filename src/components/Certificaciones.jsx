@@ -60,6 +60,7 @@ const certsData = [
   },
   {
     title: "Construcción de Bases de Datos con MySQL",
+    lang: "es", // título oficial en español: se marca para los lectores de pantalla
     issuer: "SENA",
     date: "2025-12",
     file: "CONSTRUCCION_DE_BASES_DE_DATOS_CON_MYSQL.pdf",
@@ -69,6 +70,7 @@ const certsData = [
   },
   {
     title: "Análisis Exploratorio de Datos en Python",
+    lang: "es", // título oficial en español: se marca para los lectores de pantalla
     issuer: "SENA",
     date: "2025-09",
     file: "CERTIFICADO_ANALISIS_DE_DATOS_SENA.pdf",
@@ -78,6 +80,7 @@ const certsData = [
   },
   {
     title: "Aplicaciones con Interfaz Gráfica en Java",
+    lang: "es", // título oficial en español: se marca para los lectores de pantalla
     issuer: "SENA",
     date: "2025-10",
     file: "CERTIFICADO_DE_APLICACIONES_CON_INTERFAZ_GRAFICA.pdf",
@@ -119,7 +122,8 @@ export default function Certificaciones() {
     <div key={cert.file} className={`cert-card ${cert.isDestacada ? 'cert-card-destacada' : ''} stagger-hidden`}>
       <div className="cert-header">
         {ICONS_MAP[cert.iconType]}
-        <h3>{cert.title}</h3>
+        {/* El título se muestra como lo emitió la entidad, con su idioma real */}
+        <h3 lang={cert.lang ?? "en"}>{cert.title}</h3>
       </div>
 
       <div className="cert-footer">
