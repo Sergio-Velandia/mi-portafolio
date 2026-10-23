@@ -1,7 +1,8 @@
 import { describe, expect, it } from "vitest"
+import { MOSS } from "../data/moss"
 import { NEXUS } from "../data/nexus"
 
-const PROJECTS = { NEXUS }
+const PROJECTS = { MOSS, NEXUS }
 
 // Forma de un objeto: claves y longitud de los arreglos, sin los textos
 function shape(value) {
@@ -37,5 +38,13 @@ describe("Moss Nexus", () => {
     expect(NEXUS.text.es.status).toBe("Estable · v1.0.0")
     expect(NEXUS.text.es.p2.join("")).toMatch(/9 de las 13 plantillas/)
     expect(NEXUS.text.en.p2.join("")).toMatch(/9 of the 13 templates/)
+  })
+})
+
+describe("Moss", () => {
+  it("es estable y presenta sus 5 rutas de aprendizaje", () => {
+    expect(MOSS.text.es.status).toBe("Estable · v1.14.0")
+    expect(MOSS.text.es.intro).toMatch(/5 rutas de aprendizaje/)
+    expect(MOSS.text.es.pilares.map((p) => p.nombre)).toContain("Rutas")
   })
 })
