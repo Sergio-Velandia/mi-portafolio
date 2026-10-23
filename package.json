@@ -1,6 +1,6 @@
 {
   "name": "mi-portafolio",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Portafolio personal de Sergio Velandia: desarrollo web full stack y automatización con n8n e IA. React + Vite, en español e inglés.",
   "type": "module",
   "scripts": {

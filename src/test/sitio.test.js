@@ -60,3 +60,12 @@ describe("metadatos para compartir", () => {
     expect(META.en.description).toMatch(/Moss Nexus/)
   })
 })
+
+describe("versión", () => {
+  it("package.json, el CHANGELOG y el README dicen la misma versión", () => {
+    const { version } = JSON.parse(read("package.json"))
+    const changelog = read("CHANGELOG.md").match(/^## \[(\d+\.\d+\.\d+)\]/m)?.[1]
+    expect(changelog).toBe(version)
+    expect(read("README.md")).toContain(`| **${version}** |`)
+  })
+})
