@@ -9,7 +9,7 @@
 [![Idiomas](https://img.shields.io/badge/Idiomas-ES%20%7C%20EN-C9A96E?style=flat-square)](https://sergio-velandia.dev/mi-portafolio/?lang=en)
 [![EmailJS](https://img.shields.io/badge/EmailJS-integrado-C9A96E?style=flat-square)](https://www.emailjs.com/)
 [![Deploy](https://img.shields.io/badge/Deploy-GitHub%20Actions-222?style=flat-square&logo=githubactions&logoColor=white)](https://github.com/Sergio-Velandia/mi-portafolio/actions)
-[![License](https://img.shields.io/badge/Uso-Personal-lightgrey?style=flat-square)](#-licencia)
+[![Licencia](https://img.shields.io/badge/C%C3%B3digo-MIT-C9A96E?style=flat-square)](./LICENSE)
 
 [🌐 Ver en vivo](https://sergio-velandia.dev/mi-portafolio/) · [🇬🇧 English version](https://sergio-velandia.dev/mi-portafolio/?lang=en) · [📬 Contacto](mailto:contacto@sergio-velandia.dev)
 
@@ -273,7 +273,8 @@ const EMAILJS_KEY      = "xxxxxxxxxxxxxxxxx"
 
 ## 📄 Licencia
 
-Este proyecto es de uso personal. Puedes inspirarte en el código, pero no redistribuirlo como propio.
+- **Código:** licencia [MIT](./LICENSE). Puedes estudiarlo, copiarlo y reutilizarlo citando el aviso de copyright.
+- **Contenido:** todos los derechos reservados ([LICENSE-CONTENT](./LICENSE-CONTENT)). Los textos, certificados, capturas, la imagen de vista previa y la marca personal no se pueden copiar ni publicar como propios.
 
 ---
 
