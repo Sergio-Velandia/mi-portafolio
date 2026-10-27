@@ -13,3 +13,6 @@ export const SITES = {
   moss: `${DOMAIN}/Moss/`,
   mossNexus: `${DOMAIN}/Moss-Nexus/`,
 }
+
+// CV público en PDF (solo correo y dominio propios, sin teléfono), en public/
+export const CV_FILE = "CV_Sergio_Ramirez_Velandia.pdf"

@@ -3,6 +3,7 @@ import { TbMenu2, TbX } from 'react-icons/tb';
 import "../App.css"
 import { initHeroNetwork } from '../heroNetwork';
 import { useLang } from '../i18n';
+import { CV_FILE } from '../config/sites';
 
 const TEXT = {
   es: {
@@ -21,6 +22,7 @@ const TEXT = {
     greeting: "Hola, bienvenido",
     eyebrow: "Portafolio 2026",
     contact: "Contáctame",
+    cv: "Descargar CV",
     github: "Ver mi GitHub",
     rotated: "Disponible para proyectos freelance en 2026",
     locationLabel: "Ubicación",
@@ -47,6 +49,7 @@ const TEXT = {
     greeting: "Hi, welcome",
     eyebrow: "Portfolio 2026",
     contact: "Contact me",
+    cv: "Download CV (Spanish)",
     github: "View my GitHub",
     rotated: "Available for freelance projects in 2026",
     locationLabel: "Location",
@@ -175,6 +178,14 @@ export default function Header() {
           <div className="hero-cta" data-hero-step="6">
             <a href="#contacto" className="btn-primary">
               {t.contact}
+            </a>
+            <a
+              href={`${import.meta.env.BASE_URL}${CV_FILE}`}
+              download
+              type="application/pdf"
+              className="btn-ghost"
+            >
+              {t.cv}
             </a>
             <a
               href="https://github.com/Sergio-Velandia"
