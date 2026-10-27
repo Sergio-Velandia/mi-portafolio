@@ -10,7 +10,7 @@
 [![Deploy](https://img.shields.io/badge/Deploy-GitHub%20Actions-222?style=flat-square&logo=githubactions&logoColor=white)](https://github.com/Sergio-Velandia/mi-portafolio/actions)
 [![Licencia](https://img.shields.io/badge/C%C3%B3digo-MIT-C9A96E?style=flat-square)](./LICENSE)
 
-[🌐 Ver en vivo](https://sergio-velandia.dev/mi-portafolio/) · [🇬🇧 English version](https://sergio-velandia.dev/mi-portafolio/?lang=en) · [📬 Contacto](mailto:contacto@sergio-velandia.dev)
+[🌐 Ver en vivo](https://sergio-velandia.dev/mi-portafolio/) · [🇬🇧 English version](https://sergio-velandia.dev/mi-portafolio/?lang=en) · [📬 Contacto](mailto:contacto@sergio-velandia.dev) · [📄 CV](https://sergio-velandia.dev/mi-portafolio/CV_Sergio_Ramirez_Velandia.pdf)
 
 Proyectos hermanos: [Moss Nexus](https://sergio-velandia.dev/Moss-Nexus/) · [Moss](https://sergio-velandia.dev/Moss/)
 
@@ -96,6 +96,7 @@ mi-portafolio/
 ├── privacidad/index.html         # Política de privacidad (HTML estático, ES + EN)
 ├── terminos/index.html           # Términos de uso (HTML estático, ES + EN)
 ├── public/
+│   ├── CV_Sergio_Ramirez_Velandia.pdf  # CV descargable desde el hero (sin teléfono ni correo personal)
 │   ├── og-image.png              # Imagen para redes sociales (Open Graph, 1200×630)
 │   ├── sitemap.xml               # Mapa del sitio: inicio, privacidad y términos
 │   ├── site.webmanifest, favicons
@@ -137,7 +138,7 @@ npm run dev        # http://localhost:5173/mi-portafolio/
 
 | Comando | Qué hace |
 |---|---|
-| `npm test` | Pruebas con Vitest: idiomas, cifras de los proyectos, orden de secciones, datos personales, metadatos, páginas legales, contraste y tope de envíos |
+| `npm test` | Pruebas con Vitest: idiomas, cifras de los proyectos, orden de secciones, datos personales, metadatos, páginas legales, contraste, tope de envíos y el CV del hero |
 | `npm run lint` | Revisión del código con oxlint |
 | `npm run build` | Build de producción en `dist/` (inicio, privacidad y términos) |
 | `npm run preview` | Sirve el build localmente |

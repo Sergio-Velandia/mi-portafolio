@@ -5,7 +5,6 @@ Pendientes del portafolio, ordenados por prioridad. Lo hecho se registra en el [
 ## Pendiente del dueño (fuera del código)
 
 - **Verificar EmailJS.** En el panel: que `sergio-velandia.dev` esté en los dominios permitidos y que la plantilla del portafolio tenga como *To Email* `contacto@sergio-velandia.dev` (puede ser una plantilla antigua, distinta de la de Moss Nexus). Después, enviar un mensaje de prueba desde el sitio en vivo en español y en inglés.
-- **CV nuevo.** Se retiró el anterior porque mostraba el correo personal y el teléfono. Cuando se rehaga: solo `contacto@sergio-velandia.dev` y el dominio, sin teléfono; volver a enlazarlo desde el hero.
 
 ## Prioridad media
 
