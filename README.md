@@ -39,7 +39,7 @@ Incluye, entre otras cosas:
 
 | Versión | Estado | Última revisión |
 |---|---|---|
-| **1.1.0** | En mantenimiento | 23 de octubre de 2026 |
+| **1.1.1** | En mantenimiento | 26 de octubre de 2026 |
 
 Los cambios de cada versión están en el [CHANGELOG](./CHANGELOG.md) y los pendientes, en el [ROADMAP](./ROADMAP.md).
 

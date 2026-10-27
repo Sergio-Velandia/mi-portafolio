@@ -6,6 +6,12 @@ El formato sigue [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y e
 
 ## [Sin publicar]
 
+## [1.1.1] - 2026-10-26
+
+### Añadido
+- Botón **«Descargar CV»** en el hero, entre «Contáctame» y «Ver mi GitHub» (en inglés, «Download CV (Spanish)», porque el CV está en español). El CV nuevo solo muestra `contacto@sergio-velandia.dev` y el dominio, sin teléfono ni correo personal.
+- Prueba que comprueba que el botón apunta a un PDF que existe y que sus metadatos no traen correos ajenos al dominio ni teléfonos.
+
 ## [1.1.0] - 2026-10-23
 
 **Cierre de ciclo** tras Moss estable y Moss Nexus v1.0.0: proyectos al día, datos personales fuera del sitio, fase legal, accesibilidad AA y pruebas.
@@ -60,6 +66,7 @@ El formato sigue [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y e
 
 > Las versiones anteriores a 1.0.1 no se registraron en este archivo; su detalle está en el historial de commits del repositorio.
 
-[Sin publicar]: https://github.com/Sergio-Velandia/mi-portafolio/compare/v1.1.0...HEAD
+[Sin publicar]: https://github.com/Sergio-Velandia/mi-portafolio/compare/v1.1.1...HEAD
+[1.1.1]: https://github.com/Sergio-Velandia/mi-portafolio/compare/v1.1.0...v1.1.1
 [1.1.0]: https://github.com/Sergio-Velandia/mi-portafolio/compare/v1.0.1...v1.1.0
 [1.0.1]: https://github.com/Sergio-Velandia/mi-portafolio/releases/tag/v1.0.1
