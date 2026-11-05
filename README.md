@@ -12,7 +12,7 @@
 
 [🌐 Ver en vivo](https://sergio-velandia.dev/mi-portafolio/) · [🇬🇧 English version](https://sergio-velandia.dev/mi-portafolio/?lang=en) · [📬 Contacto](mailto:contacto@sergio-velandia.dev) · [📄 CV](https://sergio-velandia.dev/mi-portafolio/CV_Sergio_Ramirez_Velandia.pdf)
 
-Proyectos hermanos: [Moss Nexus](https://sergio-velandia.dev/Moss-Nexus/) · [Moss](https://sergio-velandia.dev/Moss/)
+Proyectos: [Moss Nexus](https://sergio-velandia.dev/Moss-Nexus/) · [Moss](https://sergio-velandia.dev/Moss/) · [Moss Taste](https://sergio-velandia.dev/Moss-Taste/)
 
 ![Vista previa del portafolio](./public/og-image.png)
 
@@ -26,7 +26,7 @@ Portafolio personal construido desde cero con **React + Vite**, pensado como una
 
 Incluye, entre otras cosas:
 - **Bilingüe (español / inglés).** Español por defecto, botón **ES / EN** en el menú, idioma recordado en el navegador y enlace directo en inglés con `?lang=en`.
-- **Proyectos al día.** Moss Nexus (v1.0.0 estable, 13 plantillas de n8n y 9 probadas en una instancia real) y Moss (v1.14.0 estable, con 5 rutas de aprendizaje), cada uno con su estado, versión y capturas del sitio en vivo.
+- **Proyectos al día.** Moss Nexus (v1.0.0 estable, 13 plantillas de n8n y 9 probadas en una instancia real) , Moss (v1.14.0 estable, con 5 rutas de aprendizaje) y Moss Taste (v1.1.0 estable, el recetario de la familia), cada uno con su estado, versión y capturas del sitio en vivo.
 - **Flujo de n8n animado.** Recreación del flujo real que "se ejecuta" al llegar a la sección; la captura real queda debajo como prueba.
 - **Formulario de contacto sin backend** vía EmailJS, con validación junto a cada campo, mensajes de estado accesibles, campo trampa para bots y un tope de 3 envíos por hora.
 - **Privacidad y términos** como páginas HTML reales (bilingües), enlazadas desde el pie.
@@ -55,10 +55,11 @@ El orden de las secciones en `App.jsx` está pensado como un argumento, no como 
 4. **Experiencia profesional (Roblox)**: trabajo real pagado, un videojuego multijugador de 12 niveles.
 5. **Moss Nexus**: el proyecto más fuerte hoy, una librería de flujos de n8n probados.
 6. **Moss**: su proyecto hermano, mi "segundo cerebro" técnico con rutas de aprendizaje.
-7. **Flujo con n8n**: automatización de datos, con el flujo animado y la captura real.
-8. **Otros proyectos**: YuGiOhApi, DigimonAPI + Firebase y este mismo portafolio.
-9. **Stats** y **Stack actual**: números y lo que estoy aprendiendo ahora mismo.
-10. **Contacto**: formulario directo, sin backend propio.
+7. **Moss Taste**: el recetario de la familia, con cantidades y costo para las porciones que vayas a servir.
+8. **Flujo con n8n**: automatización de datos, con el flujo animado y la captura real.
+9. **Otros proyectos**: YuGiOhApi, DigimonAPI + Firebase y este mismo portafolio.
+10. **Stats** y **Stack actual**: números y lo que estoy aprendiendo ahora mismo.
+11. **Contacto**: formulario directo, sin backend propio.
 
 Una prueba (`src/test/orden.test.js`) mantiene este orden de los proyectos destacados.
 
@@ -76,6 +77,10 @@ Desarrollo completo de una experiencia de **12 niveles** jugables en Roblox Stud
 ### 🌱 Moss: jardín digital · v1.14.0 estable
 Mi "segundo cerebro" técnico. Lo que lo separa de un blog son sus **5 rutas de aprendizaje**, que recorren un tema de principio a fin, junto a sus secciones Laboratorio, Manual, Bitácora, Proyectos y Herbario, **sin base de datos ni backend**.
 [Ver en vivo](https://sergio-velandia.dev/Moss/) · [Ver repo](https://github.com/Sergio-Velandia/Moss)
+
+### 🍲 Moss Taste: el recetario de la familia · v1.1.0 estable
+Las recetas de la casa, con las cantidades y el costo en pesos colombianos para las porciones que vayas a servir, y un modo cocina para las manos ocupadas. Lista de compras y cuentas privadas con Firebase. **6 recetas, 390 pruebas de la aplicación y 63 de las reglas de Firestore.** Las ilustraciones de los platos son generadas con IA y se etiquetan así.
+[Ver en vivo](https://sergio-velandia.dev/Moss-Taste/) · [Ver repo](https://github.com/Sergio-Velandia/Moss-Taste)
 
 ### ⚙️ Automatización de procesamiento de datos (n8n)
 Flujo que reemplaza la carga manual de datos: recibe archivos CSV desde un webhook, valida y filtra la información, la convierte a XLSX y la sube a Google Drive.
@@ -104,13 +109,14 @@ mi-portafolio/
 ├── scripts/
 │   └── og-card.html              # Fuente de og-image.png (abrir a 1200×630 y capturar)
 ├── src/
-│   ├── assets/                   # Capturas en WebP: flujo de n8n, Moss y Moss Nexus
+│   ├── assets/                   # Capturas en WebP: flujo de n8n, Moss, Moss Nexus y Moss Taste
 │   ├── components/               # Una sección por archivo (Header, Certificaciones, RobloxProyecto,
 │   │                             #   ProjectShowcase, Proyectos, Stats, Contacto, Footer…)
 │   ├── data/
 │   │   ├── nexus.js              # Textos, cifras y capturas de Moss Nexus (ES + EN)
-│   │   └── moss.js               # Textos, cifras y capturas de Moss (ES + EN)
-│   ├── config/sites.js           # URLs del portafolio, Moss y Moss Nexus (un solo lugar)
+│   │   ├── moss.js               # Textos, cifras y capturas de Moss (ES + EN)
+│   │   └── taste.js              # Textos, cifras y capturas de Moss Taste (ES + EN)
+│   ├── config/sites.js           # URLs del portafolio, Moss, Moss Nexus y Moss Taste (un solo lugar)
 │   ├── lib/envios.js             # Tope de envíos del formulario (lógica pura, con pruebas)
 │   ├── test/                     # Pruebas con Vitest
 │   ├── i18n.js / LanguageProvider.jsx  # Idioma: contexto, URL, <html lang>, título y descripción
