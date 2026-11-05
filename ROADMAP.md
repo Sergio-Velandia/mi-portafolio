@@ -6,8 +6,12 @@ Pendientes del portafolio, ordenados por prioridad. Lo hecho se registra en el [
 
 - **Verificar EmailJS.** En el panel: que `sergio-velandia.dev` esté en los dominios permitidos y que la plantilla del portafolio tenga como *To Email* `contacto@sergio-velandia.dev` (puede ser una plantilla antigua, distinta de la de Moss Nexus). Después, enviar un mensaje de prueba desde el sitio en vivo en español y en inglés.
 
+- **Probar la pantalla de entrada en un teléfono real.** Se verificó en Chrome con tamaños de teléfono, no en un dispositivo.
+- **Actualizar el CV.** No menciona Moss Taste.
+
 ## Prioridad media
 
+- **Hallazgos de axe anteriores a la pantalla de entrada.** Los íconos flotantes (`svg-img-alt`, 5 nodos) y los bloques de código en móvil (`scrollable-region-focusable`, 2 nodos).
 - **Página 404 propia** para `/mi-portafolio/*`. Hoy se ve la 404 genérica de GitHub; una propia, con enlace al inicio, en los dos idiomas.
 - **Hero en pantallas bajas.** Con unos 630 px de alto, «Hola, bienvenido» se monta sobre «Portafolio 2026». No pasa a 900 px; revisar el posicionamiento del saludo.
 - **Botón flotante «volver arriba»** se superpone al botón «Arriba» del pie al final de la página. Dejar uno solo.

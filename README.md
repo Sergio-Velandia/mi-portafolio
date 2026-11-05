@@ -27,6 +27,7 @@ Portafolio personal construido desde cero con **React + Vite**, pensado como una
 Incluye, entre otras cosas:
 - **Bilingüe (español / inglés).** Español por defecto, botón **ES / EN** en el menú, idioma recordado en el navegador y enlace directo en inglés con `?lang=en`.
 - **Proyectos al día.** Moss Nexus (v1.0.0 estable, 13 plantillas de n8n y 9 probadas en una instancia real) , Moss (v1.14.0 estable, con 5 rutas de aprendizaje) y Moss Taste (v1.1.0 estable, el recetario de la familia), cada uno con su estado, versión y capturas del sitio en vivo.
+- **Pantalla de entrada.** Una firma de 1,8 s con el nombre, solo al llegar de afuera: se salta con un toque o una tecla, no aparece al recargar ni con movimiento reducido y no guarda nada en el navegador. Vive en `index.html`, sin React.
 - **Flujo de n8n animado.** Recreación del flujo real que "se ejecuta" al llegar a la sección; la captura real queda debajo como prueba.
 - **Formulario de contacto sin backend** vía EmailJS, con validación junto a cada campo, mensajes de estado accesibles, campo trampa para bots y un tope de 3 envíos por hora.
 - **Privacidad y términos** como páginas HTML reales (bilingües), enlazadas desde el pie.
@@ -112,6 +113,7 @@ mi-portafolio/
 │   ├── assets/                   # Capturas en WebP: flujo de n8n, Moss, Moss Nexus y Moss Taste
 │   ├── components/               # Una sección por archivo (Header, Certificaciones, RobloxProyecto,
 │   │                             #   ProjectShowcase, Proyectos, Stats, Contacto, Footer…)
+│   ├── entrada.css               # Pantalla de entrada (la crea el script en línea de index.html)
 │   ├── data/
 │   │   ├── nexus.js              # Textos, cifras y capturas de Moss Nexus (ES + EN)
 │   │   ├── moss.js               # Textos, cifras y capturas de Moss (ES + EN)
@@ -144,7 +146,7 @@ npm run dev        # http://localhost:5173/mi-portafolio/
 
 | Comando | Qué hace |
 |---|---|
-| `npm test` | Pruebas con Vitest: idiomas, cifras de los proyectos, orden de secciones, datos personales, metadatos, páginas legales, contraste, tope de envíos y el CV del hero |
+| `npm test` | Pruebas con Vitest: idiomas, cifras de los proyectos, orden de secciones, datos personales, metadatos, páginas legales, contraste, tope de envíos, el CV del hero y la pantalla de entrada |
 | `npm run lint` | Revisión del código con oxlint |
 | `npm run build` | Build de producción en `dist/` (inicio, privacidad y términos) |
 | `npm run preview` | Sirve el build localmente |
