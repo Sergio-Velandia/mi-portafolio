@@ -6,6 +6,11 @@ El formato sigue [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y e
 
 ## [Sin publicar]
 
+## [1.2.2] - 2026-11-05
+
+### Cambiado
+- README más corto: queda qué es, cómo correrlo y las reglas que no se ven en el código. Lo demás vive en el sitio, el CHANGELOG, el ROADMAP o el propio código.
+
 ## [1.2.1] - 2026-11-04
 
 ### Cambiado
@@ -84,7 +89,8 @@ El formato sigue [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y e
 
 > Las versiones anteriores a 1.0.1 no se registraron en este archivo; su detalle está en el historial de commits del repositorio.
 
-[Sin publicar]: https://github.com/Sergio-Velandia/mi-portafolio/compare/v1.2.1...HEAD
+[Sin publicar]: https://github.com/Sergio-Velandia/mi-portafolio/compare/v1.2.2...HEAD
+[1.2.2]: https://github.com/Sergio-Velandia/mi-portafolio/compare/v1.2.1...v1.2.2
 [1.2.1]: https://github.com/Sergio-Velandia/mi-portafolio/compare/v1.2.0...v1.2.1
 [1.2.0]: https://github.com/Sergio-Velandia/mi-portafolio/compare/v1.1.1...v1.2.0
 [1.1.1]: https://github.com/Sergio-Velandia/mi-portafolio/compare/v1.1.0...v1.1.1
