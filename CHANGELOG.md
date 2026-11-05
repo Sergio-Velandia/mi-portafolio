@@ -6,6 +6,11 @@ El formato sigue [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y e
 
 ## [Sin publicar]
 
+## [1.2.1] - 2026-11-04
+
+### Cambiado
+- Firebase reemplaza a Supabase en las secciones de habilidades y stack de trabajo.
+
 ## [1.2.0] - 2026-11-04
 
 ### Añadido
@@ -79,7 +84,8 @@ El formato sigue [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y e
 
 > Las versiones anteriores a 1.0.1 no se registraron en este archivo; su detalle está en el historial de commits del repositorio.
 
-[Sin publicar]: https://github.com/Sergio-Velandia/mi-portafolio/compare/v1.2.0...HEAD
+[Sin publicar]: https://github.com/Sergio-Velandia/mi-portafolio/compare/v1.2.1...HEAD
+[1.2.1]: https://github.com/Sergio-Velandia/mi-portafolio/compare/v1.2.0...v1.2.1
 [1.2.0]: https://github.com/Sergio-Velandia/mi-portafolio/compare/v1.1.1...v1.2.0
 [1.1.1]: https://github.com/Sergio-Velandia/mi-portafolio/compare/v1.1.0...v1.1.1
 [1.1.0]: https://github.com/Sergio-Velandia/mi-portafolio/compare/v1.0.1...v1.1.0

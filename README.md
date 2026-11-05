@@ -40,7 +40,7 @@ Incluye, entre otras cosas:
 
 | Versión | Estado | Última revisión |
 |---|---|---|
-| **1.2.0** | En mantenimiento | 4 de noviembre de 2026 |
+| **1.2.1** | En mantenimiento | 4 de noviembre de 2026 |
 
 Los cambios de cada versión están en el [CHANGELOG](./CHANGELOG.md) y los pendientes, en el [ROADMAP](./ROADMAP.md).
 
