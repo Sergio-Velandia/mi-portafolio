@@ -22,8 +22,8 @@ Las cifras y versiones de cada uno están en el sitio y en su propio repositorio
 - **[Moss Nexus](https://sergio-velandia.dev/Moss-Nexus/):** librería de flujos de n8n listos para copiar. [Repo](https://github.com/Sergio-Velandia/Moss-Nexus)
 - **[Moss](https://sergio-velandia.dev/Moss/):** mi jardín digital, con rutas de aprendizaje. [Repo](https://github.com/Sergio-Velandia/Moss)
 - **[Moss Taste](https://sergio-velandia.dev/Moss-Taste/):** el recetario de la familia, con cantidades y costo por porciones. [Repo](https://github.com/Sergio-Velandia/Moss-Taste)
-- **Automatización de datos con n8n:** de CSV a XLSX en Google Drive. [Repo](https://github.com/Sergio-Velandia/Test-N8N)
-- **Otros:** [YuGiOhApi](https://github.com/Sergio-Velandia/YuGiOhApi) y [DigimonAPI + Firebase](https://github.com/Sergio-Velandia/DigimonAPI-Firebase).
+- **Automatización de datos con n8n:** de CSV a XLSX en Google Drive.
+- **Otros:** YuGiOhApi y DigimonAPI + Firebase.
 
 ## 🛠 Desarrollo
 
