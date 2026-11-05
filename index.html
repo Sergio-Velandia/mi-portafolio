@@ -43,10 +43,51 @@
     <link rel="apple-touch-icon" href="/mi-portafolio/apple-touch-icon.png" sizes="180x180" />
     <link rel="manifest"         href="/mi-portafolio/site.webmanifest" />
 
-    <script type="module" crossorigin src="/mi-portafolio/assets/main-CQ5-7V0S.js"></script>
-    <link rel="stylesheet" crossorigin href="/mi-portafolio/assets/main-Bh64DiEA.css">
+    <!-- ── Fuente del nombre: precargada para que no salte durante la entrada ── -->
+    <link rel="preload" href="/mi-portafolio/assets/syne-latin-800-normal-EehdNYzx.woff2" as="font" type="font/woff2" crossorigin />
+
+    <script type="module" crossorigin src="/mi-portafolio/assets/main-BpBe6DDL.js"></script>
+    <link rel="stylesheet" crossorigin href="/mi-portafolio/assets/main-UVtVGVZZ.css">
   </head>
   <body>
+    <!-- Pantalla de entrada: estilos en src/entrada.css y reglas en src/test/entrada.test.js -->
+    <template id="plantilla-entrada">
+      <div class="entrada" aria-hidden="true">
+        <div class="entrada-firma">
+          <div class="entrada-nombre" translate="no">
+            <span class="entrada-palabra">Sergio</span>
+            <span class="entrada-palabra">Velandia</span>
+          </div>
+          <span class="entrada-linea"></span>
+        </div>
+      </div>
+    </template>
+    <script>
+      // Solo al llegar de afuera y sin guardar nada: ni al recargar, ni al volver, ni con movimiento reducido.
+      (function () {
+        try {
+          var nav = performance.getEntriesByType("navigation")[0];
+          if (nav && nav.type !== "navigate") return;
+          if (document.referrer.indexOf(location.origin + "/mi-portafolio/") === 0) return;
+          if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+          var entrada = document.getElementById("plantilla-entrada").content.firstElementChild.cloneNode(true);
+          var quitar = function () {
+            entrada.remove();
+            removeEventListener("pointerdown", quitar);
+            removeEventListener("keydown", quitar);
+          };
+          entrada.addEventListener("animationend", function (e) {
+            if (e.target === entrada) quitar();
+          });
+          addEventListener("pointerdown", quitar);
+          addEventListener("keydown", quitar);
+          setTimeout(quitar, 2400);
+          document.documentElement.classList.add("con-entrada");
+          document.body.prepend(entrada);
+        } catch (e) {}
+      })();
+    </script>
     <div id="root"></div>
   </body>
 </html>
