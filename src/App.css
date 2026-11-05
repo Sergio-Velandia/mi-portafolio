@@ -24,6 +24,7 @@
    ============================================================ */
 
 /* === IMPORTS === */
+@import "./entrada.css";
 
 /* ============================================================
    01. VARIABLES
@@ -54,6 +55,12 @@
 
   --status-live:  #3ad389;
   --status-error: #e0685f;
+
+  /* Pantalla de entrada */
+  --c-entrada-fondo:  #0a0a09;
+  --c-entrada-brillo: rgb(201 169 110 / 0.09);
+  --c-entrada-texto:  #f5f2ec;
+  --c-entrada-dorado: #c9a96e;
 
   --font-display: "Syne", sans-serif;
   --font-body:    "DM Sans", sans-serif;

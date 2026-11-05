@@ -26,6 +26,10 @@ describe("contraste AA", () => {
     expect(contrast(token("text-outline"), token("bg-base"))).toBeGreaterThanOrEqual(3)
   })
 
+  it.each(["c-entrada-texto", "c-entrada-dorado"])("--%s alcanza 4,5:1 sobre el fondo de la entrada", (name) => {
+    expect(contrast(token(name), token("c-entrada-fondo"))).toBeGreaterThanOrEqual(4.5)
+  })
+
   it("no queda ningún color por debajo de AA usado como texto", () => {
     expect(css).not.toContain("--text-disabled")
   })

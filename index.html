@@ -43,8 +43,49 @@
     <link rel="apple-touch-icon" href="%BASE_URL%apple-touch-icon.png" sizes="180x180" />
     <link rel="manifest"         href="%BASE_URL%site.webmanifest" />
 
+    <!-- ── Fuente del nombre: precargada para que no salte durante la entrada ── -->
+    <link rel="preload" href="/node_modules/@fontsource/syne/files/syne-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin />
+
   </head>
   <body>
+    <!-- Pantalla de entrada: estilos en src/entrada.css y reglas en src/test/entrada.test.js -->
+    <template id="plantilla-entrada">
+      <div class="entrada" aria-hidden="true">
+        <div class="entrada-firma">
+          <div class="entrada-nombre" translate="no">
+            <span class="entrada-palabra">Sergio</span>
+            <span class="entrada-palabra">Velandia</span>
+          </div>
+          <span class="entrada-linea"></span>
+        </div>
+      </div>
+    </template>
+    <script>
+      // Solo al llegar de afuera y sin guardar nada: ni al recargar, ni al volver, ni con movimiento reducido.
+      (function () {
+        try {
+          var nav = performance.getEntriesByType("navigation")[0];
+          if (nav && nav.type !== "navigate") return;
+          if (document.referrer.indexOf(location.origin + "%BASE_URL%") === 0) return;
+          if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+          var entrada = document.getElementById("plantilla-entrada").content.firstElementChild.cloneNode(true);
+          var quitar = function () {
+            entrada.remove();
+            removeEventListener("pointerdown", quitar);
+            removeEventListener("keydown", quitar);
+          };
+          entrada.addEventListener("animationend", function (e) {
+            if (e.target === entrada) quitar();
+          });
+          addEventListener("pointerdown", quitar);
+          addEventListener("keydown", quitar);
+          setTimeout(quitar, 2400);
+          document.documentElement.classList.add("con-entrada");
+          document.body.prepend(entrada);
+        } catch (e) {}
+      })();
+    </script>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

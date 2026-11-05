@@ -247,7 +247,9 @@ export function initHeroIntro(baseDelay = 120, step = 140) {
   const steps = document.querySelectorAll("[data-hero-step]")
   if (!steps.length) return
 
-  if (prefersReducedMotion()) {
+  // Si la pantalla de entrada está activa, el hero ya debe estar armado cuando
+  // ella se desvanezca: su animación correría oculta y repetiría el mismo gesto.
+  if (prefersReducedMotion() || document.querySelector(".entrada")) {
     steps.forEach((el) => el.classList.add("is-in"))
     return
   }

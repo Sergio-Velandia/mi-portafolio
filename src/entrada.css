@@ -1,0 +1,118 @@
+/*
+ * Pantalla de entrada: una firma. La línea dorada se dibuja y el nombre sube
+ * detrás de ella, como si se firmara sobre la raya.
+ * La crea el script en línea de index.html. Dura 1,8 s (nunca más de 3: lo
+ * verifica entrada.test.js) y solo anima transform y opacity. El contenido se
+ * va antes que el fondo, para que el nombre no quede flotando sobre la página.
+ */
+.entrada {
+  --entrada-duracion: 1800ms;
+  position: fixed;
+  inset: 0;
+  z-index: 5000; /* sobre la barra de progreso (1000); el cursor propio queda encima */
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background:
+    radial-gradient(55% 45% at 50% 50%, var(--c-entrada-brillo), transparent),
+    var(--c-entrada-fondo);
+  animation: entrada-salida var(--entrada-duracion) linear both;
+  user-select: none;
+}
+
+/* El fundido del body también afectaría a la capa. La clase no se quita al
+   terminar: si se quitara, el fundido del body se dispararía en ese momento. */
+.con-entrada body {
+  animation: none;
+}
+
+.entrada-firma {
+  display: grid;
+  gap: 0.75rem;
+  padding: 1rem;
+  animation: entrada-firma var(--entrada-duracion) linear both;
+}
+
+/* La máscara termina justo en la línea: el nombre sale de detrás de ella. */
+.entrada-nombre {
+  display: grid;
+  overflow: hidden;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 12vw, 6.5rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  white-space: nowrap;
+  color: var(--c-entrada-texto);
+}
+
+.entrada-palabra {
+  display: block;
+  padding-bottom: 0.1em;
+  animation: entrada-palabra var(--entrada-duracion) linear both;
+}
+
+.entrada-palabra + .entrada-palabra {
+  color: var(--c-entrada-dorado);
+  animation-delay: 90ms;
+  animation-duration: 1710ms;
+}
+
+.entrada-linea {
+  display: block;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--c-entrada-dorado);
+  transform-origin: left;
+  animation: entrada-linea var(--entrada-duracion) linear both;
+}
+
+@keyframes entrada-salida {
+  0%,
+  76% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes entrada-firma {
+  0%,
+  62% {
+    opacity: 1;
+  }
+  78%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes entrada-palabra {
+  0%,
+  11% {
+    transform: translateY(210%);
+    animation-timing-function: var(--ease-out);
+  }
+  47%,
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes entrada-linea {
+  0% {
+    transform: scaleX(0);
+    animation-timing-function: var(--ease-out);
+  }
+  30%,
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+@media print {
+  .entrada {
+    display: none;
+  }
+}
