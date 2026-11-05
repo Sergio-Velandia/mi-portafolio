@@ -302,7 +302,7 @@ header {
 
 .hero-title {
   font-family: var(--font-display);
-  font-size: clamp(3.2rem, 7vw, 6.5rem); 
+  font-size: clamp(2.25rem, max(7vw, min(12vw, 3.2rem)), 6.5rem); /* en móvil, «Velandia» debe caber */
   font-weight: 800;
   line-height: 0.86;
   letter-spacing: -0.03em;

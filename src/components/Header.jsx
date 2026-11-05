@@ -166,7 +166,7 @@ export default function Header() {
           {/* Cada línea sube desde detrás de una máscara (initHeroIntro) */}
           <h1 className="hero-title" translate="no">
             <span className="line"><span data-hero-step="2">Sergio</span></span>
-            <span className="line accent-word"><span data-hero-step="3">Ramirez</span></span>
+            <span className="line accent-word"><span data-hero-step="3">Velandia</span></span>
             <span className="line outline-word"><span data-hero-step="4">Dev</span></span>
           </h1>
 
