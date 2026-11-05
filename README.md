@@ -1,40 +1,10 @@
-<div align="center">
-
 # ✦ Sergio Velandia — Portafolio Personal
 
-**Desarrollador Web Full Stack · Automatización con n8n & IA — Colombia 🇨🇴**
+Mi carta de presentación como desarrollador: quién soy, qué he construido y cómo contactarme, en español e inglés.
 
-[![React](https://img.shields.io/badge/React-19-61DAFB?style=flat-square&logo=react&logoColor=black)](https://react.dev/)
-[![Vite](https://img.shields.io/badge/Vite-7-646CFF?style=flat-square&logo=vite&logoColor=white)](https://vitejs.dev/)
-[![Idiomas](https://img.shields.io/badge/Idiomas-ES%20%7C%20EN-C9A96E?style=flat-square)](https://sergio-velandia.dev/mi-portafolio/?lang=en)
-[![Deploy](https://img.shields.io/badge/Deploy-GitHub%20Actions-222?style=flat-square&logo=githubactions&logoColor=white)](https://github.com/Sergio-Velandia/mi-portafolio/actions)
-[![Licencia](https://img.shields.io/badge/C%C3%B3digo-MIT-C9A96E?style=flat-square)](./LICENSE)
-
-[🌐 Ver en vivo](https://sergio-velandia.dev/mi-portafolio/) · [🇬🇧 English version](https://sergio-velandia.dev/mi-portafolio/?lang=en) · [📬 Contacto](mailto:contacto@sergio-velandia.dev) · [📄 CV](https://sergio-velandia.dev/mi-portafolio/CV_Sergio_Ramirez_Velandia.pdf)
-
-Proyectos: [Moss Nexus](https://sergio-velandia.dev/Moss-Nexus/) · [Moss](https://sergio-velandia.dev/Moss/) · [Moss Taste](https://sergio-velandia.dev/Moss-Taste/)
+[🌐 Ver en vivo](https://sergio-velandia.dev/mi-portafolio/) · [🇬🇧 English version](https://sergio-velandia.dev/mi-portafolio/?lang=en) · [📄 CV](https://sergio-velandia.dev/mi-portafolio/CV_Sergio_Ramirez_Velandia.pdf) · [📬 Contacto](mailto:contacto@sergio-velandia.dev)
 
 ![Vista previa del portafolio](./public/og-image.png)
-
-</div>
-
----
-
-## ✨ Sobre el proyecto
-
-Portafolio personal construido desde cero con **React + Vite**, pensado como una sola página fluida que cuenta una historia: quién soy, qué sé hacer y la prueba de que ya lo hice. Sin plantillas genéricas: cada sección, animación y color se decidió a propósito.
-
-Incluye, entre otras cosas:
-- **Bilingüe (español / inglés).** Español por defecto, botón **ES / EN** en el menú, idioma recordado en el navegador y enlace directo en inglés con `?lang=en`.
-- **Proyectos al día.** Moss Nexus (v1.0.0 estable, 13 plantillas de n8n y 9 probadas en una instancia real) , Moss (v1.14.0 estable, con 5 rutas de aprendizaje) y Moss Taste (v1.1.0 estable, el recetario de la familia), cada uno con su estado, versión y capturas del sitio en vivo.
-- **Pantalla de entrada.** Una firma de 1,8 s con el nombre, solo al llegar de afuera: se salta con un toque o una tecla, no aparece al recargar ni con movimiento reducido y no guarda nada en el navegador. Vive en `index.html`, sin React.
-- **Flujo de n8n animado.** Recreación del flujo real que "se ejecuta" al llegar a la sección; la captura real queda debajo como prueba.
-- **Formulario de contacto sin backend** vía EmailJS, con validación junto a cada campo, mensajes de estado accesibles, campo trampa para bots y un tope de 3 envíos por hora.
-- **Privacidad y términos** como páginas HTML reales (bilingües), enlazadas desde el pie.
-- **Sin recursos de terceros al cargar:** las fuentes se sirven desde el propio sitio.
-- **Accesibilidad AA** verificada: contraste de todos los textos, foco visible y navegación con teclado.
-
----
 
 ## 📌 Estado
 
@@ -44,98 +14,20 @@ Incluye, entre otras cosas:
 
 Los cambios de cada versión están en el [CHANGELOG](./CHANGELOG.md) y los pendientes, en el [ROADMAP](./ROADMAP.md).
 
----
+## 🚀 Proyectos que presenta
 
-## 🧭 Recorrido de la página
+Las cifras y versiones de cada uno están en el sitio y en su propio repositorio.
 
-El orden de las secciones en `App.jsx` está pensado como un argumento, no como una lista al azar:
-
-1. **Sobre mí**: quién soy y qué busco.
-2. **Certificaciones**: credenciales (IBM, Google, Postman, SENA) para generar confianza rápido.
-3. **Habilidades**: el stack técnico completo, en un vistazo.
-4. **Experiencia profesional (Roblox)**: trabajo real pagado, un videojuego multijugador de 12 niveles.
-5. **Moss Nexus**: el proyecto más fuerte hoy, una librería de flujos de n8n probados.
-6. **Moss**: su proyecto hermano, mi "segundo cerebro" técnico con rutas de aprendizaje.
-7. **Moss Taste**: el recetario de la familia, con cantidades y costo para las porciones que vayas a servir.
-8. **Flujo con n8n**: automatización de datos, con el flujo animado y la captura real.
-9. **Otros proyectos**: YuGiOhApi, DigimonAPI + Firebase y este mismo portafolio.
-10. **Stats** y **Stack actual**: números y lo que estoy aprendiendo ahora mismo.
-11. **Contacto**: formulario directo, sin backend propio.
-
-Una prueba (`src/test/orden.test.js`) mantiene este orden de los proyectos destacados.
-
----
-
-## 🚀 Proyectos destacados
-
-### 🎮 Videojuego Multijugador en Roblox
-Desarrollo completo de una experiencia de **12 niveles** jugables en Roblox Studio (Lua/Luau), con entregas incrementales para un cliente real: pathfinding de NPCs, sistema de fases con temporizadores en servidor, un ritual multijugador cooperativo de 7 pasos con `RemoteEvent`, animaciones, físicas y control anti-exploits.
-
-### 🔗 Moss Nexus: librería de flujos para n8n · v1.0.0 estable
-**13 plantillas** de n8n ya armadas, explicadas paso a paso y listas para copiar. **9 tienen el sello «Probado»** en una instancia real (n8n 2.43.5), con datos ficticios y casos trampa; las otras 4 se marcan «Sin probar» a la vista. Búsqueda, filtros (incluido «Solo probadas»), un mapa del flujo que se dibuja solo y copia en un clic, **sin backend**.
-[Ver en vivo](https://sergio-velandia.dev/Moss-Nexus/) · [Ver repo](https://github.com/Sergio-Velandia/Moss-Nexus)
-
-### 🌱 Moss: jardín digital · v1.14.0 estable
-Mi "segundo cerebro" técnico. Lo que lo separa de un blog son sus **5 rutas de aprendizaje**, que recorren un tema de principio a fin, junto a sus secciones Laboratorio, Manual, Bitácora, Proyectos y Herbario, **sin base de datos ni backend**.
-[Ver en vivo](https://sergio-velandia.dev/Moss/) · [Ver repo](https://github.com/Sergio-Velandia/Moss)
-
-### 🍲 Moss Taste: el recetario de la familia · v1.1.0 estable
-Las recetas de la casa, con las cantidades y el costo en pesos colombianos para las porciones que vayas a servir, y un modo cocina para las manos ocupadas. Lista de compras y cuentas privadas con Firebase. **6 recetas, 390 pruebas de la aplicación y 63 de las reglas de Firestore.** Las ilustraciones de los platos son generadas con IA y se etiquetan así.
-[Ver en vivo](https://sergio-velandia.dev/Moss-Taste/) · [Ver repo](https://github.com/Sergio-Velandia/Moss-Taste)
-
-### ⚙️ Automatización de procesamiento de datos (n8n)
-Flujo que reemplaza la carga manual de datos: recibe archivos CSV desde un webhook, valida y filtra la información, la convierte a XLSX y la sube a Google Drive.
-[Ver repo](https://github.com/Sergio-Velandia/Test-N8N)
-
-### Otros
-- **YuGiOhApi**: app que consume una API externa para explorar las cartas Yu-Gi-Oh!. [Ver repo](https://github.com/Sergio-Velandia/YuGiOhApi)
-- **DigimonAPI + Firebase**: app multiplataforma (Capacitor) con autenticación. [Ver repo](https://github.com/Sergio-Velandia/DigimonAPI-Firebase)
-
----
-
-## 🗂 Estructura del proyecto
-
-```
-mi-portafolio/
-├── .github/workflows/
-│   └── deploy.yml                # Lint, pruebas, build y publicación en cada push a main
-├── privacidad/index.html         # Política de privacidad (HTML estático, ES + EN)
-├── terminos/index.html           # Términos de uso (HTML estático, ES + EN)
-├── public/
-│   ├── CV_Sergio_Ramirez_Velandia.pdf  # CV descargable desde el hero (sin teléfono ni correo personal)
-│   ├── og-image.png              # Imagen para redes sociales (Open Graph, 1200×630)
-│   ├── sitemap.xml               # Mapa del sitio: inicio, privacidad y términos
-│   ├── site.webmanifest, favicons
-│   └── *.pdf                     # Certificaciones descargables (IBM, Google, Postman, SENA...)
-├── scripts/
-│   └── og-card.html              # Fuente de og-image.png (abrir a 1200×630 y capturar)
-├── src/
-│   ├── assets/                   # Capturas en WebP: flujo de n8n, Moss, Moss Nexus y Moss Taste
-│   ├── components/               # Una sección por archivo (Header, Certificaciones, RobloxProyecto,
-│   │                             #   ProjectShowcase, Proyectos, Stats, Contacto, Footer…)
-│   ├── entrada.css               # Pantalla de entrada (la crea el script en línea de index.html)
-│   ├── data/
-│   │   ├── nexus.js              # Textos, cifras y capturas de Moss Nexus (ES + EN)
-│   │   ├── moss.js               # Textos, cifras y capturas de Moss (ES + EN)
-│   │   └── taste.js              # Textos, cifras y capturas de Moss Taste (ES + EN)
-│   ├── config/sites.js           # URLs del portafolio, Moss, Moss Nexus y Moss Taste (un solo lugar)
-│   ├── lib/envios.js             # Tope de envíos del formulario (lógica pura, con pruebas)
-│   ├── test/                     # Pruebas con Vitest
-│   ├── i18n.js / LanguageProvider.jsx  # Idioma: contexto, URL, <html lang>, título y descripción
-│   ├── fonts.js                  # Fuentes autoalojadas (@fontsource), solo los pesos usados
-│   ├── App.jsx / App.css         # Composición de secciones y sistema de diseño
-│   ├── legal.css                 # Estilos de las páginas legales
-│   └── animation.js, extras.js, heroNetwork.js, skillsFloat.js
-├── LICENSE                       # MIT (código)
-├── LICENSE-CONTENT               # Derechos reservados (contenido)
-└── vite.config.js                # base '/mi-portafolio/' y las tres páginas del build
-```
-
----
+- **Videojuego multijugador en Roblox:** mi experiencia profesional, en Lua y Roblox Studio.
+- **[Moss Nexus](https://sergio-velandia.dev/Moss-Nexus/):** librería de flujos de n8n listos para copiar. [Repo](https://github.com/Sergio-Velandia/Moss-Nexus)
+- **[Moss](https://sergio-velandia.dev/Moss/):** mi jardín digital, con rutas de aprendizaje. [Repo](https://github.com/Sergio-Velandia/Moss)
+- **[Moss Taste](https://sergio-velandia.dev/Moss-Taste/):** el recetario de la familia, con cantidades y costo por porciones. [Repo](https://github.com/Sergio-Velandia/Moss-Taste)
+- **Automatización de datos con n8n:** de CSV a XLSX en Google Drive. [Repo](https://github.com/Sergio-Velandia/Test-N8N)
+- **Otros:** [YuGiOhApi](https://github.com/Sergio-Velandia/YuGiOhApi) y [DigimonAPI + Firebase](https://github.com/Sergio-Velandia/DigimonAPI-Firebase).
 
 ## 🛠 Desarrollo
 
-Requisitos: Node.js 22 y npm.
+Requisitos: Node.js y npm. La versión de Node que usa el CI está en [`deploy.yml`](./.github/workflows/deploy.yml).
 
 ```bash
 git clone https://github.com/Sergio-Velandia/mi-portafolio.git
@@ -146,71 +38,44 @@ npm run dev        # http://localhost:5173/mi-portafolio/
 
 | Comando | Qué hace |
 |---|---|
-| `npm test` | Pruebas con Vitest: idiomas, cifras de los proyectos, orden de secciones, datos personales, metadatos, páginas legales, contraste, tope de envíos, el CV del hero y la pantalla de entrada |
+| `npm test` | Pruebas con Vitest |
 | `npm run lint` | Revisión del código con oxlint |
-| `npm run build` | Build de producción en `dist/` (inicio, privacidad y términos) |
+| `npm run build` | Build de producción en `dist/` |
 | `npm run preview` | Sirve el build localmente |
 
-El CI corre `lint`, `test` y `build` antes de publicar.
+**Stack:** React, Vite, CSS con variables y EmailJS, publicado en GitHub Pages. Las versiones están en [`package.json`](./package.json).
 
----
+## 🧭 Dónde está cada cosa
 
-## ⚡ Stack
+Solo lo que no se deduce de los nombres:
 
-| Capa | Tecnología |
-|---|---|
-| UI | React 19, CSS con variables (sin framework de estilos), React Icons |
-| Build | Vite 7, varias páginas (inicio + legales) |
-| Fuentes | Syne y DM Sans autoalojadas con @fontsource |
-| Idiomas | Context API, sin librerías externas |
-| Formulario | EmailJS |
-| Calidad | Vitest, oxlint |
-| Hosting | GitHub Pages con GitHub Actions, dominio propio |
+- `src/data/`: textos y capturas de Moss Nexus, Moss y Moss Taste, en los dos idiomas.
+- `src/config/sites.js`: las URLs de los proyectos, en un solo lugar.
+- `src/entrada.css`: estilos de la pantalla de entrada, que crea un script en línea de `index.html`, sin React.
+- `privacidad/` y `terminos/`: páginas legales en HTML estático.
+- `scripts/og-card.html`: fuente de `public/og-image.png`.
 
----
+## ⚠️ Reglas que no se ven en el código
 
-## 🎨 Sistema de diseño
-
-Los valores viven como variables en `src/App.css`: fondo grafito cálido (`--bg-base: #0a0a09`), un único acento oro mate (`--accent: #c9a96e`) y textos que cumplen **AA**: `--text-muted` alcanza 4,5:1 sobre todos los fondos y `--text-outline` se reserva al texto grande en contorno (3:1). Una prueba calcula estos contrastes.
-
-**Tipografía:** `Syne` para títulos y `DM Sans` para el cuerpo. **Movimiento:** se animan solo `transform` y `opacity`, nada se repite al volver a hacer scroll y todo respeta `prefers-reduced-motion`.
-
----
-
-## 🌍 Idiomas
-
-- El sitio carga en **español**. El botón **ES / EN** cambia el contenido, el `lang` del documento, el título y la descripción; [`?lang=en`](https://sergio-velandia.dev/mi-portafolio/?lang=en) abre directamente la versión en inglés.
-- Cada componente guarda sus textos en `{ es, en }` y elige el suyo con `useLang()`. Las pruebas comparan los campos y las cifras de los proyectos entre los dos idiomas.
+**Idiomas**
+- Cada componente guarda sus textos en `{ es, en }` y elige el suyo con `useLang()`.
 - Las páginas legales tienen las dos versiones en la misma página (inglés en `#en`).
+- Las `key` de las listas deben ser identificadores fijos, nunca el texto traducido: si la `key` cambia con el idioma, React recrea el elemento y se pierden las clases de animación.
 
-> ⚠️ Las `key` de las listas deben ser identificadores fijos, nunca el texto traducido: si la `key` cambia con el idioma, React recrea el elemento y se pierden las clases de animación.
+**Despliegue**
+- Cada push a `main` publica el sitio en [sergio-velandia.dev/mi-portafolio](https://sergio-velandia.dev/mi-portafolio/).
+- El dominio se configura en el repositorio raíz `Sergio-Velandia.github.io`, así que este repositorio **no lleva `CNAME`**.
+- Toda página nueva debe ser HTML real generado en el build, no una ruta de la SPA, para que responda 200 y los buscadores la indexen.
 
----
-
-## ☁️ Despliegue
-
-Cada push a `main` ejecuta `.github/workflows/deploy.yml` (lint, pruebas, build) y publica `dist/` en la rama `gh-pages`. El sitio se sirve en [sergio-velandia.dev/mi-portafolio](https://sergio-velandia.dev/mi-portafolio/): el dominio se configura en el repositorio raíz `Sergio-Velandia.github.io`, así que este repositorio **no lleva `CNAME`**.
-
-Privacidad y términos son **HTML reales generados en el build**, no rutas de la SPA, para que respondan 200 y los buscadores los indexen. Cualquier página nueva debe seguir la misma regla.
-
----
-
-## 📬 Formulario de contacto
-
-Usa [EmailJS](https://www.emailjs.com/) (plan gratuito, con cuota mensual). Las constantes públicas están en `src/components/Contacto.jsx`; quedan visibles en el navegador por diseño, así que el servicio debe estar **restringido al dominio `sergio-velandia.dev`** desde el panel de EmailJS. La plantilla usa `{{from_name}}`, `{{reply_to}}` y `{{message}}`.
-
-Lo que el formulario hace con los datos está descrito en la [política de privacidad](https://sergio-velandia.dev/mi-portafolio/privacidad/).
-
----
+**Formulario de contacto**
+- Usa [EmailJS](https://www.emailjs.com/). Sus constantes públicas están en `src/components/Contacto.jsx` y quedan visibles en el navegador por diseño, así que el servicio debe estar **restringido al dominio `sergio-velandia.dev`** desde su panel.
+- La plantilla usa `{{from_name}}`, `{{reply_to}}` y `{{message}}`.
+- Lo que el formulario hace con los datos está en la [política de privacidad](https://sergio-velandia.dev/mi-portafolio/privacidad/).
 
 ## 📄 Licencia
 
-- **Código:** licencia [MIT](./LICENSE). Puedes estudiarlo, copiarlo y reutilizarlo citando el aviso de copyright.
-- **Contenido:** todos los derechos reservados ([LICENSE-CONTENT](./LICENSE-CONTENT)). Los textos, certificados, capturas, la imagen de vista previa y la marca personal no se pueden copiar ni publicar como propios.
+- **Código:** [MIT](./LICENSE).
+- **Contenido:** todos los derechos reservados ([LICENSE-CONTENT](./LICENSE-CONTENT)). Textos, certificados, capturas, la imagen de vista previa y la marca personal no se pueden copiar ni publicar como propios.
 - Roblox, n8n y las demás marcas mencionadas pertenecen a sus titulares; este proyecto no está afiliado a ellas.
 
----
-
-<div align="center">
-  Hecho con mucho café ☕ por <strong>Sergio Velandia</strong> — Colombia 🇨🇴
-</div>
+Hecho con mucho café ☕ por **Sergio Velandia** — Colombia 🇨🇴
