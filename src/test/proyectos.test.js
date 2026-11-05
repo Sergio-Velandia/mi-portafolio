@@ -2,8 +2,9 @@ import { readFileSync } from "node:fs"
 import { describe, expect, it } from "vitest"
 import { MOSS } from "../data/moss"
 import { NEXUS } from "../data/nexus"
+import { TASTE } from "../data/taste"
 
-const PROJECTS = { MOSS, NEXUS }
+const PROJECTS = { MOSS, NEXUS, TASTE }
 
 // Forma de un objeto: claves y longitud de los arreglos, sin los textos
 function shape(value) {
@@ -47,6 +48,19 @@ describe("Moss", () => {
     expect(MOSS.text.es.status).toBe("Estable · v1.14.0")
     expect(MOSS.text.es.intro).toMatch(/5 rutas de aprendizaje/)
     expect(MOSS.text.es.pilares.map((p) => p.nombre)).toContain("Rutas")
+  })
+})
+
+describe("Moss Taste", () => {
+  it("usa las cifras de la v1.1.0: 6 recetas, 390 y 63 pruebas", () => {
+    expect(TASTE.text.es.status).toBe("Estable · v1.1.0")
+    expect(TASTE.text.es.p2.join("")).toMatch(/6 recetas, 390 pruebas de la aplicación y 63 de las reglas/)
+    expect(TASTE.text.en.p2.join("")).toMatch(/6 recipes, 390 application tests and 63 Firestore/)
+  })
+
+  it("avisa en los textos alternativos que las ilustraciones son generadas con IA", () => {
+    expect(TASTE.text.es.capturas[0].alt).toMatch(/generadas con IA/)
+    expect(TASTE.text.en.capturas[0].alt).toMatch(/AI-generated/)
   })
 })
 

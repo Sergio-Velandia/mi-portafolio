@@ -12,6 +12,7 @@ export const SITES = {
   portfolio: `${DOMAIN}/mi-portafolio/`,
   moss: `${DOMAIN}/Moss/`,
   mossNexus: `${DOMAIN}/Moss-Nexus/`,
+  mossTaste: `${DOMAIN}/Moss-Taste/`,
 }
 
 // CV público en PDF (solo correo y dominio propios, sin teléfono), en public/

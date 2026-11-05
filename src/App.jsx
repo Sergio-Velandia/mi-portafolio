@@ -9,6 +9,7 @@ import StackActual from "./components/Stackactual"
 import N8nProyecto from "./components/N8nProyecto"
 import MossProject from "./components/MossProject"
 import MossNexusProject from "./components/MossNexusProject"
+import MossTasteProject from "./components/MossTasteProject"
 import Certificaciones from "./components/Certificaciones"
 import Contacto from "./components/Contacto"
 import Footer from "./components/Footer"
@@ -66,9 +67,10 @@ export default function App() {
         <RobloxProyecto />
         
         {/* 5. PROYECTOS DESTACADOS: primero Moss Nexus (el más fuerte hoy), luego Moss,
-            su proyecto hermano, y al final el flujo de n8n. */}
+            su proyecto hermano, Moss Taste y al final el flujo de n8n. */}
         <MossNexusProject />
         <MossProject />
+        <MossTasteProject />
         <N8nProyecto />
 
         {/* 6. EL RESTO DE PROYECTOS: Tu gestor DevAsset, este mismo portafolio, etc. */}
