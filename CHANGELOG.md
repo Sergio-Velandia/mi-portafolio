@@ -6,6 +6,19 @@ El formato sigue [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y e
 
 ## [Sin publicar]
 
+## [1.2.0] - 2026-11-04
+
+### Añadido
+- **Moss Taste**, el recetario de la familia, como proyecto destacado después de Moss: capturas, textos en los dos idiomas y estado «Estable · v1.1.0». Los textos alternativos avisan que las ilustraciones son generadas con IA.
+- **Pantalla de entrada**: una firma de 1,8 s con el nombre sobre una línea dorada. Sale solo al llegar de afuera, se salta con un toque o una tecla, y no aparece al recargar, al navegar dentro del sitio ni con movimiento reducido. No guarda nada en el navegador.
+- Pruebas de la pantalla de entrada (cuándo aparece y cuándo se va, los 3 s, que solo anime `transform` y `opacity`) y de su contraste.
+
+### Cambiado
+- El hero dice **Sergio Velandia**, como el pie, el título y el dominio. En móvil el nombre es un poco más pequeño para que quepa.
+- Si la pantalla de entrada está activa, el hero ya está armado cuando se desvanece, en lugar de repetir su animación detrás de ella.
+- Proyectos completados: 8+.
+- La fuente del nombre se precarga para que no salte durante la entrada.
+
 ## [1.1.1] - 2026-10-26
 
 ### Añadido
@@ -66,7 +79,8 @@ El formato sigue [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y e
 
 > Las versiones anteriores a 1.0.1 no se registraron en este archivo; su detalle está en el historial de commits del repositorio.
 
-[Sin publicar]: https://github.com/Sergio-Velandia/mi-portafolio/compare/v1.1.1...HEAD
+[Sin publicar]: https://github.com/Sergio-Velandia/mi-portafolio/compare/v1.2.0...HEAD
+[1.2.0]: https://github.com/Sergio-Velandia/mi-portafolio/compare/v1.1.1...v1.2.0
 [1.1.1]: https://github.com/Sergio-Velandia/mi-portafolio/compare/v1.1.0...v1.1.1
 [1.1.0]: https://github.com/Sergio-Velandia/mi-portafolio/compare/v1.0.1...v1.1.0
 [1.0.1]: https://github.com/Sergio-Velandia/mi-portafolio/releases/tag/v1.0.1
