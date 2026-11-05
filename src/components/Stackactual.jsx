@@ -19,7 +19,7 @@ const herramientas = [
     categoria: { es: "Backend y bases de datos", en: "Backend & databases" },
     skills: [
       { nombre: "Node.js",    color: "#339933" },
-      { nombre: "Supabase",   color: "#3ECF8E" },
+      { nombre: "Firebase",   color: "#FFCA28" },
       { nombre: "PostgreSQL", color: "#336791" },
       { nombre: "MySQL",      color: "#4479A1" },
       { nombre: "MongoDB",    color: "#47A248" }

@@ -1,13 +1,13 @@
 import React, { useEffect, useRef } from 'react';
 import { FaReact, FaNodeJs, FaHtml5, FaDatabase, FaJs, FaGithub, FaDocker } from 'react-icons/fa';
-import { SiN8N, SiVite, SiSupabase, SiPostgresql } from 'react-icons/si';
+import { SiN8N, SiVite, SiFirebase, SiPostgresql } from 'react-icons/si';
 
 // Configuración de los íconos por sección
 const ICONS_CONFIG = [
   // Habilidades
   { id: 'h-1', Icon: FaReact, sectionId: 'habilidades', layer: 2, size: 60 },
   { id: 'h-2', Icon: FaNodeJs, sectionId: 'habilidades', layer: 1, size: 45 },
-  { id: 'h-3', Icon: SiSupabase, sectionId: 'habilidades', layer: 0, size: 30 },
+  { id: 'h-3', Icon: SiFirebase, sectionId: 'habilidades', layer: 0, size: 30 },
   { id: 'h-4', Icon: FaJs, sectionId: 'habilidades', layer: 2, size: 50 },
   { id: 'h-5', Icon: SiPostgresql, sectionId: 'habilidades', layer: 1, size: 40 },
   { id: 'h-6', Icon: FaDocker, sectionId: 'habilidades', layer: 0, size: 35 },

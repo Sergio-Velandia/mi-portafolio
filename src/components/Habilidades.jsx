@@ -3,7 +3,7 @@ import {
   FaJs, FaReact, FaHtml5, FaNodeJs, FaGithub, FaDocker
 } from "react-icons/fa"
 import {
-  SiVite, SiSupabase, SiPostgresql, SiMongodb,
+  SiVite, SiFirebase, SiPostgresql, SiMongodb,
   SiN8N, SiPostman, SiGit, SiLua
 } from "react-icons/si"
 import { TbApi, TbRobot } from "react-icons/tb"
@@ -25,7 +25,7 @@ const TECH_ICONS = {
   vite:       SiVite,
   htmlcss:    FaHtml5,
   nodejs:     FaNodeJs,
-  supabase:   SiSupabase,
+  firebase:   SiFirebase,
   postgresql: SiPostgresql,
   mongodb:    SiMongodb,
   n8n:        SiN8N,
@@ -56,11 +56,11 @@ const skillCategories = [
     categoria: { es: "Backend y bases de datos", en: "Backend & databases" },
     skills: [
       { nombre: "Node.js",    color: "#3c873a", tech: "nodejs"     },
-      { nombre: "Supabase",   color: "#3ECF8E", tech: "supabase"   },
+      { nombre: "Firebase",   color: "#FFCA28", tech: "firebase"   },
       { nombre: "PostgreSQL", color: "#336791", tech: "postgresql" },
       { nombre: "MongoDB",    color: "#47A248", tech: "mongodb"    },
     ],
-    floatIcons: ["nodejs", "supabase", "postgresql", "mongodb"],
+    floatIcons: ["nodejs", "firebase", "postgresql", "mongodb"],
   },
   {
     id: "ia",
