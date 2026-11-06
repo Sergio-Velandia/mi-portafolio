@@ -6,6 +6,11 @@ El formato sigue [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y e
 
 ## [Sin publicar]
 
+## [1.2.3] - 2026-11-06
+
+### Añadido
+- **Página 404 propia** para `/mi-portafolio/*`, en español e inglés, con salida al inicio del portafolio, a la portada del dominio y a los otros tres proyectos. Reemplaza a la 404 genérica de GitHub.
+
 ## [1.2.2] - 2026-11-05
 
 ### Cambiado

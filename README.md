@@ -10,7 +10,7 @@ Mi carta de presentación como desarrollador: quién soy, qué he construido y c
 
 | Versión | Estado | Última revisión |
 |---|---|---|
-| **1.2.2** | En mantenimiento | 5 de noviembre de 2026 |
+| **1.2.3** | En mantenimiento | 6 de noviembre de 2026 |
 
 Los cambios de cada versión están en el [CHANGELOG](./CHANGELOG.md) y los pendientes, en el [ROADMAP](./ROADMAP.md).
 
