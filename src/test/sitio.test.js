@@ -27,6 +27,26 @@ describe("URLs del ecosistema", () => {
   })
 })
 
+describe("página 404", () => {
+  const html = read("public/404.html")
+  const hrefs = [...html.matchAll(/href="([^"]+)"/g)].map((m) => m[1])
+
+  it("tiene salida al hub y a los cuatro proyectos, en los dos idiomas", () => {
+    for (const ruta of ["/", "/mi-portafolio/", "/mi-portafolio/?lang=en", "/Moss/", "/Moss-Nexus/", "/Moss-Taste/"]) {
+      expect(hrefs).toContain(ruta)
+    }
+    expect(html).toContain('lang="en"')
+  })
+
+  it("usa rutas absolutas, porque se sirve desde cualquier profundidad", () => {
+    for (const href of hrefs) expect(href.startsWith("/")).toBe(true)
+  })
+
+  it("no se indexa", () => {
+    expect(html).toContain('<meta name="robots" content="noindex">')
+  })
+})
+
 describe("privacidad", () => {
   it("index.html no carga recursos de terceros (fuentes, scripts ni estilos)", () => {
     const html = read("index.html")

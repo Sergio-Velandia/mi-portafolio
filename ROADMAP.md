@@ -14,7 +14,6 @@ Pendientes del portafolio, ordenados por prioridad. Lo hecho se registra en el [
 
 - **Versiones de los proyectos en el sitio.** `src/data/*.js` muestra Moss Nexus v1.0.0, Moss v1.14.0 y Moss Taste v1.1.0; hoy son v1.1.0, v1.16.1 y v1.1.1. `proyectos.test.js` fija las versiones antiguas, así que pasa aunque ya no sean reales. Revisar también sus cifras.
 - **Hallazgos de axe anteriores a la pantalla de entrada.** Los íconos flotantes (`svg-img-alt`, 5 nodos) y los bloques de código en móvil (`scrollable-region-focusable`, 2 nodos).
-- **Página 404 propia** para `/mi-portafolio/*`. Hoy se ve la 404 genérica de GitHub; una propia, con enlace al inicio, en los dos idiomas.
 - **Hero en pantallas bajas.** Con unos 630 px de alto, «Hola, bienvenido» se monta sobre «Portafolio 2026». No pasa a 900 px; revisar el posicionamiento del saludo.
 - **Botón flotante «volver arriba»** se superpone al botón «Arriba» del pie al final de la página. Dejar uno solo.
 
