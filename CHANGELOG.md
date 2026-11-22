@@ -6,6 +6,11 @@ El formato sigue [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y e
 
 ## [Sin publicar]
 
+## [1.2.4] - 2026-11-21
+
+### Cambiado
+- CV descargable desde el hero actualizado: suma Moss Taste, la experiencia como animador 3D y Firebase. Sigue sin teléfono ni correo personal.
+
 ## [1.2.3] - 2026-11-06
 
 ### Añadido
@@ -94,7 +99,9 @@ El formato sigue [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y e
 
 > Las versiones anteriores a 1.0.1 no se registraron en este archivo; su detalle está en el historial de commits del repositorio.
 
-[Sin publicar]: https://github.com/Sergio-Velandia/mi-portafolio/compare/v1.2.2...HEAD
+[Sin publicar]: https://github.com/Sergio-Velandia/mi-portafolio/compare/v1.2.4...HEAD
+[1.2.4]: https://github.com/Sergio-Velandia/mi-portafolio/compare/v1.2.3...v1.2.4
+[1.2.3]: https://github.com/Sergio-Velandia/mi-portafolio/compare/v1.2.2...v1.2.3
 [1.2.2]: https://github.com/Sergio-Velandia/mi-portafolio/compare/v1.2.1...v1.2.2
 [1.2.1]: https://github.com/Sergio-Velandia/mi-portafolio/compare/v1.2.0...v1.2.1
 [1.2.0]: https://github.com/Sergio-Velandia/mi-portafolio/compare/v1.1.1...v1.2.0
