@@ -8,10 +8,10 @@ const stats = [
   {
     id: "stat-meses",
     label: { es: "Meses de experiencia", en: "Months of experience" },
-    valor: 6,
+    valor: 14,
     sufijo: "",
     porcentaje: 100,
-    desc: { es: "Desarrollador de videojuegos en Roblox Studio, con entregas periódicas y feedback del cliente.", en: "Game developer in Roblox Studio, with regular releases and client feedback." },
+    desc: { es: "7 como desarrollador de videojuegos en Roblox Studio (2025) y 7 como animador 3D en Blender (2026).", en: "7 as a game developer in Roblox Studio (2025) and 7 as a 3D animator in Blender (2026)." },
   },
   {
     id: "stat-proyectos",
