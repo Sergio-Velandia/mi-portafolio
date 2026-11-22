@@ -6,6 +6,15 @@ El formato sigue [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y e
 
 ## [Sin publicar]
 
+## [1.3.0] - 2026-11-21
+
+### Añadido
+- **Animación 3D** como segunda experiencia profesional, después de Roblox: animador 3D independiente de enero a julio de 2026, con Blender, Python y MCP. Sin capturas, porque es trabajo para un cliente.
+
+### Corregido
+- Roblox fue **prestación de servicios, de enero a julio de 2025**, no un contrato de aprendizaje de 6 meses, como dice el CV.
+- «Meses de experiencia» pasa de 6 a 14: 7 en Roblox y 7 en animación 3D.
+
 ## [1.2.4] - 2026-11-21
 
 ### Cambiado
@@ -99,7 +108,8 @@ El formato sigue [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y e
 
 > Las versiones anteriores a 1.0.1 no se registraron en este archivo; su detalle está en el historial de commits del repositorio.
 
-[Sin publicar]: https://github.com/Sergio-Velandia/mi-portafolio/compare/v1.2.4...HEAD
+[Sin publicar]: https://github.com/Sergio-Velandia/mi-portafolio/compare/v1.3.0...HEAD
+[1.3.0]: https://github.com/Sergio-Velandia/mi-portafolio/compare/v1.2.4...v1.3.0
 [1.2.4]: https://github.com/Sergio-Velandia/mi-portafolio/compare/v1.2.3...v1.2.4
 [1.2.3]: https://github.com/Sergio-Velandia/mi-portafolio/compare/v1.2.2...v1.2.3
 [1.2.2]: https://github.com/Sergio-Velandia/mi-portafolio/compare/v1.2.1...v1.2.2
