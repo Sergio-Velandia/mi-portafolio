@@ -1231,6 +1231,9 @@ header {
 .roblox-sub-label { font-size: 0.72rem; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 20px; }
 .roblox-features ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px; }
 .roblox-features li { font-size: 0.88rem; font-weight: 300; color: var(--text-secondary); padding-left: 18px; position: relative; line-height: 1.6; }
+/* Animación 3D: segunda experiencia, a continuación de Roblox y sin cuadrícula de código */
+.roblox-proyecto.experiencia-3d { padding-top: 0; }
+.experiencia-3d .roblox-features { border-right: none; }
 .roblox-features li::before { content: ''; position: absolute; left: 0; top: 8px; width: 5px; height: 5px; border-radius: 50%; background: var(--accent); }
 
 .roblox-code-col { padding: 40px 48px; background: var(--bg-base); }

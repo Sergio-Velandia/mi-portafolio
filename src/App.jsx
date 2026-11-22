@@ -4,6 +4,7 @@ import SobreMi from "./components/SobreMi"
 import Habilidades from "./components/Habilidades"
 import Proyectos from "./components/Proyectos"
 import RobloxProyecto from "./components/RobloxProyecto"
+import Animacion3D from "./components/Animacion3D"
 import Stats from "./components/Stats"
 import StackActual from "./components/Stackactual"
 import N8nProyecto from "./components/N8nProyecto"
@@ -66,6 +67,7 @@ export default function App() {
         {/* 4. EXPERIENCIA: videojuego en Roblox (prestación de servicios, ene–jul 2025)
             y animación 3D independiente (ene–jul 2026). */}
         <RobloxProyecto />
+        <Animacion3D />
         
         {/* 5. PROYECTOS DESTACADOS: primero Moss Nexus (el más fuerte hoy), luego Moss,
             su proyecto hermano, Moss Taste y al final el flujo de n8n. */}
