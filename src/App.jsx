@@ -63,7 +63,8 @@ export default function App() {
             El reclutador hará "check" mental de los requisitos de la vacante. */}
         <Habilidades />
         
-        {/* 4. EL PLATO FUERTE (Experiencia): Tu trabajo real de 6 meses. */}
+        {/* 4. EXPERIENCIA: videojuego en Roblox (prestación de servicios, ene–jul 2025)
+            y animación 3D independiente (ene–jul 2026). */}
         <RobloxProyecto />
         
         {/* 5. PROYECTOS DESTACADOS: primero Moss Nexus (el más fuerte hoy), luego Moss,
