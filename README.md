@@ -18,7 +18,8 @@ Los cambios de cada versión están en el [CHANGELOG](./CHANGELOG.md) y los pend
 
 Las cifras y versiones de cada uno están en el sitio y en su propio repositorio.
 
-- **Videojuego multijugador en Roblox:** mi experiencia profesional, en Lua y Roblox Studio.
+- **Videojuego multijugador en Roblox:** experiencia profesional, en Lua y Roblox Studio.
+- **Animación 3D:** experiencia profesional como animador independiente, con Blender, Python y MCP.
 - **[Moss Nexus](https://sergio-velandia.dev/Moss-Nexus/):** librería de flujos de n8n listos para copiar. [Repo](https://github.com/Sergio-Velandia/Moss-Nexus)
 - **[Moss](https://sergio-velandia.dev/Moss/):** mi jardín digital, con rutas de aprendizaje. [Repo](https://github.com/Sergio-Velandia/Moss)
 - **[Moss Taste](https://sergio-velandia.dev/Moss-Taste/):** el recetario de la familia, con cantidades y costo por porciones. [Repo](https://github.com/Sergio-Velandia/Moss-Taste)
